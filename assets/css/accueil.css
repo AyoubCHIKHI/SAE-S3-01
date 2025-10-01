@@ -17,6 +17,7 @@ nav {
     /* alignement vertical du contenu */
     padding: 10px 20px;
     max-width: 60%;
+    max-height: 10%;
 }
 
 /* ---------- Logo ---------- */
@@ -58,6 +59,7 @@ nav .page li{
 }
 
 .nav1{
+    position: relative;
     display: flex;
     height: 500px;
 
@@ -82,3 +84,16 @@ nav ul.page li a::after {
 nav ul.page li a:hover::after {
     width: 90%;
 }
+
+
+#text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+h1{
+    padding-top: 25px;
+
+}
+
