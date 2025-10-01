@@ -94,6 +94,11 @@ nav ul.page li a:hover::after {
 
 h1{
     padding-top: 25px;
+    padding-right: 5em;
+}
+
+p{
+    padding-right: 10em;
 
 }
 
