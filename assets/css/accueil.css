@@ -13,14 +13,11 @@ header {
 /* ---------- Navbar ---------- */
 nav {
     display: flex;
-    justify-content: center; /* logo à gauche, menu à droite */
-    /* alignement vertical du contenu */
+    justify-content: center;
     padding: 10px 20px;
     max-width: 60%;
-    max-height: 10%;
 }
 
-/* ---------- Logo ---------- */
 nav ul.LOGO {
     list-style: none;
     margin: 0;
@@ -28,77 +25,110 @@ nav ul.LOGO {
 }
 
 nav .LOGO li a img {
-    display: block; /* supprime l'espace sous l'image */
-    height: 60px;   /* ajuste selon ton design */
+    display: block;
+    height: 60px;
     width: auto;
+    padding-left: 300px;
 }
 
-/* ---------- Menu ---------- */
 nav .page {
     list-style: none;
     display: flex;
     gap: 50px;
     margin: 0;
     padding: 0;
-    padding-right: 100px;
-    padding-left: 40px;
+    padding-right: 500px;
+    padding-left: 100px;
     align-content: center;
 }
 
 nav .page li a {
     position: relative;
-    text-decoration: none; /* supprime le soulignement */
+    text-decoration: none;
     color: #4a5384;
     font-weight: bold;
-    padding-right: 10px;
+    padding-right: 150px;
 }
 
-nav .page li{
+nav .page li {
     padding-top: 20px;
-
 }
 
-.nav1{
+.nav1 {
     position: relative;
     display: flex;
     height: 500px;
-
 }
-.nav2{
-    background-color: cornflowerblue;
+
+.nav2 {
+    background-color: #4b97cd;
     flex: 1;
 }
 
+/* Effet soulignement au hover */
 nav ul.page li a::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
     width: 0%;
-    height: 2px; /* épaisseur de la ligne */
-    background-color: #4a5384; /* couleur de la ligne */
+    height: 2px;
+    background-color: #4a5384;
     transition: width 0.3s ease-in-out;
 }
 
-/* quand on hover, la ligne s’étend */
 nav ul.page li a:hover::after {
-    width: 90%;
+    width: 60%;
 }
 
-
-#text{
+/* ---------- Contenu principal ---------- */
+#text {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
 
-
-h1{
+h1 {
     padding-top: 25px;
     padding-right: 5em;
+    font-size: 50px;
+    text-align: center;
 }
 
-p{
-    padding-right: 10em;
-
+p {
+    padding-right: 12em;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 1px;
 }
 
+/* ---------- Boutons Don / Rejoindre ---------- */
+.bouton {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    padding-left: 5em;
+}
+
+.bouton ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bouton li {
+    border: 1px solid #4a5384;
+    border-radius: 21px;
+    padding: 12px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.bouton li a {
+    text-decoration: none;
+    color: #4a5384;
+    font-weight: bold;
+    display: inline-block;
+}
