@@ -1,0 +1,19 @@
+body{
+    font-family: Arial, sans-serif;
+}
+
+header{
+    color: white;
+    padding: 1rem;
+}
+
+.LOGO{
+
+}
+
+nav{
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+}
+
