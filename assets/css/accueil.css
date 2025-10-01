@@ -5,21 +5,18 @@ body {
     padding: 0;
 }
 
+/* ---------- Header ---------- */
 header {
-    color: white;
-    display: flex;
-    justify-content: center;
+    width: 100%;
 }
 
 /* ---------- Navbar ---------- */
 nav {
     display: flex;
-    justify-content: space-between; /* logo à gauche, menu à droite */
-    align-items: center;            /* centrage vertical */
+    justify-content: center; /* logo à gauche, menu à droite */
+    /* alignement vertical du contenu */
     padding: 10px 20px;
-    position: relative;
-    padding-top: 2.5em;
-    padding-bottom: 3em;
+    max-width: 60%;
 }
 
 /* ---------- Logo ---------- */
@@ -29,37 +26,59 @@ nav ul.LOGO {
     padding: 0;
 }
 
-nav ul.LOGO li a img {
+nav .LOGO li a img {
     display: block; /* supprime l'espace sous l'image */
     height: 60px;   /* ajuste selon ton design */
     width: auto;
 }
 
 /* ---------- Menu ---------- */
-nav ul.page {
+nav .page {
     list-style: none;
     display: flex;
     gap: 50px;
     margin: 0;
-    padding-right: 25em;
+    padding: 0;
+    padding-right: 100px;
+    padding-left: 40px;
+    align-content: center;
 }
 
-nav ul.page li a {
+nav .page li a {
+    position: relative;
     text-decoration: none; /* supprime le soulignement */
     color: #4a5384;
     font-weight: bold;
+    padding-right: 10px;
+}
+
+nav .page li{
+    padding-top: 20px;
 
 }
 
-aside{
-    background-color: #4a5384;
-    padding: 160px;
-    padding-bottom: 50px;
+.nav1{
     display: flex;
+    height: 500px;
+
+}
+.nav2{
+    background-color: cornflowerblue;
+    flex: 1;
 }
 
-aside #menu-toggle{
-    padding-bottom: 70px;
+nav ul.page li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px; /* épaisseur de la ligne */
+    background-color: #4a5384; /* couleur de la ligne */
+    transition: width 0.3s ease-in-out;
 }
 
-
+/* quand on hover, la ligne s’étend */
+nav ul.page li a:hover::after {
+    width: 90%;
+}

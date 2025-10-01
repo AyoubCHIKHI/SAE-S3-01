@@ -8,43 +8,38 @@
     <link rel="stylesheet" href="../assets/css/accueil.css">
 </head>
 <body>
-    <header>
+<header>
+    <div class="nav1">
         <nav>
-            <ul class = "LOGO">
+            <!-- Logo -->
+            <ul class="LOGO">
                 <li>
-                    <a href = "acceuil.html">
-                        <img src = "../assets/img/Logo.svg" width="175" height="auto">
-                    </a>
-                </li>
-            </ul>
-            <ul class = "page">
-                <li>
-                    <a href = "FaireDon.html" class = "don">
-                        Faire un don
-                    </a>
-                </li>
-                <li>
-                    <a href = "nosactions.html">
-                        Nos actions
-                    </a>
-                </li>
-                <li>
-                    <a href ="NousRejoindre.html">
-                        Nous rejoindre
+                    <a href="acceuil.html">
+                        <img src="../assets/img/Logo.svg" alt="Logo" width="175" height="auto">
                     </a>
                 </li>
             </ul>
 
+            <!-- Menu -->
+            <ul class="page">
+                <li><a href="FaireDon.html" class="don">Faire un don</a></li>
+                <li><a href="nosactions.html">Nos actions</a></li>
+                <li><a href="NousRejoindre.html">Nous rejoindre</a></li>
+            </ul>
+
+            <!-- Menu burger -->
+            <aside>
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </aside>
         </nav>
-    <aside>
-        <input type="checkbox" id="menu-toggle">
-        <!-- Bouton burger -->
-        <label for ="menu-toggle" class="menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-    </aside>
-    </header>
+        <div class="nav2">
+        </div>
+    </div>
+</header>
 </body>
 </html>
