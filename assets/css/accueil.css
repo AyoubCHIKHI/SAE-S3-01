@@ -1,29 +1,65 @@
-body{
+/* ---------- Général ---------- */
+body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-header{
+header {
     color: white;
-    padding: 1rem;
-}
-
-.LOGO{
-
-}
-
-nav{
     display: flex;
-    max-width: 100%;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.page{
+/* ---------- Navbar ---------- */
+nav {
+    display: flex;
+    justify-content: space-between; /* logo à gauche, menu à droite */
+    align-items: center;            /* centrage vertical */
+    padding: 10px 20px;
+    position: relative;
+    padding-top: 2.5em;
+    padding-bottom: 3em;
+}
+
+/* ---------- Logo ---------- */
+nav ul.LOGO {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul.LOGO li a img {
+    display: block; /* supprime l'espace sous l'image */
+    height: 60px;   /* ajuste selon ton design */
+    width: auto;
+}
+
+/* ---------- Menu ---------- */
+nav ul.page {
+    list-style: none;
+    display: flex;
     gap: 50px;
+    margin: 0;
+    padding-right: 25em;
+}
+
+nav ul.page li a {
+    text-decoration: none; /* supprime le soulignement */
+    color: #4a5384;
+    font-weight: bold;
+
+}
+
+aside{
+    background-color: #4a5384;
+    padding: 160px;
+    padding-bottom: 50px;
     display: flex;
-
 }
 
-.page li{
-
+aside #menu-toggle{
+    padding-bottom: 70px;
 }
+
 
