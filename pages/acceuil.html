@@ -1,98 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Description de mon site">
-    <title>Accueil</title>
-    <link rel="stylesheet" href="../assets/css/accueil.css">
-</head>
-<body>
-<header>
-    <div class="nav1">
-        <nav>
-            <div id="text">
-                <!-- Logo -->
-                <div style="display: flex;">
-                    <ul class="LOGO">
-                        <li>
-                            <a href="acceuil.html">
-                                <img src="../assets/img/Logo.svg" alt="Logo">
-                            </a>
-                        </li>
-                    </ul>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bénévolat de compétences - Association EGEE | Des seniors bénévoles au service de vos projets</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
 
-                    <!-- Menu -->
-                    <ul class="page">
-                        <li><a href="FaireDon.html">Faire un don</a></li>
-                        <li><a href="nosactions.html">Nos actions</a></li>
-                        <li><a href="NousRejoindre.html">Nous rejoindre</a></li>
-                    </ul>
-
-                    <!-- Menu burger (optionnel) -->
-                    <aside>
-                        <input type="checkbox" id="menu-toggle">
-                        <label for="menu-toggle" class="menu-btn">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </label>
-                    </aside>
+        <div class="absolute w-full">
+            <nav class="flex items-top px-8 py-4">
+               
+                <img src="../assets/img/Logo.svg" alt="EGEE Logo" class="w-48 h-auto self-start mr-32">
+        
+                <div class="flex gap-12 whitespace-nowrap">
+                    <a href="./don.html">Faire un don</a>
+                    <a href="./nos_actions.html">Nos actions</a>
+                    <a href="./nous_contacter.html">Nous rejoindre</a>
                 </div>
 
-                <!-- Titre & texte -->
-                <h1><i>Transmettre le savoir <br> construire l’avenir</i></h1>
-                <p><i>Chacun peut avoir besoin d’un oeil extérieur, averti, <br>objectif et lucide sur le monde du travail.</i></p>
+                <div class="flex-1"></div>
 
-                <!-- Boutons -->
-                <div class="bouton">
-                    <ul id="don">
-                        <li><a href="don.html">Faire un don</a></li>
-                    </ul>
-                    <ul id="join">
-                        <li><a href="NousRejoindre.html">Nous rejoindre</a></li>
-                    </ul>
+                <img src="../assets/img/icon_menu_burger.svg" class="w-8 mr-4">
+            </nav>
+        </div>
+
+
+        <div id="hero_section" class="flex h-[600px]">
+            <div id="partie_blanc" class="flex flex-col justify-center items-center w-[60%] pt-36 ">
+
+                <div id="slogan_large" class="text-5xl font-bold">
+                    <p>Transmetrre le savoir,</p>
+                    <p class="indent-8">contruire l'avenir</p>
                 </div>
+
+                <p class="text-center px-28 p-8">
+                    Chacun peut avoir besoin d’un oeil extérieur, averti, objectif et lucide sur le monde du travail.
+                </p>
+
+                <button class="bg-blue-500 text-white px-4 py-2 rounded">
+                    Faire un don
+                </button>
+                
             </div>
-        </nav>
-        <div class="nav2"></div>
-    </div>
-</header>
+            
 
-<footer>
+            <div id="partie_bleue" class="flex flex-1 bg-blue-500"></div>
 
-    <div class="footer1">
-        <h3>
-            EGEE
-        </h3>
+        </div>
 
-        <ul>
-            <li><a href="nosaction.html">Nos action</a></li>
-        </ul>
-        <ul>
-            <li><a href="nosmission.html">Nos missions</a></li>
-        </ul>
-        <ul>
-            <li><a href="apropos">A propos</a></li>
-        </ul>
-    </div>
-     <h6>
-         Entente des Générations pour l’Emploi et L’entreprise <br>
-         Association reconnu d’utilité publique
-    </h6>
-
-    <a>
-        <img src="../assets/img/Facebook" alt="Facebook">
-    </a>
-    <a>
-        <img src="../assets/img/X" alt="X">
-    </a>
-    <a>
-        <img src="../assets/img/LinkeDin" alt="LinkedIn">
-    </a>
-
-
-
-</footer>
-</body>
+    </body>
 </html>
