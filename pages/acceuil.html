@@ -31,23 +31,85 @@
 
                 <div id="slogan_large" class="text-5xl font-bold">
                     <p>Transmetrre le savoir,</p>
-                    <p class="indent-8">contruire l'avenir</p>
+                    <p class="indent-8">contruire <span id="bloc_blue" class="">l'avenir</span></p>
                 </div>
 
-                <p class="text-center px-28 p-8">
+                <p class="text-center px-28 py-8">
                     Chacun peut avoir besoin d’un oeil extérieur, averti, objectif et lucide sur le monde du travail.
                 </p>
 
-                <button class="bg-blue-500 text-white px-4 py-2 rounded">
-                    Faire un don
-                </button>
+                <div class="flex gap-16">
+                    <button class="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded">
+                        <img src="../assets/img/heart-svgrepo-com.svg" alt="icon_don" class="w-6">
+                        Faire un don
+                    </button>
+
+                    <button class="flex items-center gap-2 text-black px-4 py-2 border border-blue-500 rounded">
+                        <img src="../assets/img/play-svgrepo-com.svg" alt="icon_don" class="w-6">
+                        Nos actions
+                    </button>
+                    
+                </div>
                 
             </div>
             
 
-            <div id="partie_bleue" class="flex flex-1 bg-blue-500"></div>
+            <div id="partie_bleue" class="flex flex-1 bg-blue-500">
+                <div class="flex relative flex-1 items-center">
+                    <img src="../assets/img/hero_illustration.png" alt="hero_section_illustration" class="absolute lg:-translate-x-56">
+                </div>
+            </div>
 
         </div>
+
+        <footer class="flex w-full h-[200px] px-12 pt-20">
+
+            <div class="flex flex-col">
+                <p class="text-blue-500 font-bold text-4xl">EGEE</p>
+                <p>Entente des Générations pour l’Emploi et L’entreprise</p>
+                <p>Association reconnu d’utilité publique</p>
+
+                <div class="flex gap-4 items-center mt-8">
+                    <a href="https://www.instagram.com/association_egee/">
+                        <img src="../assets/img/icons8-instagram.svg" alt="">
+                    </a>
+                    <a href="https://fr.linkedin.com/company/egee-asso/">
+                        <img src="../assets/img/icons8-linkedin.svg" alt="">
+                    </a>
+                    <a href="https://www.facebook.com/egee.asso/">
+                        <img src="../assets/img/icons8-facebook.svg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex-1"></div>
+
+            <div id="info_section_footer" class="flex flex-row gap-8">
+                <div class="flex flex-col">
+                    <p class="font-bold text-xl mb-4 uppercase">Nos actions</p>
+                    <a href="#">Education</a>
+                    <a href="#">Emploi</a>
+                    <a href="#">Entreprise</a>
+                    <a href="#">Formation</a>
+                </div>
+
+                <div class="flex flex-col">
+                    <p class="font-bold text-xl mb-4 uppercase">Nos missions</p>
+                    <a href="#">Education</a>
+                    <a href="#">Emploi</a>
+                    <a href="#">Entreprise</a>
+                    <a href="#">Formation</a>
+                </div>
+
+                <div class="flex flex-col">
+                    <p class="font-bold text-xl mb-4 uppercase">à propos</p>
+                    <a href="#">Mentions légales</a>
+                    <a href="../pages/nous_contacter.html">Contactez nous</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+
+        </footer>
 
     </body>
 </html>
