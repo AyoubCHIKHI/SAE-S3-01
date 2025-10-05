@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Je fais un don à EGEE | Bénévolat de compétences</title>
+    <title>Où sommes-nous | Bénévolat de compétences</title>
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/egee_en_france.css">
+    <!-- Feuilles de style Leaflet -->
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+
+
+
+
+
+
 </head>
 <body>
     <nav class="flex items-top px-8 py-4">
@@ -36,6 +48,48 @@
         Ces antennes, animées par des bénévoles <br> expérimentés, accompagnent les jeunes, les <br> entrepreneurs et les acteurs locaux. <br>
         Une présence nationale pour être au plus près <br> des besoins de chaque territoire.
     </p>
+
+
+    <div id="map"></div>
+
+
+
+    <!-- Script Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+    <script>
+        // Initialisation de la carte centrée sur le pays (exemple : France)
+        const map = L.map('map').setView([46.603354, 1.888334], 6);
+
+        // Couche de fond OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Exemple de marqueurs (à adapter)
+        const markers = [
+            { lat: 48.8566, lon: 2.3522, text: "Paris - Siège de l'association" },
+            { lat: 43.6047, lon: 1.4442, text: "Toulouse - Antenne Sud" },
+            { lat: 45.7640, lon: 4.8357, text: "Lyon - Bureau régional" },
+        ];
+
+        // Ajout des marqueurs
+        markers.forEach(point => {
+            L.marker([point.lat, point.lon])
+                .addTo(map)
+                .bindPopup(point.text);
+        });
+
+        // (Optionnel) Ajout dynamique d’un marqueur au clic
+        map.on('click', function (e) {
+            const { lat, lng } = e.latlng;
+            L.marker([lat, lng])
+                .addTo(map)
+                .bindPopup(`Nouveau marqueur à<br>Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(4)}`);
+        });
+    </script>
 
 
 
