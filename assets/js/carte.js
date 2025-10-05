@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Exemple de marqueurs
     const markers = [
         { lat: 48.830984476882584, lon: 2.3388590070525854, text: "Paris - Siège de l'association" },
-        { lat: 48.12708285201991, lon: 1.692307944988219, text: "EGEE BRETAGNE" },
-        { lat: 45.7640, lon: 4.8357, text: "Lyon - Bureau régional" },
+        { lat: 48.127091050746216, lon: -1.6923763033717514, text: "EGEE BRETAGNE" },
+        { lat: 48.70510793708534, lon: 6.129533626201256, text: "Lyon - Bureau régional" },
     ];
 
     markers.forEach(point => {
