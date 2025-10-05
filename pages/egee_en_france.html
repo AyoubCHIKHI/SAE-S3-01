@@ -50,48 +50,86 @@
     </p>
 
 
-    <div id="map"></div>
+    <div class="flex">
+
+        <div id="map"></div>
 
 
 
-    <!-- Script Leaflet -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <!-- Script Leaflet -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 
-    <script>
-        // Initialisation de la carte centrée sur le pays (exemple : France)
-        const map = L.map('map').setView([46.603354, 1.888334], 6);
+        <script>
+            // Initialisation de la carte centrée sur le pays (exemple : France)
+            const map = L.map('map').setView([46.603354, 1.888334], 6);
 
-        // Couche de fond OpenStreetMap
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(map);
+            // Couche de fond OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(map);
 
-        // Exemple de marqueurs (à adapter)
-        const markers = [
-            { lat: 48.8566, lon: 2.3522, text: "Paris - Siège de l'association" },
-            { lat: 43.6047, lon: 1.4442, text: "Toulouse - Antenne Sud" },
-            { lat: 45.7640, lon: 4.8357, text: "Lyon - Bureau régional" },
-        ];
+            // Exemple de marqueurs (à adapter)
+            const markers = [
+                { lat: 48.830984476882584, lon: 2.3388590070525854, text: "Paris - Siège de l'association" },
+                { lat: 48.12708285201991, lon: 1.692307944988219, text: "EGEE BRETAGNE" },
+                { lat: 45.7640, lon: 4.8357, text: "Lyon - Bureau régional" },
+            ];
 
-        // Ajout des marqueurs
-        markers.forEach(point => {
-            L.marker([point.lat, point.lon])
-                .addTo(map)
-                .bindPopup(point.text);
-        });
+            // Ajout des marqueurs
+            markers.forEach(point => {
+                L.marker([point.lat, point.lon])
+                    .addTo(map)
+                    .bindPopup(point.text);
+            });
 
-        // (Optionnel) Ajout dynamique d’un marqueur au clic
-        map.on('click', function (e) {
-            const { lat, lng } = e.latlng;
-            L.marker([lat, lng])
-                .addTo(map)
-                .bindPopup(`Nouveau marqueur à<br>Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(4)}`);
-        });
-    </script>
+            // (Optionnel) Ajout dynamique d’un marqueur au clic
+            map.on('click', function (e) {
+                const { lat, lng } = e.latlng;
+                L.marker([lat, lng])
+                    .addTo(map)
+                    .bindPopup(`Nouveau marqueur à<br>Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(4)}`);
+            });
+        </script>
+
+        <div class="ml-20">
+            <ul class="mt-20 border-2 border-blue-300 rounded py-2 px-4">
+                <li>
+                    EGEE ILE-DE-FRANCE : <br> <br>
+                </li>
+                <li>
+
+                    <div class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50" onclick="window.open('https://www.linkedin.com/in/lcayron/?originalSubdomain=fr')">
+                        Délégué Régional Île-de-France : Loïc CAYRON
+                    </div>
+                    <br>
+                </li>
+                <div
+                        class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50"
+                        onclick="window.open('https://www.google.com/maps?q=14+Villa+de+Lourcine+75014+PARIS', '_blank')">
+                    14, Villa de Lourcine – 75014 PARIS
+                </div>
+                </li>
+                <br>
+                <li class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50"
+                    onclick="window.location.href='tel:+33147055771'">
+                    📞 01 47 05 57 71
+                </li>
+                <br>
+                <li>
+                    <div class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50"
+                         onclick="window.location.href='mailto:contact@egee.asso.fr'">
+                        ✉️ lcayron@egee.asso.fr
 
 
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
 
     <footer class="flex w-full px-12 pt-20 pb-12 mt-auto">
         <div>
