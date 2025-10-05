@@ -5,178 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Où sommes-nous | Bénévolat de compétences</title>
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../assets/css/egee_en_france.css">
-    <!-- Feuilles de style Leaflet -->
-    <link
-            rel="stylesheet"
-            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    />
 
-
-
-
-
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 
 </head>
 <body>
-    <nav class="flex items-top px-8 py-4">
-        <a href="accueil.html">
-            <img src="../assets/img/Logo.svg" alt="EGEE Logo" class="w-48 h-auto self-start mr-32">
-        </a>
+<!-- Navbar -->
+<nav class="flex items-top px-8 py-4">
+    <a href="accueil.html">
+        <img src="../assets/img/Logo.svg" alt="EGEE Logo" class="w-48 h-auto self-start mr-32">
+    </a>
 
-        <div class="flex gap-12 whitespace-nowrap">
-            <a href="don.html">Faire un don</a>
-            <a href="nos_actions.html">Nos actions</a>
-            <a href="nous_contacter.html">Nous rejoindre</a>
-        </div>
-
-        <img src="../assets/img/icon_menu_burger.svg" class="w-8 mr-4 ml-auto">
-    </nav>
-
-
-    <div class="flex">
-        <h1 class = "font-bold text-8xl mt-10 ml-20 mx-10 pr-10">
-            EGEE Paris proche <br>
-            de chez vous <br>
-        </h1>
-        <img src="../assets/img/egee_en_france/carte.png" alt="carte" class="w-96">
-    </div>
-    <p class="text-3xl flex justify-start text-center ml-10">
-        EGEE Paris est présent dans toutes les régions de <br> France grâce à un réseau d’antennes locales. <br>
-        Ces antennes, animées par des bénévoles <br> expérimentés, accompagnent les jeunes, les <br> entrepreneurs et les acteurs locaux. <br>
-        Une présence nationale pour être au plus près <br> des besoins de chaque territoire.
-    </p>
-
-
-    <div class="flex">
-
-        <div id="map"></div>
-
-
-
-        <!-- Script Leaflet -->
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-
-        <script>
-            // Initialisation de la carte centrée sur le pays (exemple : France)
-            const map = L.map('map').setView([46.603354, 1.888334], 6);
-
-            // Couche de fond OpenStreetMap
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 19,
-                attribution: '&copy; OpenStreetMap contributors'
-            }).addTo(map);
-
-            // Exemple de marqueurs (à adapter)
-            const markers = [
-                { lat: 48.830984476882584, lon: 2.3388590070525854, text: "Paris - Siège de l'association" },
-                { lat: 48.12708285201991, lon: 1.692307944988219, text: "EGEE BRETAGNE" },
-                { lat: 45.7640, lon: 4.8357, text: "Lyon - Bureau régional" },
-            ];
-
-            // Ajout des marqueurs
-            markers.forEach(point => {
-                L.marker([point.lat, point.lon])
-                    .addTo(map)
-                    .bindPopup(point.text);
-            });
-
-            // (Optionnel) Ajout dynamique d’un marqueur au clic
-            map.on('click', function (e) {
-                const { lat, lng } = e.latlng;
-                L.marker([lat, lng])
-                    .addTo(map)
-                    .bindPopup(`Nouveau marqueur à<br>Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(4)}`);
-            });
-        </script>
-
-        <div class="ml-20">
-            <ul class="mt-20 border-2 border-blue-300 rounded py-2 px-4">
-                <li>
-                    EGEE ILE-DE-FRANCE : <br> <br>
-                </li>
-                <li>
-
-                    <div class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50" onclick="window.open('https://www.linkedin.com/in/lcayron/?originalSubdomain=fr')">
-                        Délégué Régional Île-de-France : Loïc CAYRON
-                    </div>
-                    <br>
-                </li>
-                <div
-                        class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50"
-                        onclick="window.open('https://www.google.com/maps?q=14+Villa+de+Lourcine+75014+PARIS', '_blank')">
-                    14, Villa de Lourcine – 75014 PARIS
-                </div>
-                </li>
-                <br>
-                <li class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50"
-                    onclick="window.location.href='tel:+33147055771'">
-                    📞 01 47 05 57 71
-                </li>
-                <br>
-                <li>
-                    <div class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50"
-                         onclick="window.location.href='mailto:contact@egee.asso.fr'">
-                        ✉️ lcayron@egee.asso.fr
-
-
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-
+    <div class="flex gap-12 whitespace-nowrap">
+        <a href="don.html">Faire un don</a>
+        <a href="nos_actions.html">Nos actions</a>
+        <a href="nous_contacter.html">Nous rejoindre</a>
     </div>
 
-    <footer class="flex w-full px-12 pt-20 pb-12 mt-auto">
-        <div>
-            <p class="text-blue-500 font-bold text-4xl">EGEE</p>
-            <p>Entente des Générations pour l’Emploi et L’entreprise</p>
-            <p>Association reconnu d’utilité publique</p>
+    <img src="../assets/img/icon_menu_burger.svg" class="w-8 mr-4 ml-auto">
+</nav>
 
-            <div class="flex gap-4 items-center mt-8">
-                <a href="https://www.instagram.com/association_egee/">
-                    <img src="../assets/img/icons8-instagram.svg" alt="">
-                </a>
-                <a href="https://fr.linkedin.com/company/egee-asso/">
-                    <img src="../assets/img/icons8-linkedin.svg" alt="">
-                </a>
-                <a href="https://www.facebook.com/egee.asso/">
-                    <img src="../assets/img/icons8-facebook.svg" alt="">
-                </a>
-            </div>
+<!-- Titre et image -->
+<div class="flex">
+    <h1 class="font-bold text-8xl mt-10 ml-20 mx-10 pr-10">
+        EGEE Paris proche <br> de chez vous
+    </h1>
+    <img src="../assets/img/egee_en_france/carte.png" alt="carte" class="w-96">
+</div>
+
+<!-- Texte descriptif -->
+<p class="text-3xl flex justify-start text-center ml-10">
+    EGEE Paris est présent dans toutes les régions de <br> France grâce à un réseau d’antennes locales. <br>
+    Ces antennes, animées par des bénévoles <br> expérimentés, accompagnent les jeunes, les <br> entrepreneurs et les acteurs locaux. <br>
+    Une présence nationale pour être au plus près <br> des besoins de chaque territoire.
+</p>
+
+<!-- Carte et informations -->
+<div class="flex mt-10 gap-20 ml-10">
+    <div id="map"></div>
+
+    <div>
+        <ul class="border-2 border-blue-300 rounded py-2 px-4">
+            <li class="mb-2">EGEE ILE-DE-FRANCE :</li>
+            <li class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50 mb-2"
+                onclick="window.open('https://www.linkedin.com/in/lcayron/?originalSubdomain=fr')">
+                Délégué Régional Île-de-France : Loïc CAYRON
+            </li>
+            <li class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50 mb-2"
+                onclick="window.open('https://www.google.com/maps?q=14+Villa+de+Lourcine+75014+PARIS', '_blank')">
+                14, Villa de Lourcine – 75014 PARIS
+            </li>
+            <li class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50 mb-2"
+                onclick="window.location.href='tel:+33147055771'">
+                📞 01 47 05 57 71
+            </li>
+            <li class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50"
+                onclick="window.location.href='mailto:contact@egee.asso.fr'">
+                ✉️ lcayron@egee.asso.fr
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="flex w-full px-12 pt-20 pb-12 mt-20">
+    <div>
+        <p class="text-blue-500 font-bold text-4xl">EGEE</p>
+        <p>Entente des Générations pour l’Emploi et L’entreprise</p>
+        <p>Association reconnue d’utilité publique</p>
+
+        <div class="flex gap-4 items-center mt-8">
+            <a href="https://www.instagram.com/association_egee/">
+                <img src="../assets/img/icons8-instagram.svg" alt="">
+            </a>
+            <a href="https://fr.linkedin.com/company/egee-asso/">
+                <img src="../assets/img/icons8-linkedin.svg" alt="">
+            </a>
+            <a href="https://www.facebook.com/egee.asso/">
+                <img src="../assets/img/icons8-facebook.svg" alt="">
+            </a>
+        </div>
+    </div>
+
+    <div class="flex-1"></div>
+
+    <div id="info_section_footer" class="flex flex-row gap-8">
+        <div class="flex flex-col">
+            <p class="font-bold text-xl mb-4 uppercase">Nos actions</p>
+            <a href="#">Education</a>
+            <a href="#">Emploi</a>
+            <a href="#">Entreprise</a>
+            <a href="#">Formation</a>
         </div>
 
-        <div class="flex-1"></div>
-
-        <div id="info_section_footer" class="flex flex-row gap-8">
-            <div class="flex flex-col">
-                <p class="font-bold text-xl mb-4 uppercase">Nos actions</p>
-                <a href="#">Education</a>
-                <a href="#">Emploi</a>
-                <a href="#">Entreprise</a>
-                <a href="#">Formation</a>
-            </div>
-
-            <div class="flex flex-col">
-                <p class="font-bold text-xl mb-4 uppercase">Nos missions</p>
-                <a href="#">Education</a>
-                <a href="#">Emploi</a>
-                <a href="#">Entreprise</a>
-                <a href="#">Formation</a>
-            </div>
-
-            <div class="flex flex-col">
-                <p class="font-bold text-xl mb-4 uppercase">à propos</p>
-                <a href="#">Mentions légales</a>
-                <a href="../pages/nous_contacter.html">Contactez nous</a>
-                <a href="#">FAQ</a>
-            </div>
+        <div class="flex flex-col">
+            <p class="font-bold text-xl mb-4 uppercase">Nos missions</p>
+            <a href="#">Education</a>
+            <a href="#">Emploi</a>
+            <a href="#">Entreprise</a>
+            <a href="#">Formation</a>
         </div>
-    </footer>
 
+        <div class="flex flex-col">
+            <p class="font-bold text-xl mb-4 uppercase">À propos</p>
+            <a href="#">Mentions légales</a>
+            <a href="../pages/nous_contacter.html">Contactez nous</a>
+            <a href="#">FAQ</a>
+        </div>
+    </div>
+</footer>
 
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../assets/js/carte.js"></script>
 </body>
+</html>

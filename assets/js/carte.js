@@ -1,16 +1,33 @@
-<script>
-    // Initialisation de la carte
-    const map = L.map('map').setView([48.858844, 2.294351], 13); // Coordonnées de Paris, zoom 13
+// ../assets/js/carte.js
 
-    // Ajout des tuiles (fond de carte)
+document.addEventListener("DOMContentLoaded", function () {
+    // Initialisation de la carte centrée sur la France
+    const map = L.map('map').setView([46.603354, 1.888334], 6);
+
+    // Couche de fond OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-}).addTo(map);
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
 
-    // Ajout d’un marqueur
-    L.marker([48.858844, 2.294351])
-    .addTo(map)
-    .bindPopup('Notre association est ici !')
-    .openPopup();
-</script>
+    // Exemple de marqueurs
+    const markers = [
+        { lat: 48.830984476882584, lon: 2.3388590070525854, text: "Paris - Siège de l'association" },
+        { lat: 48.12708285201991, lon: 1.692307944988219, text: "EGEE BRETAGNE" },
+        { lat: 45.7640, lon: 4.8357, text: "Lyon - Bureau régional" },
+    ];
+
+    markers.forEach(point => {
+        L.marker([point.lat, point.lon])
+            .addTo(map)
+            .bindPopup(point.text);
+    });
+
+    // Ajout dynamique d’un marqueur au clic
+    map.on('click', function (e) {
+        const { lat, lng } = e.latlng;
+        L.marker([lat, lng])
+            .addTo(map)
+            .bindPopup(`Nouveau marqueur à<br>Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(4)}`);
+    });
+});
