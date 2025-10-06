@@ -30,12 +30,4 @@ document.addEventListener("DOMContentLoaded", function () {
             .addTo(map)
             .bindPopup(point.text);
     });
-
-    // Ajout dynamique d’un marqueur au clic
-    map.on('click', function (e) {
-        const { lat, lng } = e.latlng;
-        L.marker([lat, lng])
-            .addTo(map)
-            .bindPopup(`Nouveau marqueur à<br>Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(4)}`);
-    });
 });
