@@ -24,7 +24,7 @@
                 <a href="don.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Faire un don</a>
                 <a href="seconnecter.php" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Se connecter</a>
             </div>
-            <img src="../assets/img/icon_menu_burger.svg" class="w-8 mr-4 ml-auto transition transform hover:scale-125">
+            <img src="../assets/img/icon_menu_burger.svg" class="w-8 mr-4 ml-auto transition transform hover:scale-125 cursor-pointer">
         </nav>
     
         <article id="hero_section" class="flex flex-col-reverse md:flex-row gap-4 md:gap-24 justify-center items-center h-[52em] my-2">
@@ -53,9 +53,9 @@
             </section>
 
 
-            <section id="partie_bleue" class="flex justify-center items-center bg-blue-500 rounded-lg md:mr-16">
-                <img src="../assets/img/accueil/hero_illustration.png" alt="hero_section_illustration"
-                    class="w-64 md:w-[36em] md:my-16">
+            <section id="hero_caroussel" class="w-64 h-48 md:w-96 md:h-72 overflow-hidden rounded-lg md:mr-16">
+                <img src="../assets/img/accueil/hero_image.png" alt="hero_section_illustration"
+                    class="rounded border-4 border-blue-300 object-cover w-full h-full">
             </section>
 
         </article>
@@ -81,10 +81,13 @@
             </p>
 
             <div class="flex gap-8 pt-4">
-                <img src="../assets/img/left-arrow.svg" alt="flèche gauche" class="w-10 transform transition duration-300 hover:scale-105">
-                <div class="flex justify-center items-center w-16 h-12 rounded-xl bg-blue-500 transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
+                <button>
+                    <img src="../assets/img/left-arrow.svg" alt="flèche gauche" class="w-10 transform transition duration-300 hover:scale-105">
+                </button>
+                
+                <button class="flex justify-center items-center w-16 h-12 rounded-xl bg-blue-500 transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
                     <img src="../assets/img/arrow-sm-right.svg" alt="flèche droite" class="w-12">
-                </div>
+                </button>
             </div>
 
         </article>
@@ -96,7 +99,7 @@
 
             <section id="présentation_action" class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-6">
                 
-                <div class="flex flex-col items-center justify-center w-72 gap-3 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4">
+                <div class="flex flex-col items-center justify-center w-72 gap-3 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4 cursor-pointer">
                     <img src="../assets/img/accueil/education.png" alt="" class="w-62 h-52 md:w-44 md:h-56 border-4 border-blue-300 rounded-md object-cover">
                     <p class="font-bold text-xl">Education</p>
                     <p class="text-center">Préparer les jeunes à leur future vie professionnelle</p>
@@ -107,7 +110,7 @@
                     </a>
                 </div>
 
-                <div class="flex flex-col items-center justify-center w-72 gap-3 md:mb-28 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4">
+                <div class="flex flex-col items-center justify-center w-72 gap-3 md:mb-28 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4 cursor-pointer">
                     <img src="../assets/img/accueil/emploie.png" alt="" class="w-62 h-52 border-4 border-blue-300 rounded-md object-cover">
                     <p class="font-bold text-xl">Emploi</p>
                     <p class="text-center">Accompagner l’entrée dans la vie active et le retour à l’emploi</p>
@@ -118,7 +121,7 @@
                     </a>
                 </div>
 
-                <div class="flex flex-col items-center justify-center w-72 gap-3 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4">
+                <div class="flex flex-col items-center justify-center w-72 gap-3 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4 cursor-pointer">
                     <img src="../assets/img/accueil/entreprise.webp" alt="" class="w-62 h-52 md:w-44 md:h-56 border-4 border-blue-300 rounded-md object-cover">
                     <p class="font-bold text-xl">Entreprise</p>
                     <p class="text-center">Soutenir les entrepreneurs dans la création, la croissance et les difficultés</p>
@@ -141,7 +144,7 @@
             <img src="../assets/img/accueil/location.svg" class="w-32 mb-10" alt="LOC">
             <p class="text-2xl uppercase">Où nous trouver</p>
 
-            <p class="text-center text-2xl mt-10 w-[18em] md:w-[36em]">
+            <p class="text-center text-xl mt-10 w-[16em] md:w-[36em]">
                 L’association EGEE compte près de 1 800 conseillers bénévoles 
                 seniors répartis dans 13 délégations régionalessur 
                 l’ensemble du territoire français.
@@ -160,12 +163,12 @@
                 <p class="text-center text-blue-500 font-bold text-4xl mb-8 w-[12em]">
                      Inscrivez-vous aux actualités EGEE
                 </p>
-                <p class="text-center text-xl w-[20em] md:w-[38em]">
+                <p class="text-center text-xl px-4 w-[20em] md:w-[38em]">
                     Soyez le premier informé des événements à venir, des ressources
                      éducatives et des opportunités de vous impliquer.
                 </p>
 
-                <div class="flex items-center justify-center w-96 h-16 bg-blue-300 rounded-md my-16 p-4">
+                <div class="flex items-center justify-center h-16 bg-blue-300 rounded-md my-16 p-4">
                     <input 
                         type="email" 
                         placeholder="Saisissez votre email" 
