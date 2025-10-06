@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-    // Exemple de marqueurs
+    // ajout des marqueur
     const markers = [
         { lat: 48.830984476882584, lon: 2.3388590070525854, text: "Paris - Siège de l'association" },
         { lat: 48.127091050746216, lon: -1.6923763033717514, text: "EGEE BRETAGNE" },
@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
         { lat:  50.288, lon: 2.3071, text: "" },
         { lat: 43.6833, lon: 2.4609, text: "" },
     ];
+
+    // ajout des points sur la carte
 
     markers.forEach(point => {
         L.marker([point.lat, point.lon])
