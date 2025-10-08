@@ -140,29 +140,6 @@ body {
 }
 
 /* Footer */
-footer {
-    background-color: #0099cc;
-    padding: 30px 30px 30px 30px;
-    color: white;
-}
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.footer-content .col {
-    width: 30%;
-    min-width: 200px;
-    font-size: 40px;
-}
-.footer-icons a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-}
-.footer-icons a:hover {
-    text-decoration: underline;
-}
 
 /* Responsive */
 @media (max-width: 800px) {

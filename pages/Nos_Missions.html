@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <title>Association EGEE - Nous connaître</title>
     <link rel="stylesheet" href="../assets/css/StyleNotreMission.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 
-<header class="banner">g
-    <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+<nav class="flex w-full items-top px-8 py-4">
+    <a href="accueil.html">
+        <img src="../assets/img/Logo.svg" alt="EGEE Logo" class="w-48 self-start mr-32 transform transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
+    </a>
+
+    <div class="hidden md:flex gap-12 mr-4 whitespace-nowrap text-gray-500">
+        <a href="nos_actions.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">
+            Nos actions
+        </a>
+        <a href="nous_contacter.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Nous rejoindre</a>
+        <a href="nous_connaitre.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Nous connaitre</a>
+        <a href="don.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Faire un don</a>
+        <a href="seconnecter.php" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Se connecter</a>
     </div>
-    <h2>Nos mission</h2>
-</header>
+    <img src="../assets/img/icon_menu_burger.svg" class="w-8 mr-4 ml-auto transition transform hover:scale-125 cursor-pointer">
+</nav>
 
 <!-- Titre central -->
 <section class="intro">
@@ -90,27 +99,47 @@
 </div>
 
 <!-- Footer -->
-<footer>
-    <div class="footer-content">
-        <div class="col">
-            <h4>Association EGEE</h4>
-            <p>Entente des Générations pour l’Emploi et l’Entreprise<br>
-                Association reconnue d’utilité publique<br>
-                14 villa Lourcine – 75014 PARIS<br>
-                Tél : 01 47 05 57 71</p>
+<footer class="flex flex-col md:flex-row w-full px-12 pt-20 pb-12 gap-8">
+    <div class="mr-1">
+        <p class="text-blue-500 font-bold text-4xl">EGEE</p>
+        <p>Entente des Générations pour l’Emploi et L’entreprise</p>
+        <p>Association reconnu d’utilité publique</p>
+
+        <div class="flex gap-4 items-center mt-8">
+            <a href="https://www.instagram.com/association_egee/" class="transform transition duration-300 hover:scale-125">
+                <img src="../assets/img/instagram.svg" alt="">
+            </a>
+            <a href="https://fr.linkedin.com/company/egee-asso/" class="transform transition duration-300 hover:scale-125">
+                <img src="../assets/img/linkedin.svg" alt="">
+            </a>
+            <a href="https://www.facebook.com/egee.asso/" class="transform transition duration-300 hover:scale-125">
+                <img src="../assets/img/facebook.svg" alt="">
+            </a>
         </div>
-        <div class="col">
-            <p>Mentions légales<br>
-                Crédits<br>
-                Plan du site</p>
+    </div>
+
+    <div id="info_section_footer" class="flex flex-row gap-6 md:gap-16 md:ml-auto">
+        <div class="flex flex-col">
+            <p class="font-bold text-xl mb-4 uppercase">Nos actions</p>
+            <a href="#" class="transition hover:text-blue-500">Education</a>
+            <a href="#" class="transition hover:text-blue-500">Emploi</a>
+            <a href="#" class="transition hover:text-blue-500">Entreprise</a>
+            <a href="#" class="transition hover:text-blue-500">Formation</a>
         </div>
-        <div class="col">
-            <p>Nous suivre...</p>
-            <div class="footer-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
+
+        <div class="flex flex-col">
+            <p class="font-bold text-xl mb-4 uppercase">Nos missions</p>
+            <a href="#" class="transition hover:text-blue-500">Education</a>
+            <a href="#" class="transition hover:text-blue-500">Emploi</a>
+            <a href="#" class="transition hover:text-blue-500">Entreprise</a>
+            <a href="#" class="transition hover:text-blue-500">Formation</a>
+        </div>
+
+        <div class="flex flex-col">
+            <p class="font-bold text-xl mb-4 uppercase">à propos</p>
+            <a href="#" class="transition hover:text-blue-500">Mentions légales</a>
+            <a href="../pages/nous_contacter.html" class="transition hover:text-blue-500">Contactez nous</a>
+            <a href="#" class="transition hover:text-blue-500">FAQ</a>
         </div>
     </div>
 </footer>
