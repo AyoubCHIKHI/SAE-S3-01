@@ -14,9 +14,9 @@ body {
 
 /* Bandeau / Header */
 .banner {
-    margin-top: 60px;
+    margin-top: 30px;
     background: #dcefff;
-    padding: 60px;
+    padding: 30px;
     position: relative;
 }
 
@@ -25,7 +25,7 @@ body {
     color: #00a0c6;
     border-left: 3px solid #00a0c6;
     padding-left: 15px;
-    font-size: 55px;
+    font-size: 25px;
 }
 
 .banner .social-icons {
@@ -44,13 +44,13 @@ body {
 .intro {
     padding: 20px;
     text-align: center;
-    margin: 110px 40px 40px 20px;
+    margin: 60px 20px 20px 10px;
     background: #dcefff;
 }
 .intro h3 {
     color: #0077cc;
     font-weight: normal;
-    font-size: 45px;
+    font-size: 15px;
 }
 .intro h3 .accent {
     color: #f16529;
@@ -74,8 +74,8 @@ body {
 
 /* Bloc Lire aussi */
 .lire_aussi {
-    width: 300px;
-    height: 3300px;
+    width: 150px;
+    height: 1000px;
     background: #dcefff;
     border-left: 3px solid #00a0c6;
     padding: 20px;
@@ -88,7 +88,7 @@ body {
 .lire_aussi h4 {
     color: #f16529;
     font-weight: normal;
-    font-size: 45px;
+    font-size: 15px;
     margin-top: 0;
 }
 
@@ -121,7 +121,7 @@ body {
 .block .text {
     width: 40%;
     color: #0077cc;
-    font-size: 45px;
+    font-size: 15px;
     line-height: 1.5;
     padding: 0 20px;
 }
@@ -140,6 +140,29 @@ body {
 }
 
 /* Footer */
+footer {
+    background-color: #0099cc;
+    padding: 30px 30px 30px 30px;
+    color: white;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-content .col {
+    width: 30%;
+    min-width: 200px;
+    font-size: 15px;
+}
+.footer-icons a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.footer-icons a:hover {
+    text-decoration: underline;
+}
 
 /* Responsive */
 @media (max-width: 800px) {
