@@ -2,12 +2,13 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Association EGEE - Nous connaître</title>
+    <title>Association EGEE - Notre mission</title>
     <link rel="stylesheet" href="../assets/css/StyleNotreMission.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 
+<!-- Barre de navigation conservée -->
 <nav class="flex w-full items-top px-8 py-4">
     <a href="accueil.html">
         <img src="../assets/img/Logo.svg" alt="EGEE Logo" class="w-48 self-start mr-32 transform transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
@@ -25,48 +26,56 @@
     <img src="../assets/img/icon_menu_burger.svg" class="w-8 mr-4 ml-auto transition transform hover:scale-125 cursor-pointer">
 </nav>
 
-<!-- Titre central -->
-<section class="intro">
-    <h3>
-        Parce que des <span class="accent">inégalités subsistent</span> sur le chemin de la vie professionnelle,
-        <br>
-        Parce que les <span class="accent">doutes</span> et les <span class="accent">difficultés</span> surgissent parfois,
-        <br>
-        Chacun peut avoir besoin d’un <span class="accent">œil extérieur</span>, averti, objectif et lucide sur le monde du travail.
-    </h3>
+<!-- Bandeau titre -->
+<section class="banner">
+    <h2>Notre mission</h2>
 </section>
 
-<!-- Conteneur principal : contenu + bloc Lire aussi -->
+<!-- Texte d’intro -->
+<section class="intro">
+    <p>
+        Parce que des <span class="accent-bold">inégalités subsistent</span> sur le chemin de la vie professionnelle.<br>
+        Parce que les <span class="accent-bold">doutes et les difficultés</span> surgissent parfois.<br>
+        Chacun peut avoir besoin d’un <span class="accent-bold">œil extérieur</span>, averti, objectif et lucide sur le monde du travail.
+    </p>
+</section>
+
+<!-- Conteneur principal avec "Lire aussi" -->
 <div class="main-container">
+    <main class="content">
 
-    <!-- Contenu principal -->
-    <section class="content-blocks">
-
-        <div class="block text-right">
-            <img src="../assets/img/Nos_Missions/3P_travaillent.webp" alt="Notre Mission">
-            <div class="text">
-                <h3>Nous accompagnons les :</h3>
+        <!-- Bloc 1 -->
+        <div class="mission-block">
+            <div class="image-side">
+                <img src="../assets/img/Nos_Missions/3P_travaillent.webp" alt="Jeunes en atelier">
+            </div>
+            <div class="text-side">
+                <p class="subtitle">Nous accompagnons les :</p>
                 <ul>
-                    <li><span class="accent">jeunes générations</span></li>
-                    <li><span class="accent">entrepreneurs</span></li>
-                    <li><span class="accent">personnes en reconversion</span> ou en transition professionnelle.</li>
+                    <li><span class="accent-bold">jeunes générations</span></li>
+                    <li><span class="accent-bold">entrepreneurs</span></li>
+                    <li><span class="accent-bold">personnes en reconversion</span> ou en transition professionnelle.</li>
                 </ul>
                 <p>
-                    Nos bénévoles les <span class="accent">informent</span>, les <span class="accent">écoutent</span>,
-                    les <span class="accent">conseillent</span> et les <span class="accent">mentorient</span> pour les aider
-                    à maîtriser leur parcours professionnel.
+                    Nos bénévoles les <span class="accent-bold">informent</span>, les <span class="accent-bold">écoutent</span>,
+                    les <span class="accent-bold">conseillent</span> et les <span class="accent-bold">mentorent</span>
+                    pour leur ouvrir la voie de choix éclairés et les aider à maîtriser leurs démarches,
+                    rebondir ou se repositionner.
                 </p>
             </div>
         </div>
 
-        <div class="block text-left">
-            <img src="../assets/img/Nos_Missions/pouce_en_lair.jpg" alt="Nos domaines d'action">
-            <div class="text">
-                <h3>Nos domaines d’action</h3>
+        <!-- Bloc 2 -->
+        <div class="mission-block reverse">
+            <div class="image-side">
+                <img src="../assets/img/Nos_Missions/pouce_en_lair.jpg" alt="Jeunes satisfaits">
+            </div>
+            <div class="text-side">
+                <p class="subtitle">Nos domaines d’action</p>
                 <p>
-                    Parce que nous sommes convaincus que l’accès à <span class="accent">l’éducation</span>, la
-                    <span class="accent">formation</span> et l’<span class="accent">emploi</span> est au cœur de la
-                    <span class="accent">cohésion sociale</span> et territoriale, nous agissons dans trois domaines :
+                    Parce que nous sommes convaincus que l’accès à <span class="accent-bold">l’éducation</span>,
+                    la <span class="accent-bold">formation</span> et l’<span class="accent-bold">emploi</span> est au cœur de la
+                    <span class="accent-bold">cohésion sociale</span> et territoriale, nous agissons dans trois domaines appelés les <span class="accent-bold">3E</span> :
                 </p>
                 <ul>
                     <li>L’éducation</li>
@@ -76,34 +85,41 @@
             </div>
         </div>
 
-        <div class="block text-right">
-            <img src="../assets/img/Nos_Missions/beaucoupDeGens.jpg" alt="Notre réseau de bénévoles">
-            <div class="text">
-                <h3>Notre réseau de bénévoles</h3>
+        <!-- Bloc 3 -->
+        <div class="mission-block">
+            <div class="image-side">
+                <img src="../assets/img/Nos_Missions/beaucoupDeGens.jpg" alt="Réseau de bénévoles">
+            </div>
+            <div class="text-side">
+                <p class="subtitle">Notre réseau de bénévoles</p>
                 <p>
-                    Hommes et femmes, anciens entrepreneurs, dirigeants, cadres, professions libérales ou enseignants,
-                    nos conseillers bénévoles sont présents partout sur le territoire à travers
-                    <span class="accent">13 délégations régionales</span>.
+                    Hommes et femmes, anciens entrepreneurs, dirigeants, cadres, professions libérales ou encore enseignants,
+                    nos conseillers bénévoles sont présents sur tout le territoire à travers un réseau de
+                    <span class="accent-bold">13 délégations régionales</span>.
                 </p>
             </div>
         </div>
 
-    </section>
+    </main>
 
-    <!-- Bloc Lire aussi -->
-    <section class="lire_aussi">
-        <h4>Lire ensuite</h4>
-        <p>Articles et ressources complémentaires pour approfondir.</p>
-    </section>
 
+    <aside class="lire-aussi">
+        <h4>Lire aussi</h4>
+        <ul>
+            <li><a href="nous_connaitre.html">Nous connaitre</a></li>
+            <li><a href="video_egee.html">Vidéo EGEE</a></li>
+            <li><a href="#">Conseil d'administration</a></li>
+            <li><a href="RapportActivitee.html">Rapports d'activités</a></li>
+        </ul>
+    </aside>
 </div>
 
-<!-- Footer -->
+
 <footer class="flex flex-col md:flex-row w-full px-12 pt-20 pb-12 gap-8">
     <div class="mr-1">
         <p class="text-blue-500 font-bold text-4xl">EGEE</p>
         <p>Entente des Générations pour l’Emploi et L’entreprise</p>
-        <p>Association reconnu d’utilité publique</p>
+        <p>Association reconnue d’utilité publique</p>
 
         <div class="flex gap-4 items-center mt-8">
             <a href="https://www.instagram.com/association_egee/" class="transform transition duration-300 hover:scale-125">
