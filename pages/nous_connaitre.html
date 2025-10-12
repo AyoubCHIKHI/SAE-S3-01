@@ -10,7 +10,7 @@
 
     <body class="font-sans">
 
-        <div class="fixed top-0 left-0 w-full bg-white shadow z-50">
+        <div class="fixed top-0 left-0 w-full z-50">
             <nav class="flex w-full items-top px-8 py-4">
                 <a href="accueil.html">
                     <img src="../assets/img/Logo.svg" alt="EGEE Logo" class="w-48 self-start mr-32 transform transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
@@ -175,36 +175,6 @@
                 <button class="bouton-etape-suivante">PASSER À L'ÉTAPE SUIVANTE</button>
             </div>
         </div>
-
-        <script>
-            const boutonOuvrirDon = document.getElementById('ouvrir-don');
-            const fondAssombri = document.getElementById('fond-assombri');
-            const modales = document.querySelectorAll('.modale');
-            const boutonFermer = document.getElementById('fermer-tout');
-
-            function ouvrirDon() {
-                fondAssombri.classList.remove('cache');
-                fondAssombri.classList.add('afficher');
-                boutonFermer.classList.remove('cache');
-                modales.forEach(modale => {
-                    modale.classList.remove('cache');
-                    setTimeout(() => modale.classList.add('afficher'), 10);
-                });
-            }
-
-            function fermerDon() {
-                fondAssombri.classList.remove('afficher');
-                modales.forEach(modale => modale.classList.remove('afficher'));
-                boutonFermer.classList.add('cache');
-                setTimeout(() => {
-                    fondAssombri.classList.add('cache');
-                    modales.forEach(modale => modale.classList.add('cache'));
-                }, 300);
-            }
-
-            boutonOuvrirDon.addEventListener('click', ouvrirDon);
-            boutonFermer.addEventListener('click', fermerDon);
-        </script>
-
+        <script src="../assets/js/don.js"></script>
     </body>
 </html>

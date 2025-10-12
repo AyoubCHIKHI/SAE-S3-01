@@ -1,5 +1,3 @@
-// ../assets/js/carte.js
-
 document.addEventListener("DOMContentLoaded", function () {
     // Initialisation de la carte centrée sur la France
     const map = L.map('map').setView([46.603354, 1.888334], 6);
@@ -33,3 +31,4 @@ document.addEventListener("DOMContentLoaded", function () {
             .bindPopup(point.text);
     });
 });
+

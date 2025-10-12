@@ -265,35 +265,6 @@
             </div>
         </div>
 
-        <script>
-            const boutonOuvrirDon = document.getElementById('ouvrir-don');
-            const fondAssombri = document.getElementById('fond-assombri');
-            const modales = document.querySelectorAll('.modale');
-            const boutonFermer = document.getElementById('fermer-tout');
-
-            function ouvrirDon() {
-                fondAssombri.classList.remove('cache');
-                fondAssombri.classList.add('afficher');
-                boutonFermer.classList.remove('cache');
-                modales.forEach(modale => {
-                    modale.classList.remove('cache');
-                    setTimeout(() => modale.classList.add('afficher'), 10);
-                });
-            }
-
-            function fermerDon() {
-                fondAssombri.classList.remove('afficher');
-                modales.forEach(modale => modale.classList.remove('afficher'));
-                boutonFermer.classList.add('cache');
-                setTimeout(() => {
-                    fondAssombri.classList.add('cache');
-                    modales.forEach(modale => modale.classList.add('cache'));
-                }, 300);
-            }
-
-            boutonOuvrirDon.addEventListener('click', ouvrirDon);
-            boutonFermer.addEventListener('click', fermerDon);
-        </script>
-
+    <script src="../assets/js/don.js"></script>
     </body>
 </html>

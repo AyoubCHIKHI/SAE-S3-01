@@ -7,14 +7,12 @@
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
 
     <link rel="stylesheet" href="../assets/css/don.css">
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../assets/css/egee_en_france.css">
-
-
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
 
 
 </head>
@@ -169,7 +167,9 @@
 </footer>
 <!-- Scripts -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="../assets/js/carte.js"></script>
+
+
+
 
 <!-- don -->
 <div id="fond-assombri" class="cache"></div>
@@ -205,34 +205,8 @@
     </div>
 </div>
 
-<script>
-    const boutonOuvrirDon = document.getElementById('ouvrir-don');
-    const fondAssombri = document.getElementById('fond-assombri');
-    const modales = document.querySelectorAll('.modale');
-    const boutonFermer = document.getElementById('fermer-tout');
+<script src="../assets/js/egee_en_france.js"></script>
+<script src="../assets/js/don.js"></script>
 
-    function ouvrirDon() {
-        fondAssombri.classList.remove('cache');
-        fondAssombri.classList.add('afficher');
-        boutonFermer.classList.remove('cache');
-        modales.forEach(modale => {
-            modale.classList.remove('cache');
-            setTimeout(() => modale.classList.add('afficher'), 10);
-        });
-    }
-
-    function fermerDon() {
-        fondAssombri.classList.remove('afficher');
-        modales.forEach(modale => modale.classList.remove('afficher'));
-        boutonFermer.classList.add('cache');
-        setTimeout(() => {
-            fondAssombri.classList.add('cache');
-            modales.forEach(modale => modale.classList.add('cache'));
-        }, 300);
-    }
-
-    boutonOuvrirDon.addEventListener('click', ouvrirDon);
-    boutonFermer.addEventListener('click', fermerDon);
-</script>
 </body>
 </html>
