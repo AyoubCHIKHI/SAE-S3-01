@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Page de don</title>
+    <link rel="stylesheet" href="../assets/css/don.css">
+</head>
+<body>
+
+<!-- Fond semi-transparent -->
+<div id="fond-assombri" class="cache"></div>
+
+<!-- Croix globale -->
+<button id="fermer-tout" class="cache bouton-fermeture">&times;</button>
+
+<!-- Première page flottante (image) -->
+<div id="page-image" class="modale cache">
+    <div class="image">
+        <img src="../assets/img/don/donImage1.png" alt="Image don">
+    </div>
+</div>
+
+<!-- Deuxième page flottante (formulaire don) -->
+<div id="page-don" class="modale cache">
+    <div class="conteneur-don">
+        <h2>1. MON DON</h2>
+
+        <div class="type-don">
+            <button class="bouton-don-unique actif">Je donne une fois</button>
+            <label>
+                <input type="radio" name="frequence" checked>
+                Je donne tous les mois
+            </label>
+        </div>
+
+        <div class="montants-don">
+            <button class="bouton-montant">50 €</button>
+            <button class="bouton-montant">100 €</button>
+            <button class="bouton-montant">150 €</button>
+            <button class="bouton-montant">200 €</button>
+            <input type="text" placeholder="Montant libre" class="champ-libre">
+        </div>
+
+        <button class="bouton-etape-suivante">PASSER À L'ÉTAPE SUIVANTE</button>
+    </div>
+</div>
+
+<script src="../assets/js/don.js"></script>
+</body>
+</html>

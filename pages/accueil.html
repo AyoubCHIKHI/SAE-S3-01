@@ -5,7 +5,9 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Bénévolat de compétences - Association EGEE | Des seniors bénévoles au service de vos projets</title>
-		<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+        <link rel="stylesheet" href="../assets/css/don.css">
+
+        <link rel="icon" type="image/png" href="../assets/img/favicon.png">
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 
@@ -21,7 +23,7 @@
                 </a>
                 <a href="nous_contacter.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Nous rejoindre</a>
                 <a href="nous_connaitre.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Nous connaitre</a>
-                <a href="don.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Faire un don</a>
+                <a href="#" id="ouvrir-don" class="relative inline-block ...">Faire un don</a>
                 <a href="seconnecter.php" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Se connecter</a>
             </div>
             <img src="../assets/img/icon_menu_burger.svg" class="w-8 mr-4 ml-auto transition transform hover:scale-125 cursor-pointer">
@@ -228,5 +230,70 @@
                     </div>
                 </div>
         </footer>
+
+        <!-- don -->
+        <div id="fond-assombri" class="cache"></div>
+        <button id="fermer-tout" class="cache bouton-fermeture">&times;</button>
+
+        <div id="page-image" class="modale cache">
+            <div class="image">
+                <img src="../assets/img/don/donImage1.png" alt="Image don">
+            </div>
+        </div>
+
+        <div id="page-don" class="modale cache">
+            <div class="conteneur-don">
+                <h2>1. MON DON</h2>
+                <div class="type-don">
+                    <label>
+                        <input type="radio" name="frequence" checked>
+                        Je donne une fois
+                    </label>
+                    <label>
+                        <input type="radio" name="frequence" checked>
+                        Je donne tous les mois
+                    </label>
+                </div>
+                <div class="montants-don">
+                    <button class="bouton-montant">50 €</button>
+                    <button class="bouton-montant">100 €</button>
+                    <button class="bouton-montant">150 €</button>
+                    <button class="bouton-montant">200 €</button>
+                    <input type="text" placeholder="Montant libre" class="champ-libre">
+                </div>
+                <button class="bouton-etape-suivante">PASSER À L'ÉTAPE SUIVANTE</button>
+            </div>
+        </div>
+
+        <script>
+            const boutonOuvrirDon = document.getElementById('ouvrir-don');
+            const fondAssombri = document.getElementById('fond-assombri');
+            const modales = document.querySelectorAll('.modale');
+            const boutonFermer = document.getElementById('fermer-tout');
+
+            function ouvrirDon() {
+                fondAssombri.classList.remove('cache');
+                fondAssombri.classList.add('afficher');
+                boutonFermer.classList.remove('cache');
+                modales.forEach(modale => {
+                    modale.classList.remove('cache');
+                    setTimeout(() => modale.classList.add('afficher'), 10);
+                });
+            }
+
+            function fermerDon() {
+                fondAssombri.classList.remove('afficher');
+                modales.forEach(modale => modale.classList.remove('afficher'));
+                boutonFermer.classList.add('cache');
+                setTimeout(() => {
+                    fondAssombri.classList.add('cache');
+                    modales.forEach(modale => modale.classList.add('cache'));
+                }, 300);
+            }
+
+            boutonOuvrirDon.addEventListener('click', ouvrirDon);
+            boutonFermer.addEventListener('click', fermerDon);
+        </script>
+
     </body>
 </html>

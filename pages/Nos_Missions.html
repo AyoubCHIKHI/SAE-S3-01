@@ -4,46 +4,42 @@
     <meta charset="UTF-8">
     <title>Association EGEE - Notre mission</title>
     <link rel="stylesheet" href="../assets/css/StyleNotreMission.css">
+    <link rel="stylesheet" href="../assets/css/don.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 
-<!-- Barre de navigation conservée -->
 <nav class="flex w-full items-top px-8 py-4">
     <a href="accueil.html">
         <img src="../assets/img/Logo.svg" alt="EGEE Logo" class="w-48 self-start mr-32 transform transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
     </a>
 
     <div class="hidden md:flex gap-12 mr-4 whitespace-nowrap text-gray-500">
-        <a href="nos_actions.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">
-            Nos actions
-        </a>
-        <a href="nous_contacter.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Nous rejoindre</a>
-        <a href="nous_connaitre.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Nous connaitre</a>
-        <a href="don.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Faire un don</a>
-        <a href="seconnecter.php" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Se connecter</a>
+        <a href="nos_actions.html" class="relative inline-block ...">Nos actions</a>
+        <a href="nous_contacter.html" class="relative inline-block ...">Nous rejoindre</a>
+        <a href="nous_connaitre.html" class="relative inline-block ...">Nous connaitre</a>
+        <a href="#" id="ouvrir-don" class="relative inline-block ...">Faire un don</a>
+        <a href="seconnecter.php" class="relative inline-block ...">Se connecter</a>
     </div>
     <img src="../assets/img/icon_menu_burger.svg" class="w-8 mr-4 ml-auto transition transform hover:scale-125 cursor-pointer">
 </nav>
 
-<!-- Bandeau titre -->
 <section class="banner">
     <h2>Notre mission</h2>
 </section>
 
-<!-- Texte d’intro -->
 <section class="intro">
-    <p>
-        Parce que des <span class="accent-bold">inégalités subsistent</span> sur le chemin de la vie professionnelle.<br>
-        Parce que les <span class="accent-bold">doutes et les difficultés</span> surgissent parfois.<br>
-        Chacun peut avoir besoin d’un <span class="accent-bold">œil extérieur</span>, averti, objectif et lucide sur le monde du travail.
+    <p>Parce que des <span class="accent-bold">inégalités subsistent</span>
+        sur le chemin de la vie professionnelle.<br>
+        Parce que les <span class="accent-bold">doutes et les difficultés</span>
+        surgissent parfois.<br>
+        Chacun peut avoir besoin d’un <span class="accent-bold">œil extérieur</span>,
+        averti, objectif et lucide sur le monde du travail.
     </p>
 </section>
 
-<!-- Conteneur principal avec "Lire aussi" -->
 <div class="main-container">
     <main class="content">
-
         <!-- Bloc 1 -->
         <div class="mission-block">
             <div class="image-side">
@@ -56,11 +52,12 @@
                     <li><span class="accent-bold">entrepreneurs</span></li>
                     <li><span class="accent-bold">personnes en reconversion</span> ou en transition professionnelle.</li>
                 </ul>
-                <p>
-                    Nos bénévoles les <span class="accent-bold">informent</span>, les <span class="accent-bold">écoutent</span>,
-                    les <span class="accent-bold">conseillent</span> et les <span class="accent-bold">mentorent</span>
-                    pour leur ouvrir la voie de choix éclairés et les aider à maîtriser leurs démarches,
-                    rebondir ou se repositionner.
+                <p>Nos bénévoles les <span class="accent-bold">informent</span>,
+                    les <span class="accent-bold">écoutent</span>,
+                    les <span class="accent-bold">conseillent</span> et les
+                    <span class="accent-bold">mentorent</span>
+                    pour leur ouvrir la voie de choix éclairés et les aider à maîtriser
+                    leurs démarches, rebondir ou se repositionner.
                 </p>
             </div>
         </div>
@@ -72,10 +69,13 @@
             </div>
             <div class="text-side">
                 <p class="subtitle">Nos domaines d’action</p>
-                <p>
-                    Parce que nous sommes convaincus que l’accès à <span class="accent-bold">l’éducation</span>,
-                    la <span class="accent-bold">formation</span> et l’<span class="accent-bold">emploi</span> est au cœur de la
-                    <span class="accent-bold">cohésion sociale</span> et territoriale, nous agissons dans trois domaines appelés les <span class="accent-bold">3E</span> :
+                <p>Parce que nous sommes convaincus que l’accès à
+                    <span class="accent-bold">l’éducation</span>, la
+                    <span class="accent-bold">formation</span> et l’
+                    <span class="accent-bold">emploi</span> est au cœur de la
+                    <span class="accent-bold">cohésion sociale</span>
+                    et territoriale, nous agissons dans trois domaines appelés les
+                    <span class="accent-bold">3E</span> :
                 </p>
                 <ul>
                     <li>L’éducation</li>
@@ -92,16 +92,14 @@
             </div>
             <div class="text-side">
                 <p class="subtitle">Notre réseau de bénévoles</p>
-                <p>
-                    Hommes et femmes, anciens entrepreneurs, dirigeants, cadres, professions libérales ou encore enseignants,
-                    nos conseillers bénévoles sont présents sur tout le territoire à travers un réseau de
+                <p>Hommes et femmes, anciens entrepreneurs, dirigeants, cadres,
+                    professions libérales ou encore enseignants, nos conseillers
+                    bénévoles sont présents sur tout le territoire à travers un réseau de
                     <span class="accent-bold">13 délégations régionales</span>.
                 </p>
             </div>
         </div>
-
     </main>
-
 
     <aside class="lire-aussi">
         <h4>Lire aussi</h4>
@@ -114,26 +112,17 @@
     </aside>
 </div>
 
-
 <footer class="flex flex-col md:flex-row w-full px-12 pt-20 pb-12 gap-8">
     <div class="mr-1">
         <p class="text-blue-500 font-bold text-4xl">EGEE</p>
         <p>Entente des Générations pour l’Emploi et L’entreprise</p>
         <p>Association reconnue d’utilité publique</p>
-
         <div class="flex gap-4 items-center mt-8">
-            <a href="https://www.instagram.com/association_egee/" class="transform transition duration-300 hover:scale-125">
-                <img src="../assets/img/instagram.svg" alt="">
-            </a>
-            <a href="https://fr.linkedin.com/company/egee-asso/" class="transform transition duration-300 hover:scale-125">
-                <img src="../assets/img/linkedin.svg" alt="">
-            </a>
-            <a href="https://www.facebook.com/egee.asso/" class="transform transition duration-300 hover:scale-125">
-                <img src="../assets/img/facebook.svg" alt="">
-            </a>
+            <a href="https://www.instagram.com/association_egee/"><img src="../assets/img/instagram.svg" alt=""></a>
+            <a href="https://fr.linkedin.com/company/egee-asso/"><img src="../assets/img/linkedin.svg" alt=""></a>
+            <a href="https://www.facebook.com/egee.asso/"><img src="../assets/img/facebook.svg" alt=""></a>
         </div>
     </div>
-
     <div id="info_section_footer" class="flex flex-row gap-6 md:gap-16 md:ml-auto">
         <div class="flex flex-col">
             <p class="font-bold text-xl mb-4 uppercase">Nos actions</p>
@@ -142,7 +131,6 @@
             <a href="#" class="transition hover:text-blue-500">Entreprise</a>
             <a href="#" class="transition hover:text-blue-500">Formation</a>
         </div>
-
         <div class="flex flex-col">
             <p class="font-bold text-xl mb-4 uppercase">Nos missions</p>
             <a href="#" class="transition hover:text-blue-500">Education</a>
@@ -150,7 +138,6 @@
             <a href="#" class="transition hover:text-blue-500">Entreprise</a>
             <a href="#" class="transition hover:text-blue-500">Formation</a>
         </div>
-
         <div class="flex flex-col">
             <p class="font-bold text-xl mb-4 uppercase">à propos</p>
             <a href="#" class="transition hover:text-blue-500">Mentions légales</a>
@@ -159,6 +146,70 @@
         </div>
     </div>
 </footer>
+
+<!-- don -->
+<div id="fond-assombri" class="cache"></div>
+<button id="fermer-tout" class="cache bouton-fermeture">&times;</button>
+
+<div id="page-image" class="modale cache">
+    <div class="image">
+        <img src="../assets/img/don/donImage1.png" alt="Image don">
+    </div>
+</div>
+
+<div id="page-don" class="modale cache">
+    <div class="conteneur-don">
+        <h2>1. MON DON</h2>
+        <div class="type-don">
+            <label>
+                <input type="radio" name="frequence" checked>
+                Je donne une fois
+            </label>
+            <label>
+                <input type="radio" name="frequence" checked>
+                Je donne tous les mois
+            </label>
+        </div>
+        <div class="montants-don">
+            <button class="bouton-montant">50 €</button>
+            <button class="bouton-montant">100 €</button>
+            <button class="bouton-montant">150 €</button>
+            <button class="bouton-montant">200 €</button>
+            <input type="text" placeholder="Montant libre" class="champ-libre">
+        </div>
+        <button class="bouton-etape-suivante">PASSER À L'ÉTAPE SUIVANTE</button>
+    </div>
+</div>
+
+<script>
+    const boutonOuvrirDon = document.getElementById('ouvrir-don');
+    const fondAssombri = document.getElementById('fond-assombri');
+    const modales = document.querySelectorAll('.modale');
+    const boutonFermer = document.getElementById('fermer-tout');
+
+    function ouvrirDon() {
+        fondAssombri.classList.remove('cache');
+        fondAssombri.classList.add('afficher');
+        boutonFermer.classList.remove('cache');
+        modales.forEach(modale => {
+            modale.classList.remove('cache');
+            setTimeout(() => modale.classList.add('afficher'), 10);
+        });
+    }
+
+    function fermerDon() {
+        fondAssombri.classList.remove('afficher');
+        modales.forEach(modale => modale.classList.remove('afficher'));
+        boutonFermer.classList.add('cache');
+        setTimeout(() => {
+            fondAssombri.classList.add('cache');
+            modales.forEach(modale => modale.classList.add('cache'));
+        }, 300);
+    }
+
+    boutonOuvrirDon.addEventListener('click', ouvrirDon);
+    boutonFermer.addEventListener('click', fermerDon);
+</script>
 
 </body>
 </html>
