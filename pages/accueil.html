@@ -5,6 +5,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Bénévolat de compétences - Association EGEE | Des seniors bénévoles au service de vos projets</title>
+        <script src ="../assets/js/accueil.js"></script>
         <link rel="stylesheet" href="../assets/css/don.css">
 
         <link rel="icon" type="image/png" href="../assets/img/favicon.png">
@@ -69,25 +70,41 @@
                 <p class="text-blue-300">-</p>
                 <p class="text-blue-300">03</p>
             </section>
-            
 
             <p class="text-blue-500 font-bold text-4xl">
                 Notre mission
             </p>
 
-            <p class="text-center text-xl md:text-2xl w-[16em] md:w-[72em] md:px-96 py-24">
-                Nos <b>bénévoles</b> informent, écoutent, conseillent et 
-                mentorent <b>les jeunes</b> pour leur ouvrir la voie de <b>choix éclairés</b> 
-                et les aider à maîtriser leurs démarches, leur parcours 
-                professionnel, rebondir ou se repositionner.
-            </p>
+            <!-- ✅ CARROUSEL DE TEXTES -->
+            <div id="carousel-mission" class="relative flex justify-center items-center w-full overflow-hidden">
+                <div id="slides" class="flex transition-transform duration-700 ease-in-out">
+                    <div class="slide w-full flex-shrink-0 flex justify-center items-center">
+                        <p class="text-center text-xl md:text-2xl w-[16em] md:w-[72em] md:px-96 py-24">
+                            Nos <b>bénévoles</b> informent, écoutent, conseillent et mentorent <b>les jeunes</b> pour leur ouvrir la voie de <b>choix éclairés</b> et les aider à maîtriser leurs démarches, leur parcours professionnel, rebondir ou se repositionner.
+                        </p>
+                    </div>
 
+                    <div class="slide w-full flex-shrink-0 flex justify-center items-center">
+                        <p class="text-center text-xl md:text-2xl w-[16em] md:w-[72em] md:px-96 py-24">
+                            Nous accompagnons également <b>les entrepreneurs</b> dans leurs projets, qu’il s’agisse de création, de développement ou de transition, pour favoriser la réussite et la pérennité de leurs entreprises.
+                        </p>
+                    </div>
+
+                    <div class="slide w-full flex-shrink-0 flex justify-center items-center">
+                        <p class="text-center text-xl md:text-2xl w-[16em] md:w-[72em] md:px-96 py-24">
+                            EGEE s’engage à <b>transmettre l’expérience</b> et les compétences des seniors au service des générations futures et du tissu économique français.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOUTONS DE NAVIGATION -->
             <div class="flex gap-8 pt-4">
-                <button>
+                <button id="prev-mission">
                     <img src="../assets/img/left-arrow.svg" alt="flèche gauche" class="w-10 transform transition duration-300 hover:scale-105">
                 </button>
-                
-                <button class="flex justify-center items-center w-16 h-12 rounded-xl bg-blue-500 transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
+
+                <button id="next-mission" class="flex justify-center items-center w-16 h-12 rounded-xl bg-blue-500 transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
                     <img src="../assets/img/arrow-sm-right.svg" alt="flèche droite" class="w-12">
                 </button>
             </div>
