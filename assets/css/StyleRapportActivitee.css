@@ -29,10 +29,10 @@ body {
 }
 
 .bannerT h2{
-    color: #f16529;
+    color: #040404;
 }
 .bannerT a:hover {
-    color: #f16529;
+    color: #000000;
 }
 
 .intro {
@@ -48,7 +48,7 @@ body {
     line-height: 1.8;
 }
 .accent-bold {
-    color: #f16529;
+    color: #000000;
     font-weight: bold;
 }
 
@@ -106,7 +106,7 @@ body {
     height: fit-content;
 }
 .lire-aussi h4 {
-    color: #f16529;
+    color: #000000;
     font-size: 18px;
     margin-bottom: 10px;
 }
@@ -122,7 +122,7 @@ body {
     transition: color 0.2s;
 }
 .lire-aussi ul li a:hover {
-    color: #f16529;
+    color: #000000;
 }
 
 /* Effet d’opacité sur le bloc Lire aussi */
