@@ -1,3 +1,6 @@
+<?php
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,30 +8,15 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Bénévolat de compétences - Association EGEE | Des seniors bénévoles au service de vos projets</title>
-        <link rel="stylesheet" href="../assets/css/don.css">
+        <script src ="../assets/js/accueil.js"></script>
+        <link rel="stylesheet" href="assets/css/don.css">
 
-        <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+        <link rel="icon" type="image/png" href="assets/img/favicon.png">
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 
     <body>
-        <nav class="flex w-full items-top px-8 py-4">
-            <a href="accueil.html">
-                <img src="../assets/img/Logo.svg" alt="EGEE Logo" class="w-48 self-start mr-32 transform transition duration-300 hover:scale-105 hover:shadow-lg rounded-lg">
-            </a>
-
-            <div class="hidden md:flex gap-12 mr-4 whitespace-nowrap text-gray-500">
-                <a href="nos_actions.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">
-                    Nos actions
-                </a>
-                <a href="nous_contacter.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Nous rejoindre</a>
-                <a href="nous_connaitre.html" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Nous connaitre</a>
-                <a href="#" id="ouvrir-don" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Faire un don</a>
-                <a href="seconnecter.php" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Se connecter</a>
-            </div>
-            <img src="../assets/img/icon_menu_burger.svg" class="w-8 mr-4 ml-auto transition transform hover:scale-125 cursor-pointer">
-        </nav>
-    
+    <?php include __DIR__ . '/pages/navbar.php'; ?>
         <article id="hero_section" class="flex flex-col-reverse md:flex-row gap-4 md:gap-24 justify-center items-center h-[52em] my-2">
             <section id="partie_blanc" class="flex flex-col justify-center items-center mt-16">
                 <div id="slogan_large" class="text-3xl md:pl-12 md:text-5xl font-bold whitespace-nowrap">
@@ -42,12 +30,12 @@
 
                 <div class="flex flex-col md:flex-row gap-4 md:gap-16">
                     <button class="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
-                        <img src="../assets/img/accueil/heart.svg" alt="icon_don" class="w-6">
+                        <img src="assets/img/accueil/heart.svg" alt="icon_don" class="w-6">
                         Faire un don
                     </button>
 
                     <button class="flex items-center gap-2 text-black px-4 py-2 border border-blue-500 rounded transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg">
-                        <img src="../assets/img/accueil/play.svg" alt="icon_don" class="w-6">
+                        <img src="assets/img/accueil/play.svg" alt="icon_don" class="w-6">
                         Nos actions
                     </button>
 
@@ -56,8 +44,8 @@
 
 
             <section id="hero_caroussel" class="w-64 h-48 md:w-96 md:h-72 overflow-hidden rounded-lg md:mr-16">
-                <img src="../assets/img/accueil/hero_image.png" alt="hero_section_illustration"
-                    class="rounded border-4 border-blue-300 object-cover w-full h-full">
+                <img src="assets/img/accueil/hero_image.png" alt="hero_section_illustration"
+                     class="rounded border-4 border-blue-300 object-cover w-full h-full">
             </section>
 
         </article>
@@ -69,26 +57,42 @@
                 <p class="text-blue-300">-</p>
                 <p class="text-blue-300">03</p>
             </section>
-            
 
             <p class="text-blue-500 font-bold text-4xl">
                 Notre mission
             </p>
 
-            <p class="text-center text-xl md:text-2xl w-[16em] md:w-[72em] md:px-96 py-24">
-                Nos <b>bénévoles</b> informent, écoutent, conseillent et 
-                mentorent <b>les jeunes</b> pour leur ouvrir la voie de <b>choix éclairés</b> 
-                et les aider à maîtriser leurs démarches, leur parcours 
-                professionnel, rebondir ou se repositionner.
-            </p>
+            <!-- ✅ CARROUSEL DE TEXTES -->
+            <div id="carousel-mission" class="relative flex justify-center items-center w-full overflow-hidden">
+                <div id="slides" class="flex transition-transform duration-700 ease-in-out">
+                    <div class="slide w-full flex-shrink-0 flex justify-center items-center">
+                        <p class="text-center text-xl md:text-2xl w-[16em] md:w-[72em] md:px-96 py-24">
+                            Nos <b>bénévoles</b> informent, écoutent, conseillent et mentorent <b>les jeunes</b> pour leur ouvrir la voie de <b>choix éclairés</b> et les aider à maîtriser leurs démarches, leur parcours professionnel, rebondir ou se repositionner.
+                        </p>
+                    </div>
 
+                    <div class="slide w-full flex-shrink-0 flex justify-center items-center">
+                        <p class="text-center text-xl md:text-2xl w-[16em] md:w-[72em] md:px-96 py-24">
+                            Nous accompagnons également <b>les entrepreneurs</b> dans leurs projets, qu’il s’agisse de création, de développement ou de transition, pour favoriser la réussite et la pérennité de leurs entreprises.
+                        </p>
+                    </div>
+
+                    <div class="slide w-full flex-shrink-0 flex justify-center items-center">
+                        <p class="text-center text-xl md:text-2xl w-[16em] md:w-[72em] md:px-96 py-24">
+                            EGEE s’engage à <b>transmettre l’expérience</b> et les compétences des seniors au service des générations futures et du tissu économique français.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOUTONS DE NAVIGATION -->
             <div class="flex gap-8 pt-4">
-                <button>
-                    <img src="../assets/img/left-arrow.svg" alt="flèche gauche" class="w-10 transform transition duration-300 hover:scale-105">
+                <button id="prev-mission">
+                    <img src="assets/img/left-arrow.svg" alt="flèche gauche" class="w-10 transform transition duration-300 hover:scale-105">
                 </button>
-                
-                <button class="flex justify-center items-center w-16 h-12 rounded-xl bg-blue-500 transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
-                    <img src="../assets/img/arrow-sm-right.svg" alt="flèche droite" class="w-12">
+
+                <button id="next-mission" class="flex justify-center items-center w-16 h-12 rounded-xl bg-blue-500 transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
+                    <img src="assets/img/arrow-sm-right.svg" alt="flèche droite" class="w-12">
                 </button>
             </div>
 
@@ -102,34 +106,34 @@
             <section id="présentation_action" class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-6">
                 
                 <div class="flex flex-col items-center justify-center w-72 gap-3 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4 cursor-pointer">
-                    <img src="../assets/img/accueil/education.png" alt="" class="w-62 h-52 md:w-44 md:h-56 border-4 border-blue-300 rounded-md object-cover">
+                    <img src="assets/img/accueil/education.png" alt="" class="w-62 h-52 md:w-44 md:h-56 border-4 border-blue-300 rounded-md object-cover">
                     <p class="font-bold text-xl">Education</p>
                     <p class="text-center">Préparer les jeunes à leur future vie professionnelle</p>
                     <a href="education.html" class="hidden md:block">
                         <div class="w-8 h-8 rounded-full bg-black mt-4">
-                            <img src="../assets/img/cheveron-right.svg" class="w-48">
+                            <img src="assets/img/cheveron-right.svg" class="w-48">
                         </div>  
                     </a>
                 </div>
 
                 <div class="flex flex-col items-center justify-center w-72 gap-3 md:mb-28 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4 cursor-pointer">
-                    <img src="../assets/img/accueil/emploie.png" alt="" class="w-62 h-52 border-4 border-blue-300 rounded-md object-cover">
+                    <img src="assets/img/accueil/emploie.png" alt="" class="w-62 h-52 border-4 border-blue-300 rounded-md object-cover">
                     <p class="font-bold text-xl">Emploi</p>
                     <p class="text-center">Accompagner l’entrée dans la vie active et le retour à l’emploi</p>
                     <a href="emploie.html" class="hidden md:block">
                         <div class="w-8 h-8 rounded-full bg-black mt-4">
-                            <img src="../assets/img/cheveron-right.svg" class="w-8">
+                            <img src="assets/img/cheveron-right.svg" class="w-8">
                         </div>
                     </a>
                 </div>
 
                 <div class="flex flex-col items-center justify-center w-72 gap-3 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4 cursor-pointer">
-                    <img src="../assets/img/accueil/entreprise.webp" alt="" class="w-62 h-52 md:w-44 md:h-56 border-4 border-blue-300 rounded-md object-cover">
+                    <img src="assets/img/accueil/entreprise.webp" alt="" class="w-62 h-52 md:w-44 md:h-56 border-4 border-blue-300 rounded-md object-cover">
                     <p class="font-bold text-xl">Entreprise</p>
                     <p class="text-center">Soutenir les entrepreneurs dans la création, la croissance et les difficultés</p>
                     <a href="entreprise.html" class="hidden md:block">
                         <div class="w-8 h-8 rounded-full bg-black mt-4">
-                            <img src="../assets/img/cheveron-right.svg" class="w-8">
+                            <img src="assets/img/cheveron-right.svg" class="w-8">
                         </div>  
                     </a>
                 </div>
@@ -143,7 +147,7 @@
                 EGEE en France
             </p>
         
-            <img src="../assets/img/accueil/location.svg" class="w-32 mb-10" alt="LOC">
+            <img src="assets/img/accueil/location.svg" class="w-32 mb-10" alt="LOC">
             <p class="text-2xl uppercase">Où nous trouver</p>
 
             <p class="text-center text-xl mt-10 w-[16em] md:w-[36em]">
@@ -151,7 +155,7 @@
                 seniors répartis dans 13 délégations régionalessur 
                 l’ensemble du territoire français.
             </p>
-            <a href="egee_en_france.html">
+            <a href="pages/egee_en_france.html">
                 <button class="bg-blue-400 py-4 px-6 rounded my-12 text-white transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
                     EGEE en France
                 </button>
@@ -178,66 +182,21 @@
                     />
                 
                     <button class="flex justify-center items-center w-12 h-10 ml-10 rounded-xl bg-blue-500 transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
-                        <img src="../assets/img/cheveron-right.svg" alt="flèche droite" class="w-8">
+                        <img src="assets/img/cheveron-right.svg" alt="flèche droite" class="w-8">
                     </button>
                 </div>
 
             </section>
 
         </article>
-
-        <footer class="flex flex-col md:flex-row w-full px-12 pt-20 pb-12 gap-8">
-                <div class="mr-1">
-                    <p class="text-blue-500 font-bold text-4xl">EGEE</p>
-                    <p>Entente des Générations pour l’Emploi et L’entreprise</p>
-                    <p>Association reconnu d’utilité publique</p>
-
-                    <div class="flex gap-4 items-center mt-8">
-                        <a href="https://www.instagram.com/association_egee/" class="transform transition duration-300 hover:scale-125">
-                            <img src="../assets/img/instagram.svg" alt="">
-                        </a>
-                        <a href="https://fr.linkedin.com/company/egee-asso/" class="transform transition duration-300 hover:scale-125">
-                            <img src="../assets/img/linkedin.svg" alt="">
-                        </a>
-                        <a href="https://www.facebook.com/egee.asso/" class="transform transition duration-300 hover:scale-125">
-                            <img src="../assets/img/facebook.svg" alt="">
-                        </a>
-                    </div>
-                </div>
-
-                <div id="info_section_footer" class="flex flex-row gap-6 md:gap-16 md:ml-auto">
-                    <div class="flex flex-col">
-                        <p class="font-bold text-xl mb-4 uppercase">Nos actions</p>
-                        <a href="#" class="transition hover:text-blue-500">Education</a>
-                        <a href="#" class="transition hover:text-blue-500">Emploi</a>
-                        <a href="#" class="transition hover:text-blue-500">Entreprise</a>
-                        <a href="#" class="transition hover:text-blue-500">Formation</a>
-                    </div>
-
-                    <div class="flex flex-col">
-                        <p class="font-bold text-xl mb-4 uppercase">Nos missions</p>
-                        <a href="#" class="transition hover:text-blue-500">Education</a>
-                        <a href="#" class="transition hover:text-blue-500">Emploi</a>
-                        <a href="#" class="transition hover:text-blue-500">Entreprise</a>
-                        <a href="#" class="transition hover:text-blue-500">Formation</a>
-                    </div>
-
-                    <div class="flex flex-col">
-                        <p class="font-bold text-xl mb-4 uppercase">à propos</p>
-                        <a href="#" class="transition hover:text-blue-500">Mentions légales</a>
-                        <a href="../pages/nous_contacter.html" class="transition hover:text-blue-500">Contactez nous</a>
-                        <a href="#" class="transition hover:text-blue-500">FAQ</a>
-                    </div>
-                </div>
-        </footer>
-
+    <?php include __DIR__ . '/pages/footer.php'; ?>
         <!-- don -->
         <div id="fond-assombri" class="cache"></div>
         <button id="fermer-tout" class="cache bouton-fermeture">&times;</button>
 
         <div id="page-image" class="modale cache">
             <div class="image">
-                <img src="../assets/img/don/donImage1.png" alt="Image don">
+                <img src="assets/img/don/donImage1.png" alt="Image don">
             </div>
         </div>
 
@@ -265,6 +224,7 @@
             </div>
         </div>
 
-    <script src="../assets/js/don.js"></script>
+    <script src="assets/js/don.js"></script>
+    <script src="assets/js/carousel.js"></script>
     </body>
 </html>

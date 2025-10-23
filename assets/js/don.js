@@ -1,3 +1,6 @@
+
+
+
 const boutonOuvrirDon = document.getElementById('ouvrir-don');
 const fondAssombri = document.getElementById('fond-assombri');
 const modales = document.querySelectorAll('.modale');
