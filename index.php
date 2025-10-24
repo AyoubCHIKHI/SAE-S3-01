@@ -1,6 +1,3 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,15 +5,17 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Bénévolat de compétences - Association EGEE | Des seniors bénévoles au service de vos projets</title>
-        <script src ="../assets/js/accueil.js"></script>
         <link rel="stylesheet" href="assets/css/don.css">
 
         <link rel="icon" type="image/png" href="assets/img/favicon.png">
-		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="assets/js/carousel.js" defer></script>
+        <script src="https://cdn.tailwindcss.com"></script>
 	</head>
 
     <body>
-    <?php include __DIR__ . '/pages/navbar.php'; ?>
+        
+        <?php include 'pages/includes/navbar.php'; ?>
+        
         <article id="hero_section" class="flex flex-col-reverse md:flex-row gap-4 md:gap-24 justify-center items-center h-[52em] my-2">
             <section id="partie_blanc" class="flex flex-col justify-center items-center mt-16">
                 <div id="slogan_large" class="text-3xl md:pl-12 md:text-5xl font-bold whitespace-nowrap">
@@ -29,12 +28,12 @@
                 </p>
 
                 <div class="flex flex-col md:flex-row gap-4 md:gap-16">
-                    <button class="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
+                    <button id="ouvrir-don" class="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
                         <img src="assets/img/accueil/heart.svg" alt="icon_don" class="w-6">
                         Faire un don
                     </button>
 
-                    <button class="flex items-center gap-2 text-black px-4 py-2 border border-blue-500 rounded transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg">
+                    <button onclick="location.href='/pages/nos_actions.php'" class="flex items-center gap-2 text-black px-4 py-2 border border-blue-500 rounded transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg">
                         <img src="assets/img/accueil/play.svg" alt="icon_don" class="w-6">
                         Nos actions
                     </button>
@@ -62,7 +61,6 @@
                 Notre mission
             </p>
 
-            <!-- ✅ CARROUSEL DE TEXTES -->
             <div id="carousel-mission" class="relative flex justify-center items-center w-full overflow-hidden">
                 <div id="slides" class="flex transition-transform duration-700 ease-in-out">
                     <div class="slide w-full flex-shrink-0 flex justify-center items-center">
@@ -85,7 +83,6 @@
                 </div>
             </div>
 
-            <!-- BOUTONS DE NAVIGATION -->
             <div class="flex gap-8 pt-4">
                 <button id="prev-mission">
                     <img src="assets/img/left-arrow.svg" alt="flèche gauche" class="w-10 transform transition duration-300 hover:scale-105">
@@ -109,7 +106,7 @@
                     <img src="assets/img/accueil/education.png" alt="" class="w-62 h-52 md:w-44 md:h-56 border-4 border-blue-300 rounded-md object-cover">
                     <p class="font-bold text-xl">Education</p>
                     <p class="text-center">Préparer les jeunes à leur future vie professionnelle</p>
-                    <a href="education.html" class="hidden md:block">
+                    <a href="education.php" class="hidden md:block">
                         <div class="w-8 h-8 rounded-full bg-black mt-4">
                             <img src="assets/img/cheveron-right.svg" class="w-48">
                         </div>  
@@ -120,7 +117,7 @@
                     <img src="assets/img/accueil/emploie.png" alt="" class="w-62 h-52 border-4 border-blue-300 rounded-md object-cover">
                     <p class="font-bold text-xl">Emploi</p>
                     <p class="text-center">Accompagner l’entrée dans la vie active et le retour à l’emploi</p>
-                    <a href="emploie.html" class="hidden md:block">
+                    <a href="emploie.php" class="hidden md:block">
                         <div class="w-8 h-8 rounded-full bg-black mt-4">
                             <img src="assets/img/cheveron-right.svg" class="w-8">
                         </div>
@@ -131,7 +128,7 @@
                     <img src="assets/img/accueil/entreprise.webp" alt="" class="w-62 h-52 md:w-44 md:h-56 border-4 border-blue-300 rounded-md object-cover">
                     <p class="font-bold text-xl">Entreprise</p>
                     <p class="text-center">Soutenir les entrepreneurs dans la création, la croissance et les difficultés</p>
-                    <a href="entreprise.html" class="hidden md:block">
+                    <a href="entreprise.php" class="hidden md:block">
                         <div class="w-8 h-8 rounded-full bg-black mt-4">
                             <img src="assets/img/cheveron-right.svg" class="w-8">
                         </div>  
@@ -155,7 +152,7 @@
                 seniors répartis dans 13 délégations régionalessur 
                 l’ensemble du territoire français.
             </p>
-            <a href="pages/egee_en_france.html">
+            <a href="pages/egee_en_france.php">
                 <button class="bg-blue-400 py-4 px-6 rounded my-12 text-white transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
                     EGEE en France
                 </button>
@@ -189,42 +186,8 @@
             </section>
 
         </article>
-    <?php include __DIR__ . '/pages/footer.php'; ?>
-        <!-- don -->
-        <div id="fond-assombri" class="cache"></div>
-        <button id="fermer-tout" class="cache bouton-fermeture">&times;</button>
+        
+        <?php include 'pages/includes/footer.php'; ?>
 
-        <div id="page-image" class="modale cache">
-            <div class="image">
-                <img src="assets/img/don/donImage1.png" alt="Image don">
-            </div>
-        </div>
-
-        <div id="page-don" class="modale cache">
-            <div class="conteneur-don">
-                <h2>1. MON DON</h2>
-                <div class="type-don">
-                    <label>
-                        <input type="radio" name="frequence" checked>
-                        Je donne une fois
-                    </label>
-                    <label>
-                        <input type="radio" name="frequence" checked>
-                        Je donne tous les mois
-                    </label>
-                </div>
-                <div class="montants-don">
-                    <button class="bouton-montant">50 €</button>
-                    <button class="bouton-montant">100 €</button>
-                    <button class="bouton-montant">150 €</button>
-                    <button class="bouton-montant">200 €</button>
-                    <input type="text" placeholder="Montant libre" class="champ-libre">
-                </div>
-                <button class="bouton-etape-suivante">PASSER À L'ÉTAPE SUIVANTE</button>
-            </div>
-        </div>
-
-    <script src="assets/js/don.js"></script>
-    <script src="assets/js/carousel.js"></script>
     </body>
 </html>
