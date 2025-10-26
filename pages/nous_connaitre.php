@@ -42,7 +42,7 @@
             </h3>
 
             <div class="grid md:grid-cols-3 gap-x-8 gap-y-12 justify-items-center">
-                
+
                 <a href="Nos_Missions.php" class="text-center transform transition-transform duration-300 hover:scale-105">
                 <img src="../assets/img/nous_connaitre/logo_mission.png" alt="Notre Mission"
                     class="rounded shadow w-40 h-40 object-contain mx-auto">
@@ -55,7 +55,7 @@
                 <p class="mt-2 font-medium">Vidéos EGEE</p>
                 </a>
 
-                <a href="conseil_admin.php" class="text-center transform transition-transform duration-300 hover:scale-105">
+                <a href="ConseilAdministration.php" class="text-center transform transition-transform duration-300 hover:scale-105">
                 <img src="../assets/img/nous_connaitre/logo_admin.png" alt="Conseil d’administration"
                     class="rounded shadow w-40 h-40 object-contain mx-auto">
                 <p class="mt-2 font-medium">Conseil d’administration</p>
@@ -78,6 +78,6 @@
 
 
         <?php include 'includes/footer.php'; ?>
-        
+
     </body>
 </html>
