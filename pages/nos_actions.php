@@ -10,13 +10,13 @@
     </head>
     <body>
 
-        <?php include 'includes/navbar.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
         
         <div class="my-auto">
             
         </div>
 
-        <?php include 'includes/footer.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
         
     </body>
 </html>

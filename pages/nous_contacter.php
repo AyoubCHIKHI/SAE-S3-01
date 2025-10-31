@@ -10,9 +10,9 @@
     </head>
     <body class="flex flex-col h-screen">
         
-        <?php include 'includes/navbar.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
 
-        <article class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-24 py-8 md:p-16">
+        <article class="flex flex-col md:flex-row flex-1 justify-center items-center gap-4 md:gap-24 py-8 md:p-16">
         
             <section id="coordonnées" class="flex justify-center flex-col">
                 <p class="text-3xl font-bold">Contactez-nous</p>
@@ -104,7 +104,7 @@
 
         </article>
 
-        <?php include 'includes/footer.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
        
     </body>
 </html>

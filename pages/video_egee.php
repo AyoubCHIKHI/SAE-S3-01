@@ -11,7 +11,7 @@
     <body class="font-sans">
 
         <div class="fixed top-0 left-0 w-full z-50">
-            <?php include 'includes/navbar.php'; ?>
+            <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
         </div>
 
         <div class="pt-28">
@@ -57,6 +57,6 @@
                 </div>
             </main>
 
-            <?php include 'includes/footer.php'; ?>
+            <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
     </body>
 </html>

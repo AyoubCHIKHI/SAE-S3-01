@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <?php include 'includes/navbar.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
 
     <!-- Titre et image -->
     <div class="flex justify-center">
@@ -103,7 +103,7 @@
         </div>
     </div>
 
-    <?php include 'includes/footer.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
     
 </body>
 </html>

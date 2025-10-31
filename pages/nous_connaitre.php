@@ -10,7 +10,7 @@
 
     <body>
 
-        <?php include 'includes/navbar.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
 
 
         <div id="hero_section" class="flex h-[600px]">
@@ -77,7 +77,7 @@
         </main>
 
 
-        <?php include 'includes/footer.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
 
     </body>
 </html>
