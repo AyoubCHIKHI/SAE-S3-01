@@ -14,20 +14,20 @@
 
     <body>
         
-        <?php include 'pages/includes/navbar.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
         
-        <article id="hero_section" class="flex flex-col-reverse md:flex-row gap-4 md:gap-24 justify-center items-center h-[52em] my-2">
+        <article id="hero_section" class="flex flex-col-reverse md:flex-row gap-4 md:gap-16 lg:gap-52 justify-center items-center py-12">
             <section id="partie_blanc" class="flex flex-col justify-center items-center mt-16">
-                <div id="slogan_large" class="text-3xl md:pl-12 md:text-5xl font-bold whitespace-nowrap">
+                <div id="slogan_large" class="text-3xl md:text-4xl lg:text-5xl md:pl-12 font-bold whitespace-nowrap">
                     <p>Transmetrre le savoir,</p>
                     <p class="indent-8">construire <span id="bloc_blue" class="">l'avenir</span></p>
                 </div>
 
-                <p class="text-center w-[22rem] py-8">
+                <p class="text-center w-[22rem] text-base py-8">
                     Chacun peut avoir besoin d’un oeil extérieur, averti, objectif et lucide sur le monde du travail.
                 </p>
 
-                <div class="flex flex-col md:flex-row gap-4 md:gap-16">
+                <div class="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-16">
                     <button id="ouvrir-don" class="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
                         <img src="assets/img/accueil/heart.svg" alt="icon_don" class="w-6">
                         Faire un don
@@ -37,75 +37,68 @@
                         <img src="assets/img/accueil/play.svg" alt="icon_don" class="w-6">
                         Nos actions
                     </button>
-
                 </div>
             </section>
 
-
-            <section id="hero_caroussel" class="w-64 h-48 md:w-96 md:h-72 overflow-hidden rounded-lg md:mr-16">
+            <section class="w-64 h-48 md:w-96 md:h-72 min-w-64 overflow-hidden rounded-lg md:mr-16">
                 <img src="assets/img/accueil/hero_image.png" alt="hero_section_illustration"
-                     class="rounded border-4 border-blue-300 object-cover w-full h-full">
+                    class="rounded border-4 border-blue-300 object-cover w-full h-full">
             </section>
 
         </article>
 
-        <article id="notre_mission" class="flex flex-col justify-center items-center my-16">
-
-            <section class="flex gap-2 pb-4 md:pb-12 text-3xl font-bold">
-                <p class="text-blue-500">01</p>
-                <p class="text-blue-300">-</p>
-                <p class="text-blue-300">03</p>
-            </section>
-
-            <p class="text-blue-500 font-bold text-4xl">
-                Notre mission
-            </p>
+        <article id="notre_mission" class="flex flex-col bg-blue-300 justify-center items-center mt-16 py-16">
+    
+            <div class="flex justify-center items-center gap-4">
+                <img src="assets/img/accueil/ic_mission.svg" alt="notre_mission_icon" class="w-9">
+                <p class="font-bold text-blue-950 text-3xl">Notre mission</p>
+            </div>
 
             <div id="carousel-mission" class="relative flex justify-center items-center w-full overflow-hidden">
                 <div id="slides" class="flex transition-transform duration-700 ease-in-out">
                     <div class="slide w-full flex-shrink-0 flex justify-center items-center">
-                        <p class="text-center text-xl md:text-2xl w-[16em] md:w-[72em] md:px-96 py-24">
-                            Nos <b>bénévoles</b> informent, écoutent, conseillent et mentorent <b>les jeunes</b> pour leur ouvrir la voie de <b>choix éclairés</b> et les aider à maîtriser leurs démarches, leur parcours professionnel, rebondir ou se repositionner.
+                        <p class="text-start text-xl w-[16em] md:w-[32em] py-16">
+                            Nos bénévoles informent, écoutent, conseillent et mentorent les jeunes pour leur ouvrir la voie de choix éclairés et les aider à maîtriser leurs démarches, leur parcours professionnel, rebondir ou se repositionner.
                         </p>
                     </div>
 
                     <div class="slide w-full flex-shrink-0 flex justify-center items-center">
-                        <p class="text-center text-xl md:text-2xl w-[16em] md:w-[72em] md:px-96 py-24">
+                        <p class="text-start text-xl w-[16em] md:w-[32em] py-16">
                             Nous accompagnons également <b>les entrepreneurs</b> dans leurs projets, qu’il s’agisse de création, de développement ou de transition, pour favoriser la réussite et la pérennité de leurs entreprises.
                         </p>
                     </div>
 
                     <div class="slide w-full flex-shrink-0 flex justify-center items-center">
-                        <p class="text-center text-xl md:text-2xl w-[16em] md:w-[72em] md:px-96 py-24">
-                            EGEE s’engage à <b>transmettre l’expérience</b> et les compétences des seniors au service des générations futures et du tissu économique français.
-                        </p>
+                        <p class="text-center text-xl w-[16em] md:w-[32em] py-16">
+                            EGEE s’engage à <b>transmettre l’expérience</b> et les compétences des seniors au service des générations futures et du tissu économique français.</p>
                     </div>
+
                 </div>
             </div>
 
             <div class="flex gap-8 pt-4">
                 <button id="prev-mission">
-                    <img src="assets/img/left-arrow.svg" alt="flèche gauche" class="w-10 transform transition duration-300 hover:scale-105">
+                    <img src="assets/img/left-arrow.svg" alt="flèche gauche" class="w-8 transform transition duration-300 hover:scale-105">
                 </button>
 
-                <button id="next-mission" class="flex justify-center items-center w-16 h-12 rounded-xl bg-blue-500 transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
-                    <img src="assets/img/arrow-sm-right.svg" alt="flèche droite" class="w-12">
+                <button id="next-mission" class="flex justify-center items-center w-10 rounded-xl bg-blue-500 transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
+                    <img src="assets/img/arrow-sm-right.svg" alt="flèche droite" class="w-10">
                 </button>
             </div>
 
         </article>
 
-        <article id="nos_actions" class="flex flex-col justify-center items-center my-36">
-            <p class="text-blue-500 font-bold text-4xl mb-24">
+        <article id="nos_actions" class="flex flex-col justify-center items-center bg-blue-200 mb-36">
+            <p class="text-blue-950 font-bold text-4xl my-24">
                 Nos actions
             </p>
 
-            <section id="présentation_action" class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-6">
+            <section id="présentation_action" class="flex flex-col md:flex-row justify-between items-center w-full lg:w-auto lg:gap-20 mx-12">
                 
                 <div class="flex flex-col items-center justify-center w-72 gap-3 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4 cursor-pointer">
-                    <img src="assets/img/accueil/education.png" alt="" class="w-62 h-52 md:w-44 md:h-56 border-4 border-blue-300 rounded-md object-cover">
+                    <img src="assets/img/accueil/education.png" alt="les_étudiants" class="w-62 h-52 md:w-44 md:h-56 rounded-md object-cover">
                     <p class="font-bold text-xl">Education</p>
-                    <p class="text-center">Préparer les jeunes à leur future vie professionnelle</p>
+                    <p class="text-center text-sm lg:text-base">Préparer les jeunes à leur future vie professionnelle</p>
                     <a href="education.php" class="hidden md:block">
                         <div class="w-8 h-8 rounded-full bg-black mt-4">
                             <img src="assets/img/cheveron-right.svg" class="w-48">
@@ -114,9 +107,9 @@
                 </div>
 
                 <div class="flex flex-col items-center justify-center w-72 gap-3 md:mb-28 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4 cursor-pointer">
-                    <img src="assets/img/accueil/emploie.png" alt="" class="w-62 h-52 border-4 border-blue-300 rounded-md object-cover">
+                    <img src="assets/img/accueil/emploie.png" alt="" class="w-62 h-52 rounded-md object-cover">
                     <p class="font-bold text-xl">Emploi</p>
-                    <p class="text-center">Accompagner l’entrée dans la vie active et le retour à l’emploi</p>
+                    <p class="text-center text-base">Accompagner l’entrée dans la vie active et le retour à l’emploi</p>
                     <a href="emploie.php" class="hidden md:block">
                         <div class="w-8 h-8 rounded-full bg-black mt-4">
                             <img src="assets/img/cheveron-right.svg" class="w-8">
@@ -125,9 +118,9 @@
                 </div>
 
                 <div class="flex flex-col items-center justify-center w-72 gap-3 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4 cursor-pointer">
-                    <img src="assets/img/accueil/entreprise.webp" alt="" class="w-62 h-52 md:w-44 md:h-56 border-4 border-blue-300 rounded-md object-cover">
+                    <img src="assets/img/accueil/entreprise.webp" alt="" class="w-62 h-52 md:w-44 md:h-56 rounded-md object-cover">
                     <p class="font-bold text-xl">Entreprise</p>
-                    <p class="text-center">Soutenir les entrepreneurs dans la création, la croissance et les difficultés</p>
+                    <p class="text-center text-sm lg:text-base">Soutenir les entrepreneurs dans la création, la croissance et les difficultés</p>
                     <a href="entreprise.php" class="hidden md:block">
                         <div class="w-8 h-8 rounded-full bg-black mt-4">
                             <img src="assets/img/cheveron-right.svg" class="w-8">
@@ -163,22 +156,22 @@
         <article id="egee_newsletter" class="flex justify-center my-16">
             
             <section class="flex flex-col justify-center items-center bg-blue-100 w-[90%] h-[90%] rounded-md py-12">
-                <p class="text-center text-blue-500 font-bold text-4xl mb-8 w-[12em]">
+                <p class="text-center text-blue-500 font-bold text-2xl md:text-4xl mb-8 w-[12em]">
                      Inscrivez-vous aux actualités EGEE
                 </p>
-                <p class="text-center text-xl px-4 w-[20em] md:w-[38em]">
+                <p class="text-center text-lg md:text-xl px-4 w-[16em] md:w-[32em]">
                     Soyez le premier informé des événements à venir, des ressources
                      éducatives et des opportunités de vous impliquer.
                 </p>
 
-                <div class="flex items-center justify-center h-16 bg-blue-300 rounded-md my-16 p-4">
+                <div class="flex items-center justify-center h-16 bg-blue-300 rounded-md my-16 p-4 w-[16em] md:w-auto">
                     <input 
                         type="email" 
                         placeholder="Saisissez votre email" 
-                        class="flex-1 bg-transparent outline-none placeholder-gray-700"
+                        class="bg-transparent outline-none placeholder-gray-700"
                     />
                 
-                    <button class="flex justify-center items-center w-12 h-10 ml-10 rounded-xl bg-blue-500 transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
+                    <button class="flex justify-center items-center ml-auto w-12 h-10 rounded-xl bg-blue-500 transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
                         <img src="assets/img/cheveron-right.svg" alt="flèche droite" class="w-8">
                     </button>
                 </div>
@@ -187,7 +180,7 @@
 
         </article>
         
-        <?php include 'pages/includes/footer.php'; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
 
     </body>
 </html>
