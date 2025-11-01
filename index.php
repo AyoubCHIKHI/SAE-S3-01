@@ -14,16 +14,16 @@
 
     <body>
         
-        <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
         
         <article id="hero_section" class="flex flex-col-reverse md:flex-row gap-4 md:gap-16 lg:gap-52 justify-center items-center py-12">
-            <section id="partie_blanc" class="flex flex-col justify-center items-center mt-16">
-                <div id="slogan_large" class="text-3xl md:text-4xl lg:text-5xl md:pl-12 font-bold whitespace-nowrap">
+            <section class="flex flex-col justify-center items-center mt-16">
+                <div id="slogan_large" class="text-2xl md:text-4xl lg:text-5xl md:pl-12 font-bold whitespace-nowrap">
                     <p>Transmetrre le savoir,</p>
                     <p class="indent-8">construire <span id="bloc_blue" class="">l'avenir</span></p>
                 </div>
 
-                <p class="text-center w-[22rem] text-base py-8">
+                <p class="text-center md:w-[22rem] text-base py-8">
                     Chacun peut avoir besoin d’un oeil extérieur, averti, objectif et lucide sur le monde du travail.
                 </p>
 
@@ -180,7 +180,7 @@
 
         </article>
         
-        <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
 
     </body>
 </html>

@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
 
 
         <section class="banner">
@@ -72,6 +72,6 @@
             </ul>
         </section>
 
-        <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
     </body>
 </html>

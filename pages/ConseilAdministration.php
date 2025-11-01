@@ -38,7 +38,7 @@
         </style>
     </head>
     <body>
-        <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
 
         <section class="banner">
             <h2>Bureau EGEE</h2>
@@ -51,6 +51,6 @@
             </div>
         </section>
 
-        <?php include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
+        <?php require $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
     </body>
 </html>
