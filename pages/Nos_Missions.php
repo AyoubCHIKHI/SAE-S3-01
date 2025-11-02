@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <?php require 'includes/navbar.php' ?>
+    <?php require $_SERVER['DOCUMENT_ROOT'] .'/includes/navbar.php' ?>
 
     <section class="banner">
         <h2>Notre mission</h2>

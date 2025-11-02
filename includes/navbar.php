@@ -45,4 +45,4 @@
     <img src="/assets/img/icon_menu_burger.svg" alt="icon_menu_burger" class="md:hidden w-8 mr-4 ml-auto flex-shrink-0 transition transform hover:scale-125 cursor-pointer">
 </nav>
 
-<?php require 'don_modal.php'; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'].'/includes/don_modal.php'; ?>
