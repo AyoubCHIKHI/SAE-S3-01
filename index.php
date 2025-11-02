@@ -49,9 +49,13 @@
 
         <article id="notre_mission" class="flex flex-col bg-blue-300 justify-center items-center mt-16 py-16">
     
-            <div class="flex justify-center items-center gap-4">
-                <img src="assets/img/accueil/ic_mission.svg" alt="notre_mission_icon" class="w-9">
-                <p class="font-bold text-blue-950 text-3xl">Notre mission</p>
+            <div class="flex justify-center items-center text-blue-950 gap-4">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor" version="1.1" id="Layer_1"  viewBox="0 0 511.999 511.999" xml:space="preserve">
+                    <path d="M297.607,4.825H196.939c-9.024,0-16.339,7.316-16.339,16.339c0,10.57,0,92.615,0,106.756L89.01,310.019l120.683-46.653    c4.103-1.586,8.673-1.45,12.677,0.377l76.878,35.096l-85.97-170.919v-25.596h84.328c9.024,0,16.339-7.316,16.339-16.339V21.165    C313.946,12.141,306.63,4.825,297.607,4.825z"/>
+                    <path d="M392.12,483.493c-15.622-31.061-53.925-107.224-69.417-138.024l-107.645-49.142L67.135,353.511L1.759,483.493    c-5.454,10.845,2.437,23.681,14.596,23.681h361.168C389.66,507.174,397.584,494.355,392.12,483.493z"/>
+                    <path d="M510.239,483.493L392.12,248.656c-6.028-11.988-23.177-11.965-29.194,0l-26.167,52.031    c32.068,63.755,12.981,25.806,84.556,168.123c6.114,12.155,6.867,25.909,2.423,38.364h71.905    C507.785,507.174,515.702,494.352,510.239,483.493z"/>
+                </svg>
+                <p class="font-bold text-3xl">Notre mission</p>
             </div>
 
             <div id="carousel-mission" class="relative flex justify-center items-center w-full overflow-hidden">
@@ -88,10 +92,11 @@
 
         </article>
 
-        <article id="nos_actions" class="flex flex-col justify-center items-center bg-blue-200 mb-36">
-            <p class="text-blue-950 font-bold text-4xl my-24">
-                Nos actions
-            </p>
+        <article id="nos_actions" class="flex flex-col justify-center items-center bg-blue-200 pt-20 pb-12">
+            <div class="flex justify-center items-center text-blue-950 gap-4 mb-12"> 
+                <img class="w-10" src="assets/img/accueil/ic_nos_actions.svg" alt="Hand_Charity_Heart_icon"> 
+                <p class="font-bold text-3xl">Nos actions</p>
+            </div>
 
             <section id="présentation_action" class="flex flex-col md:flex-row justify-between items-center w-full lg:w-auto lg:gap-20 mx-12">
                 
@@ -132,8 +137,43 @@
 
         </article>
 
+        <article id="faites_un_don" class="flex flex-col items-center justify-center py-32"> 
+            
+            <div class="flex justify-center items-center text-blue-500 gap-2 pb-8">
+                <p class="font-bold text-4xl ">
+                    Faites un don
+                </p>
+                <svg class="w-8 h-8 rotate-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z"/>
+                </svg>
+            </div>
+
+             <p class="text-center text-xl w-[16em] md:w-[28em]">
+                Votre soutien est essentiel à notre mission !
+                Ensemble, aidons les jeunes à mieux construire leur avenir professionnel.
+            </p>
+
+            <section id="proposition_montant" class="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
+
+                <p class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">10€</p>
+                <p class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">25€</div>
+                <p class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">50€</div>
+                <p class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">100€</div>
+                <p class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">300€</div>
+                <div class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg">
+                    <!-- [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none ; Permet de cacher les boutons incrémentation/décrémentation -->
+                    <input type="number" placeholder="autre" class="w-full h-full bg-transparent text-center text-lg focus:outline-none focus:ring-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"/>
+                </div>
+
+
+            </section>
+
+            <button class="bg-blue-800 text-white rounded-3xl px-4 py-2">Suivant</button>
+
+        </article>
+
         <article id="egee_en_france" class="flex flex-col justify-center items-center my-22">
-            <p class="text-blue-500 font-bold text-4xl pb-32">
+            <p class="text-blue-500 font-bold text-3xl pb-32">
                 EGEE en France
             </p>
         
