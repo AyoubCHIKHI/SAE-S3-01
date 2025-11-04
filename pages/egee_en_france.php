@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,36 +9,53 @@
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <link rel="stylesheet" href="../assets/css/don.css">
     <link rel="stylesheet" href="../assets/css/egee_en_france.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-    
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
-    <script src="../assets/js/egee_en_france.js" defer></script>
+
+    <style type="text/css">
+        g path {
+            stroke: #000000;
+            stroke-width: 1px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-opacity: .25;
+            fill: #86aae0;
+        }
+
+        g:hover path {
+            fill: #86cce0;
+        }
+
+        g path:hover {
+            fill: #86eee0;
+        }
+    </style>
+
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
 
-    <?php require $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php'; ?>
 
-    <!-- Titre et image -->
-    <div class="flex justify-center">
-        <h1 class="text-center font-bold text-8xl mt-10 ml-20 mx-10 pr-10">
-            EGEE Paris proche <br> de chez vous
+    <div class="flex flex-col justify-center items-center">
+        <h1 class="text-center font-bold text-5xl mt-10 ml-20 mx-10 pr-10">
+            <p>EGEE Paris</p>
+            <p>proche de chez vous</p>
         </h1>
-    <!--    <img src="../assets/img/egee_en_france/carte.png" alt="carte" class="w-96">-->
+
+        <p class="text-2xl text-center mt-20 px-12 lg:px-48 xl:px-96">
+            EGEE Paris est présent dans toutes les régions de France grâce à un réseau d’antennes locales.
+            Ces antennes, animées par des bénévoles expérimentés, accompagnent les jeunes, les entrepreneurs et les acteurs locaux.
+            Une présence nationale pour être au plus près des besoins de chaque territoire.
+        </p>
+
     </div>
 
-    <!-- Texte descriptif -->
-    <p class="text-3xl flex justify-center text-center ml-10 mt-20">
-        EGEE Paris est présent dans toutes les régions de <br> France grâce à un réseau d’antennes locales.
-        Ces antennes, animées par des bénévoles <br> expérimentés, accompagnent les jeunes, les  entrepreneurs et les acteurs locaux.
-        Une présence nationale pour être au plus près <br> des besoins de chaque territoire.
-    </p>
-
     <!-- Carte et informations -->
-    <div class="flex flex-col md:flex-row mt-10 gap-20 ml-10 justify-center items-center">
-        <div id="map"></div>
+    <div class="flex flex-col md:flex-row mt-10 gap-20 justify-center items-center">
 
-        <div class = "flex flex-col"  >
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/carte_interactive.php' ?>
+
+        <div class="flex flex-col">
             <ul class="border-2 border-blue-300 rounded py-2 px-4 mt-10">
                 <li class="mb-2">EGEE ILE-DE-FRANCE :</li>
                 <li class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50 mb-2"
@@ -82,7 +100,7 @@
                 <li class="mb-2">Délégation régionale GRAND EST :</li>
                 <li class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50 mb-2"
                     onclick="window.open('https://www.linkedin.com/in/sylvain-valsasina-7a3b52122/?originalSubdomain=fr')">
-                    Délégué régional  : Sylvain VALSASINA
+                    Délégué régional : Sylvain VALSASINA
                 </li>
                 <li class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50 mb-2"
                     onclick="window.open('https://www.google.fr/maps/place/Maison+de+l\'entreprise/@48.7049911,6.126948,16z/data=!3m2!4b1!5s0x4794a2da310ae0a5:0x6f27cb4ae9388a53!4m6!3m5!1s0x4794a2da30ef9b33:0xcdfa5c402c99932a!8m2!3d48.7049876!4d6.1295229!16s%2Fg%2F11cs68g93l?hl=fr&entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D', '_blank')">
@@ -98,12 +116,11 @@
                 </li>
             </ul>
 
-
-
         </div>
     </div>
 
-    <?php require $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
-    
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
+    <script src="../assets/js/egee_en_france.js"></script>
 </body>
+
 </html>

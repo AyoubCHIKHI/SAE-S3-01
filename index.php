@@ -153,6 +153,21 @@
             Ensemble, aidons les jeunes à mieux construire leur avenir professionnel.
         </p>
 
+        <div class="flex items-center gap-x-4 pt-6">
+            <label for="toggle_don" class="text-base text-gray-700">Une fois</label>
+            <label for="toggle_don" class="relative inline-block w-14 h-8 cursor-pointer">
+                <input type="checkbox" id="toggle_don" class="peer sr-only">
+                <span class="absolute inset-0 bg-gray-300 rounded-full transition-colors duration-200 ease-in-out 
+                    peer-checked:bg-blue-600 peer-disabled:bg-gray-200 peer-disabled:opacity-60">
+                </span>
+                <span class="absolute top-1/2 left-1 -translate-y-1/2 size-6 bg-white rounded-full shadow-md 
+                    transition-transform duration-200 ease-in-out peer-checked:translate-x-6">
+                </span>
+            </label>
+            <label for="toggle_don" class="text-base text-gray-700">Chaque mois</label>
+        </div>
+
+
         <section id="proposition_montant" class="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
 
             <p class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">10€</p>
@@ -160,11 +175,10 @@
             <p class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">50€</div>
             <p class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">100€</div>
             <p class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">300€</div>
-            <div class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition duration-300 hover:shadow-lg">
+            <div class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition duration-300 hover:shadow-lg hover:border-2 hover:border-blue-800">
                 <!-- [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none ; Permet de cacher les boutons incrémentation/décrémentation -->
                 <input type="number" placeholder="autre" class="w-full h-full bg-transparent text-center text-lg focus:outline-none focus:ring-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" />
             </div>
-
 
         </section>
 
