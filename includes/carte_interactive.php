@@ -1,5 +1,5 @@
 <div class="flex flex-col">
-	<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="105 18 568 567" width="668" height="667">
+	<svg class="size-[20em] md:size-[30em] lg:size-[40em]" id="carte-france-svg" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="105 18 568 567">
 		<g class="region region-11" data-nom="Île-de-France" data-code_insee="11">
 			<path data-nom="Paris" data-numerodepartement="75" class="region-11 departement departement-75 departement-paris" d="m641.8 78.3l-0.2 3.8-1 2.6-8.3-1.7-6-0.6-5.2 3h-4l-2.5-0.3-0.4-0.1-13.5-5-3-3.8-4.3-1.9-0.5-0.2 0.4-1.9 1.3-3.1 2.7-2.1 2.9-1.1 3.9 0.5h0.1l0.9-2.2 7.1-4.6 14-0.1 1.8 3.6 1.8 2.4 0.6 0.9 0.1 0.4 0.5 1.2 0.4 5.4 0.4 1.8v0.1l-0.3 0.8 0.1 3.6 0.6-0.5 1.6-1.6 2-0.5 2-0.5zm-245 76.4l-3.2-0.5-2.5 1.7 3 3.5 5.3-0.1-1.8-1.9z" />
 			<path data-nom="Seine-et-Marne" data-numerodepartement="77" class="region-11 departement departement-77 departement-seine-et-marne" d="m441.1 176.1l-2.9 0.8 0.4 8.5-15.4 3-0.2 5.8-3.9 5.4-11.2 2.7-9.2-0.7 2.6-1.5 0.6-2.7-4.2-4.3-0.7-3.1 3.4-4.8 4-17.2-0.5-1 1.1-4.1-0.3-2.9v-0.1l-1.3-4.7 1.3-2.5-1.7-5.1 0.1-0.1 1.7-2.3-0.2-2 6.9 1 2-2.2 2.5 1.6 8.1-2.9 2.6 0.7 1.8 2.5-0.7 2.8 3.9 4.2 9.3 6-0.4 2-2.6 2.2 3.5 8.3 2.6 1.7z" />

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../assets/css/egee_en_france.css">
 
     <style type="text/css">
-        path {
+        g path {
             stroke: #000000;
             stroke-width: 1px;
             stroke-linecap: round;
@@ -36,23 +36,22 @@
 
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php'; ?>
 
-    <!-- Titre et image -->
-    <div class="flex justify-center">
-        <h1 class="text-center font-bold text-8xl mt-10 ml-20 mx-10 pr-10">
-            EGEE Paris proche <br> de chez vous
+    <div class="flex flex-col justify-center items-center">
+        <h1 class="text-center font-bold text-5xl mt-10 ml-20 mx-10 pr-10">
+            <p>EGEE Paris</p>
+            <p>proche de chez vous</p>
         </h1>
-        <!--    <img src="../assets/img/egee_en_france/carte.png" alt="carte" class="w-96">-->
+
+        <p class="text-2xl text-center mt-20 px-12 lg:px-48 xl:px-96">
+            EGEE Paris est présent dans toutes les régions de France grâce à un réseau d’antennes locales.
+            Ces antennes, animées par des bénévoles expérimentés, accompagnent les jeunes, les entrepreneurs et les acteurs locaux.
+            Une présence nationale pour être au plus près des besoins de chaque territoire.
+        </p>
+
     </div>
 
-    <!-- Texte descriptif -->
-    <p class="text-3xl flex justify-center text-center ml-10 mt-20">
-        EGEE Paris est présent dans toutes les régions de <br> France grâce à un réseau d’antennes locales.
-        Ces antennes, animées par des bénévoles <br> expérimentés, accompagnent les jeunes, les entrepreneurs et les acteurs locaux.
-        Une présence nationale pour être au plus près <br> des besoins de chaque territoire.
-    </p>
-
     <!-- Carte et informations -->
-    <div class="flex flex-col md:flex-row mt-10 gap-20 ml-10 justify-center items-center">
+    <div class="flex flex-col md:flex-row mt-10 gap-20 justify-center items-center">
 
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/carte_interactive.php' ?>
 
