@@ -7,7 +7,6 @@
     <title>Je fais un don à EGEE | Bénévolat de compétences</title>
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../assets/css/don.css">
 </head>
 
 <body class="flex flex-col h-screen">
@@ -57,7 +56,8 @@
                         type="text"
                         name="nom"
                         placeholder="Votre nom"
-                        class="border-2 rounded-md p-2 placeholder-gray-600 mt-2">
+                        class="border-2 rounded-md p-2 placeholder-gray-600 mt-2"
+                        required>
                 </div>
 
                 <div class="flex flex-col">
@@ -67,7 +67,8 @@
                         type="text"
                         name="prénom"
                         placeholder="Votre prénom"
-                        class="border-2 rounded-md p-2 placeholder-gray-600 mt-2">
+                        class="border-2 rounded-md p-2 placeholder-gray-600 mt-2" 
+                        required>
                 </div>
 
             </div>
@@ -78,15 +79,8 @@
                 type="email"
                 name="email"
                 placeholder="votremail@mail.com"
-                class="border-2 rounded-md p-2 placeholder-gray-600 mt-2">
-
-            <label for="telephone" class="font-bold mt-4">Numéro:</label>
-            <input
-                id="telephone"
-                type="tel"
-                name="telephone"
-                placeholder="0123456789"
-                class="border-2 rounded-md p-2 placeholder-gray-600 mt-2">
+                class="border-2 rounded-md p-2 placeholder-gray-600 mt-2"
+                required>
 
             <label for="message" class="font-bold mt-4">Votre message:</label>
             <textarea

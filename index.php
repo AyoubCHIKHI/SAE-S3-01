@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bénévolat de compétences - Association EGEE | Des seniors bénévoles au service de vos projets</title>
-    <link rel="stylesheet" href="assets/css/don.css">
-
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <script src="assets/js/carousel.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -74,7 +72,9 @@
 
                 <div class="slide w-full flex-shrink-0 flex justify-center items-center">
                     <p class="text-center text-xl w-[16em] md:w-[32em] py-16">
-                        EGEE s’engage à <b>transmettre l’expérience</b> et les compétences des seniors au service des générations futures et du tissu économique français.</p>
+                        EGEE s’engage à <b>transmettre l’expérience</b> et les compétences des seniors au service des générations futures et du tissu économique français.
+                        <span class="underline decoration-dotted transform transition duration-300 hover:text-blue-600 hover:scale-105"><a href="/pages/Nos_Missions.php">Découvrez toutes nos missions en détaille ↝</a></span>
+                    </p>
                 </div>
 
             </div>
@@ -170,12 +170,12 @@
 
         <section id="proposition_montant" class="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
 
-            <p class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">10€</p>
-            <p class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">25€</div>
-            <p class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">50€</div>
-            <p class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">100€</div>
-            <p class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">300€</div>
-            <div class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition duration-300 hover:shadow-lg hover:border-2 hover:border-blue-800">
+            <p class="don-montant flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">10€</p>
+            <p class="don-montant flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">25€</p>
+            <p class="don-montant flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">50€</p>
+            <p class="don-montant flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">100€</p>
+            <p class="don-montant flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition hover:bg-blue-300 hover:border-2 hover:border-blue-800 duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">300€</p>
+            <div id="autreMontant" class="flex items-center justify-center h-28 w-44 bg-blue-100 rounded-md text-lg transform transition duration-300 hover:shadow-lg hover:border-2 hover:border-blue-800">
                 <!-- [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none ; Permet de cacher les boutons incrémentation/décrémentation -->
                 <input type="number" placeholder="autre" class="w-full h-full bg-transparent text-center text-lg focus:outline-none focus:ring-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" />
             </div>
@@ -188,7 +188,7 @@
 
     </article>
 
-    <article id="egee_en_france" class="flex flex-col items-center justify-center bg-blue-500 mb-16 p-8 text-white">
+    <article id="egee_en_france" class="flex flex-col items-center justify-center bg-blue-900 mb-16 p-8 text-white">
 
         <div>
             <div class="flex justify-start items-center gap-3 ">
@@ -215,7 +215,7 @@
                 </div>
             </div>
 
-            <button class="my-6 bg-blue-900 text-center px-4 py-2 rounded-md rounded-md transform transition duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+            <button class="my-6 bg-blue-500 text-center px-4 py-2 rounded-md transform transition duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
                 Découvrez tous nos articles
             </button>
         </div>

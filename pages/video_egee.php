@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bénévolat de compétences - Association EGEE | Des seniors bénévoles au service de vos projets</title>
-        <link rel="stylesheet" href="../assets/css/don.css">
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
 

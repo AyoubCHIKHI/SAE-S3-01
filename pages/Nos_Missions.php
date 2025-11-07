@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Association EGEE - Notre mission</title>
     <link rel="stylesheet" href="../assets/css/StyleNotreMission.css">
-    <link rel="stylesheet" href="../assets/css/don.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>

@@ -1,34 +1,42 @@
+const fenetreDon = document.getElementById("fenetreDon");
+const contenuModal = document.getElementById("contenuModal");
+const fermerModal = document.getElementById("fermerModal");
+const montants = document.querySelectorAll(".don-montant");
+const autreMontant = document.getElementById("autreMontant");
+const btnOuvrir = document.getElementById("ouvrir-don");
 
+window.ouvrirDon = function () {
+fenetreDon.classList.remove("hidden");
+setTimeout(() => {
+    fenetreDon.classList.remove("opacity-0");
+    contenuModal.classList.remove("scale-95");
+}, 10);
+};
 
-const btnOuvrirDon = document.getElementById('ouvrir-don');
-const fondAssombri = document.getElementById('fond-assombri');
-const modales = document.querySelectorAll('.modale');
-const btnFermer = document.getElementById('fermer-tout');
-
-function ouverture() {
-    fondAssombri.classList.remove('hidden');
-    fondAssombri.classList.remove('opacity-0');
-    fondAssombri.classList.add('opacity-100');
-    btnFermer.classList.remove('hidden');
-
-    modales.forEach(modale => {
-        modale.classList.remove('hidden');
-        setTimeout(() => modale.classList.add('afficher'), 10);
-    });
+function fermerDon() {
+fenetreDon.classList.add("opacity-0");
+contenuModal.classList.add("scale-95");
+setTimeout(() => fenetreDon.classList.add("hidden"), 300);
 }
 
-function fermeture() {
-    fondAssombri.classList.add('hidden');
-    fondAssombri.classList.remove('opacity-100');
-    fondAssombri.classList.add('opacity-0');
-    modales.forEach(modale => modale.classList.remove('afficher'));
-    btnFermer.classList.add('hidden');
+btnOuvrir.addEventListener("click", ouvrirDon);
+fermerModal.addEventListener("click", fermerDon);
+fenetreDon.addEventListener("click", (e) => {
+if (e.target === fenetreDon) fermerDon();
+});
 
-    setTimeout(() => {
-        fondAssombri.classList.add('hidden');
-        modales.forEach(modale => modale.classList.add('hidden'));
-    }, 300);
-}
+montants.forEach((montant) => {
+montant.addEventListener("click", () => {
+    montants.forEach((m) =>
+    m.classList.remove("bg-blue-300", "border-2", "border-blue-800")
+    );
+    montant.classList.add("bg-blue-300", "border-2", "border-blue-800");
+    autreMontant.value = "";
+});
+});
 
-btnOuvrirDon.addEventListener('click', ouverture);
-btnFermer.addEventListener('click', fermeture);
+autreMontant.addEventListener("input", () => {
+montants.forEach((m) =>
+    m.classList.remove("bg-blue-300", "border-2", "border-blue-800")
+);
+});

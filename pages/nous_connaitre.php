@@ -7,7 +7,6 @@
     <title>Nous connaître | Bénévolat de compétences - Association EGEE</title>
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../assets/css/don.css">
 </head>
 
 <body>
@@ -30,7 +29,7 @@
             Les objectifs de l’association, son organisation, ses résultats…
         </h3>
 
-        <div class="grid md:grid-cols-3 gap-x-4 gap-y-4 p-16 justify-items-center">
+        <div class="grid md:grid-cols-3 gap-x-4 gap-y-4 p-16 justify-items-stretch">
 
             <a href="Nos_Missions.php"
                 class="flex flex-col items-center justify-center shadow-md rounded-md p-12 bg-blue-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">

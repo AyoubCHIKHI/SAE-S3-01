@@ -7,7 +7,6 @@
     <title>Où sommes-nous | Bénévolat de compétences</title>
 
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
-    <link rel="stylesheet" href="../assets/css/don.css">
     <link rel="stylesheet" href="../assets/css/egee_en_france.css">
 
     <style type="text/css">
@@ -38,12 +37,12 @@
 
     <div class="flex flex-col justify-center items-center">
         <h1 class="text-center font-bold text-5xl mt-10 ml-20 mx-10 pr-10">
-            <p>EGEE Paris</p>
+            <p>Association EGEE</p>
             <p>proche de chez vous</p>
         </h1>
 
         <p class="text-2xl text-center mt-20 px-12 lg:px-48 xl:px-96">
-            EGEE Paris est présent dans toutes les régions de France grâce à un réseau d’antennes locales.
+            EGEE est présent dans toutes les régions de France grâce à un réseau d’antennes locales.
             Ces antennes, animées par des bénévoles expérimentés, accompagnent les jeunes, les entrepreneurs et les acteurs locaux.
             Une présence nationale pour être au plus près des besoins de chaque territoire.
         </p>
