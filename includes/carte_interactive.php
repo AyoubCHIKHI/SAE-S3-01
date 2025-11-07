@@ -1,7 +1,20 @@
-<div class="flex flex-col">
+<div class="relative flex flex-col">
 	<svg class="size-[20em] md:size-[30em] lg:size-[40em]" id="carte-france-svg" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="105 18 568 567">
 		<g class="region region-11" data-nom="Île-de-France" data-code_insee="11">
 			<path data-nom="Paris" data-numerodepartement="75" class="region-11 departement departement-75 departement-paris" d="m641.8 78.3l-0.2 3.8-1 2.6-8.3-1.7-6-0.6-5.2 3h-4l-2.5-0.3-0.4-0.1-13.5-5-3-3.8-4.3-1.9-0.5-0.2 0.4-1.9 1.3-3.1 2.7-2.1 2.9-1.1 3.9 0.5h0.1l0.9-2.2 7.1-4.6 14-0.1 1.8 3.6 1.8 2.4 0.6 0.9 0.1 0.4 0.5 1.2 0.4 5.4 0.4 1.8v0.1l-0.3 0.8 0.1 3.6 0.6-0.5 1.6-1.6 2-0.5 2-0.5zm-245 76.4l-3.2-0.5-2.5 1.7 3 3.5 5.3-0.1-1.8-1.9z" />
+
+			<g transform="translate(635, 60) scale(0.02)">
+				<path
+					d="M174,5248.219 C172.895,5248.219 172,5247.324 172,5246.219 C172,5245.114 172.895,5244.219 174,5244.219 
+             C175.105,5244.219 176,5245.114 176,5246.219 C176,5247.324 175.105,5248.219 174,5248.219 
+             M174,5239 C170.134,5239 167,5242.134 167,5246 
+             C167,5249.866 174,5259 174,5259 
+             C174,5259 181,5249.866 181,5246 
+             C181,5242.134 177.866,5239 174,5239"
+					fill="#102e89"
+					transform="translate(-167 -5239)" />
+			</g>
+
 			<path data-nom="Seine-et-Marne" data-numerodepartement="77" class="region-11 departement departement-77 departement-seine-et-marne" d="m441.1 176.1l-2.9 0.8 0.4 8.5-15.4 3-0.2 5.8-3.9 5.4-11.2 2.7-9.2-0.7 2.6-1.5 0.6-2.7-4.2-4.3-0.7-3.1 3.4-4.8 4-17.2-0.5-1 1.1-4.1-0.3-2.9v-0.1l-1.3-4.7 1.3-2.5-1.7-5.1 0.1-0.1 1.7-2.3-0.2-2 6.9 1 2-2.2 2.5 1.6 8.1-2.9 2.6 0.7 1.8 2.5-0.7 2.8 3.9 4.2 9.3 6-0.4 2-2.6 2.2 3.5 8.3 2.6 1.7z" />
 			<path data-nom="Yvelines" data-numerodepartement="78" class="region-11 departement departement-78 departement-yvelines" d="m364.1 158.1l-3.6-6.6-1.8-5.8 2.3-2.6 3.8 0.1 9.5 0.8 9 3.6 5.5 6.1-2 3.1 3.2 5.2-7.1 5.4-1.6 2.6 0.7 2.9-4.6 8.6-3.1 0.7-2.3-2.2-1.2-5.6-6.2-5.4z" />
 			<path data-nom="Essonne" data-numerodepartement="91" class="region-11 departement departement-91 departement-essonne" d="m401.6 164.8l2.3 2.2 0.5 1-4 17.2-3.4 4.8-3.7-0.6-2.8 1.8-1.5-2.7-1.9 2.9-6.9 0.7-2.8-10.6 4.6-8.6-0.7-2.9 1.6-2.6 7.1-5.4v-0.1l3.7 1.6 5.1 2.1z" />
@@ -128,7 +141,38 @@
 		© <a href="https://github.com/regisenguehard/carte-france-svg" class="hover:underline">carte-france-svg</a> — <a href="https://creativecommons.org/licenses/by/4.0/" class="hover:underline">CC BY 4.0</a>
 	</div>
 
+	<div id="pin_paris" class="absolute top-[21%] left-[51%] -translate-x-1/2 -translate-y-1/2 group">
+		<input type="checkbox" id="pin_paris_toggle" class="peer hidden md:hidden" />
+		<label for="pin_paris_toggle" class="block w-8 h-8 cursor-pointer md:cursor-auto">
+			<img src="../assets/img/egee_en_france/pin-fill-sharp-location.svg" alt="EGEE Île-de-France" class="w-8 h-8 transform transition duration-300 hover:scale-105" />
+		</label>
+		<div class="absolute -top-20 left-1/2 -translate-x-1/2 w-64 p-2 text-sm text-white bg-blue-900/90 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity duration-300 text-center">
+			<p class="font-semibold">EGEE ILE-DE-FRANCE</p>
+			<p>14, Villa de Lourcine – 75014 PARIS</p>
+		</div>
+	</div>
 
+	<div id="pin_bretagne" class="absolute top-[29%] left-[22%] -translate-x-1/2 -translate-y-1/2 group">
+		<input type="checkbox" id="pin_bretagne_toggle" class="peer hidden md:hidden" />
+		<label for="pin_bretagne_toggle" class="block w-8 h-8 cursor-pointer md:cursor-auto">
+			<img src="../assets/img/egee_en_france/pin-fill-sharp-location.svg" alt="EGEE Bretagne" class="w-8 h-8 transform transition duration-300 hover:scale-105" />
+		</label>
+		<div class="absolute -top-20 left-1/2 -translate-x-1/2 w-64 p-2 text-sm text-white bg-blue-900/90 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity duration-300 text-center">
+			<p class="font-semibold">EGEE BRETAGNE</p>
+			<p>CCI Bretagne – 2 avenue de la Préfecture – 35042 Rennes Cédex</p>
+		</div>
+	</div>
+
+	<div id="pin_grand_est" class="absolute top-[22%] left-[78%] -translate-x-1/2 -translate-y-1/2 group">
+		<input type="checkbox" id="pin_grand_est_toggle" class="peer hidden md:hidden" />
+		<label for="pin_grand_est_toggle" class="block w-8 h-8 cursor-pointer md:cursor-auto">
+			<img src="../assets/img/egee_en_france/pin-fill-sharp-location.svg" alt="Délégation régionale GRAND EST" class="w-8 h-8 transform transition duration-300 hover:scale-105" />
+		</label>
+		<div class="absolute -top-20 left-1/2 -translate-x-1/2 w-64 p-2 text-sm text-white bg-blue-900/90 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity duration-300 text-center">
+			<p class="font-semibold">Délégation régionale GRAND EST</p>
+			<p>Maison de l’Entreprise – 8, rue Alfred Kastler – 54522 Maxéville cédex</p>
+		</div>
+	</div>
 
 
 </div>

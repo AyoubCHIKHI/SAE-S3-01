@@ -49,8 +49,7 @@
 
     </div>
 
-    <!-- Carte et informations -->
-    <div class="flex flex-col md:flex-row mt-10 gap-20 justify-center items-center">
+    <main class="flex flex-col md:flex-row mt-10 gap-20 justify-center items-center">
 
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/carte_interactive.php' ?>
 
@@ -116,7 +115,7 @@
             </ul>
 
         </div>
-    </div>
+    </main>
 
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
     <script src="../assets/js/egee_en_france.js"></script>
