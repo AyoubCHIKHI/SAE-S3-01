@@ -21,9 +21,10 @@
                 <p class="indent-8">construire <span id="bloc_blue" class="">l'avenir</span></p>
             </div>
 
-            <p class="text-center md:w-[22rem] text-base py-8">
+            <p class="text-center px-24 md:px-0 text-base py-8 md:max-w-md mx-auto">
                 Chacun peut avoir besoin d’un oeil extérieur, averti, objectif et lucide sur le monde du travail.
             </p>
+
 
             <div class="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-16">
                 <button id="ouvrir-don" class="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
@@ -92,50 +93,46 @@
 
     </article>
 
-    <article id="nos_actions" class="flex flex-col justify-center items-center bg-blue-200 pt-20 pb-12">
-        <div class="flex justify-center items-center text-blue-950 gap-4 mb-12">
-            <img class="w-7" src="assets/img/accueil/ic_nos_actions.svg" alt="Hand_Charity_Heart_icon">
-            <p class="font-bold text-3xl">Nos actions</p>
+    <article id="nos_actions" class="flex flex-col items-center bg-blue-200 pt-20 pb-12 px-4 sm:px-6 md:px-12">
+
+        <div class="flex items-center text-blue-950 gap-4 mb-12">
+            <img class="w-7" src="assets/img/accueil/ic_nos_actions.svg" alt="Nos actions icon">
+            <h2 class="font-bold text-3xl sm:text-4xl">Nos actions</h2>
         </div>
 
-        <section id="présentation_action" class="flex flex-col md:flex-row justify-between items-center w-full lg:w-auto lg:gap-20 mx-12">
+        <section id="présentation_action" class="flex flex-wrap justify-center gap-6 w-full max-w-6xl">
 
-            <div class="flex flex-col items-center justify-center w-72 gap-3 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4 cursor-pointer">
-                <img src="assets/img/accueil/education.png" alt="les_étudiants" class="w-62 h-52 md:w-44 md:h-56 rounded-md object-cover">
-                <p class="font-bold text-xl">Education</p>
-                <p class="text-center text-sm lg:text-base">Préparer les jeunes à leur future vie professionnelle</p>
-                <a href="education.php" class="hidden md:block">
-                    <div class="w-8 h-8 rounded-full bg-black mt-4">
-                        <img src="assets/img/cheveron-right.svg" class="w-48">
-                    </div>
+            <div class="group flex flex-col items-center bg-blue-100 rounded-md shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 p-4 cursor-pointer flex-1 min-w-[250px] max-w-[320px]">
+                <img src="assets/img/accueil/education.png" alt="Education illustration" class="w-full aspect-[4/3] rounded-md object-cover">
+                <h3 class="font-bold text-xl mt-3 text-center">Education</h3>
+                <p class="text-center text-sm sm:text-base mt-1">Préparer les jeunes à leur future vie professionnelle</p>
+                <a href="education.php" class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
+                    <img src="assets/img/cheveron-right.svg" class="w-4 h-4" alt="Voir plus">
                 </a>
             </div>
 
-            <div class="flex flex-col items-center justify-center w-72 gap-3 md:mb-28 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4 cursor-pointer">
-                <img src="assets/img/accueil/emploie.png" alt="" class="w-62 h-52 rounded-md object-cover">
-                <p class="font-bold text-xl">Emploi</p>
-                <p class="text-center text-base">Accompagner l’entrée dans la vie active et le retour à l’emploi</p>
-                <a href="emploie.php" class="hidden md:block">
-                    <div class="w-8 h-8 rounded-full bg-black mt-4">
-                        <img src="assets/img/cheveron-right.svg" class="w-8">
-                    </div>
+            <div class="group flex flex-col items-center bg-blue-100 rounded-md shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 p-4 cursor-pointer flex-1 min-w-[250px] max-w-[320px]">
+                <img src="assets/img/accueil/emploie.png" alt="Emploi illustration" class="w-full aspect-[4/3] rounded-md object-cover">
+                <h3 class="font-bold text-xl mt-3 text-center">Emploi</h3>
+                <p class="text-center text-sm sm:text-base mt-1">Accompagner l’entrée dans la vie active et le retour à l’emploi</p>
+                <a href="emploie.php" class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
+                    <img src="assets/img/cheveron-right.svg" class="w-4 h-4" alt="Voir plus">
                 </a>
             </div>
 
-            <div class="flex flex-col items-center justify-center w-72 gap-3 transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg rounded-md py-4 cursor-pointer">
-                <img src="assets/img/accueil/entreprise.webp" alt="" class="w-62 h-52 md:w-44 md:h-56 rounded-md object-cover">
-                <p class="font-bold text-xl">Entreprise</p>
-                <p class="text-center text-sm lg:text-base">Soutenir les entrepreneurs dans la création, la croissance et les difficultés</p>
-                <a href="entreprise.php" class="hidden md:block">
-                    <div class="w-8 h-8 rounded-full bg-black mt-4">
-                        <img src="assets/img/cheveron-right.svg" class="w-8">
-                    </div>
+            <div class="group flex flex-col items-center bg-blue-100 rounded-md shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 p-4 cursor-pointer flex-1 min-w-[250px] max-w-[320px]">
+                <img src="assets/img/accueil/entreprise.webp" alt="Entreprise illustration" class="w-full aspect-[4/3] rounded-md object-cover">
+                <h3 class="font-bold text-xl mt-3 text-center">Entreprise</h3>
+                <p class="text-center text-sm sm:text-base mt-1">Soutenir les entrepreneurs dans la création, la croissance et les difficultés</p>
+                <a href="entreprise.php" class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
+                    <img src="assets/img/cheveron-right.svg" class="w-4 h-4" alt="Voir plus">
                 </a>
             </div>
 
         </section>
-
     </article>
+
+
 
     <article id="faites_un_don" class="flex flex-col items-center justify-center py-32">
 
@@ -188,10 +185,10 @@
 
     </article>
 
-    <article id="egee_en_france" class="flex flex-col items-center justify-center bg-blue-900 mb-16 p-8 text-white">
+    <article id="egee_en_france" class="flex flex-col items-center justify-center bg-blue-800 mb-16 p-8 text-white">
 
         <div>
-            <div class="flex justify-start items-center gap-3 ">
+            <div class="flex justify-center md:justify-start items-center gap-3 ">
                 <img class="w-10" src="assets/img/accueil/ic_autialités.svg" alt="news_paper_icon">
                 <p class="font-bold text-3xl ">Acualités</p>
             </div>
@@ -200,7 +197,7 @@
                 Restez informés des temps forts et des projets de notre association
             </p>
 
-            <div id="ligne_articles" class="flex flex-col md:flex-row gap-8 my-8">
+            <div id="ligne_articles" class="flex flex-col items-center justify-center md:flex-row gap-8 my-8">
                 <div class="flex flex-col justify-center gap-2 rounded-md transform transition duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
                     <img src="assets/img/actualites/MOnswiller-614x460.png" alt="" class="w-72 h-56 border-2 border-black rounded-md shadow-md">
                     <p class="max-w-72 font-bold">Monswiller se prépare face aux crues !</p>
@@ -215,9 +212,12 @@
                 </div>
             </div>
 
-            <button class="my-6 bg-blue-500 text-center px-4 py-2 rounded-md transform transition duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
-                Découvrez tous nos articles
-            </button>
+            <div class="w-full flex justify-center md:justify-start">
+                <button class="my-6 bg-blue-500 text-center px-4 py-2 rounded-md transform transition duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+                    Découvrez tous nos articles
+                </button>
+            </div>
+
         </div>
 
 
