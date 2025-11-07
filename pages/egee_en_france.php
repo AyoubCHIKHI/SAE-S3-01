@@ -95,7 +95,7 @@
             </ul>
 
             <ul class="border-2 border-blue-300 rounded py-2 px-4 mt-10">
-                <li class="mb-2">Délégation régionale GRAND EST :</li>
+                <li class="mb-2">EGEE GRAND EST :</li>
                 <li class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50 mb-2"
                     onclick="window.open('https://www.linkedin.com/in/sylvain-valsasina-7a3b52122/?originalSubdomain=fr')">
                     Délégué régional : Sylvain VALSASINA
