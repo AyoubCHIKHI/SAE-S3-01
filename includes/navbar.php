@@ -7,26 +7,24 @@
     <div class="hidden md:flex gap-8 lg:gap-6 lg:mt-4 mx-auto whitespace-nowrap text-gray-500">
         <a href="/pages/nos_actions.php" class="flex gap-1 group hover:text-blue-400 ">
             Nos actions
-            <svg xmlns="http://www.w3.org/2000/svg" 
-                class="w-6 h-6 transform transition-transform duration-300 group-hover:-rotate-180" 
-                fill="currentColor" 
+            <svg xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 transform transition-transform duration-300 group-hover:-rotate-180"
+                fill="currentColor"
                 aria-hidden="true">
                 <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
             </svg>
         </a>
         <a href="/pages/egee_en_france.php" class="flex gap-1 group hover:text-blue-400">
             EGEE en France
-            <svg xmlns="http://www.w3.org/2000/svg" 
-                class="w-6 h-6 transform transition-transform duration-300 group-hover:-rotate-180" 
-                fill="currentColor" 
+            <svg xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 transform transition-transform duration-300 group-hover:-rotate-180"
+                fill="currentColor"
                 aria-hidden="true">
                 <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
             </svg>
         </a>
+        
         <a href="/pages/nous_connaitre.php" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">
-            Actualités
-        </a>
-        <a href="/pages/nous_connaitre.php" class="md:hidden lg:block relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">
             Nous connaitre
         </a>
         <a href="/pages/nous_contacter.php" class="md:hidden lg:block relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">
