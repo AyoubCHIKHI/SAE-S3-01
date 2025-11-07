@@ -21,28 +21,27 @@
         <img src="../assets/img/logo_egee_footer.png" alt="egee_logo"
             class="size-16 transform transition duration-300 hover:scale-105">
     </a>
-    <div id="info_section_footer" class="grid grid-cols-2 md:grid-cols-3 gap-8 ">
+    <div id="info_section_footer" class="grid grid-cols-2 md:grid-cols-3 gap-12 ">
+
         <div class="flex flex-col">
             <p class="font-bold text-xl mb-4 uppercase">Nos actions</p>
             <a href="/pages/Nos_Missions.php" class="transition hover:text-blue-500">Education</a>
             <a href="#" class="transition hover:text-blue-500">Emploi</a>
             <a href="#" class="transition hover:text-blue-500">Entreprise</a>
-            <a href="#" class="transition hover:text-blue-500">Formation</a>
         </div>
 
         <div class="flex flex-col">
-            <p class="font-bold text-xl mb-4 uppercase">Nos missions</p>
-            <a href="#" class="transition hover:text-blue-500">Education</a>
-            <a href="#" class="transition hover:text-blue-500">Emploi</a>
-            <a href="#" class="transition hover:text-blue-500">Entreprise</a>
-            <a href="#" class="transition hover:text-blue-500">Formation</a>
+            <p class="font-bold text-xl mb-4 uppercase">Notre missions</p>
+            <a href="/pages/Nos_Missions.php" class="transition hover:text-blue-500">Accompagner</a>
+            <a href="/pages/Nos_Missions.php" class="transition hover:text-blue-500">Conseiller</a>
+            <a href="/pages/Nos_Missions.php" class="transition hover:text-blue-500">Favoriser emploi</a>
         </div>
 
         <div class="flex flex-col">
             <p class="font-bold text-xl mb-4 uppercase">à propos</p>
             <a href="#" class="transition hover:text-blue-500">Mentions légales</a>
             <a href="/pages/nous_contacter.php" class="transition hover:text-blue-500">Contactez nous</a>
-            <a href="#" class="transition hover:text-blue-500">FAQ</a>
+            <a href="https://drive.google.com/file/d/1QO9TdzlWsWi8NJITOPsyEqNbs2jnA066/view" class="transition hover:text-blue-500">Nos engagements</a>
         </div>
     </div>
 </footer>
