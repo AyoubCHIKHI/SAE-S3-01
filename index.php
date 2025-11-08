@@ -185,7 +185,7 @@
 
     </article>
 
-    <article id="egee_en_france" class="flex flex-col items-center justify-center bg-blue-800 mb-16 p-8 text-white">
+    <article id="actualités" class="flex flex-col items-center justify-center bg-blue-900 mb-16 p-8 text-white">
 
         <div>
             <div class="flex justify-center md:justify-start items-center gap-3 ">
@@ -198,15 +198,15 @@
             </p>
 
             <div id="ligne_articles" class="flex flex-col items-center justify-center md:flex-row gap-8 my-8">
-                <div class="flex flex-col justify-center gap-2 rounded-md transform transition duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+                <div class="flex flex-col justify-center gap-2 rounded-md transform transition duration-300 hover:scale-105 hover:text-blue-300 cursor-pointer">
                     <img src="assets/img/actualites/MOnswiller-614x460.png" alt="" class="w-72 h-56 border-2 border-black rounded-md shadow-md">
                     <p class="max-w-72 font-bold">Monswiller se prépare face aux crues !</p>
                 </div>
-                <div class="flex flex-col justify-center gap-2 rounded-md transform transition duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+                <div class="flex flex-col justify-center gap-2 rounded-md transform transition duration-300 hover:scale-105 hover:text-blue-300 cursor-pointer">
                     <img src="assets/img/actualites/BTransmettre-accompagner-368x460-1.png" alt="" class="w-72 h-56 border-2 border-black rounded-md shadow-md object-cover">
                     <p class="max-w-72 font-bold">Transmettre, accompagner, s’engager ensemble</p>
                 </div>
-                <div class="flex flex-col justify-center gap-4 rounded-md transform transition duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+                <div class="flex flex-col justify-center gap-4 rounded-md transform transition duration-300 hover:scale-105 hover:text-blue-300 cursor-pointer">
                     <img src="assets/img/actualites/travail_en_mutation.jpg" alt="" class="w-72 h-56 border-2 border-black rounded-md shadow-md">
                     <p class=" max-w-72 font-bold">Préparer les jeunes à un monde du travail en mutation</p>
                 </div>
