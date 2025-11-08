@@ -18,7 +18,14 @@
         <section class="flex flex-col justify-center items-center mt-16">
             <div id="slogan_large" class="text-2xl md:text-4xl lg:text-5xl md:pl-12 font-bold whitespace-nowrap">
                 <p>Transmetrre le savoir,</p>
-                <p class="indent-8">construire <span id="bloc_blue" class="">l'avenir</span></p>
+                <p class="indent-8">
+                    construire
+                    <span id="bloc_bleu" class="relative">
+                        <span class="absolute inset-x-0 bottom-0 h-[40%] bg-blue-300"></span>
+                        <span class="relative">l'avenir</span>
+                    </span>
+                </p>
+
             </div>
 
             <p class="text-center px-24 md:px-0 text-base py-8 md:max-w-md mx-auto">
@@ -151,18 +158,21 @@
         </p>
 
         <div class="flex items-center gap-x-4 pt-6">
-            <label for="toggle_don" class="text-base text-gray-700">Une fois</label>
-            <label for="toggle_don" class="relative inline-block w-14 h-8 cursor-pointer">
+            <span class="text-base text-gray-700">Une fois</span>
+
+            <label class="relative inline-block w-14 h-8 cursor-pointer">
                 <input type="checkbox" id="toggle_don" class="peer sr-only">
                 <span class="absolute inset-0 bg-gray-300 rounded-full transition-colors duration-200 ease-in-out 
-                    peer-checked:bg-blue-600 peer-disabled:bg-gray-200 peer-disabled:opacity-60">
+        peer-checked:bg-blue-600 peer-disabled:bg-gray-200 peer-disabled:opacity-60">
                 </span>
                 <span class="absolute top-1/2 left-1 -translate-y-1/2 size-6 bg-white rounded-full shadow-md 
-                    transition-transform duration-200 ease-in-out peer-checked:translate-x-6">
+        transition-transform duration-200 ease-in-out peer-checked:translate-x-6">
                 </span>
             </label>
-            <label for="toggle_don" class="text-base text-gray-700">Chaque mois</label>
+
+            <span class="text-base text-gray-700">Chaque mois</span>
         </div>
+
 
 
         <section id="proposition_montant" class="grid grid-cols-2 md:grid-cols-3 gap-4 py-8">
