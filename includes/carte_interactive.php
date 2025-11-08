@@ -141,38 +141,43 @@
 		© <a href="https://github.com/regisenguehard/carte-france-svg" class="hover:underline">carte-france-svg</a> — <a href="https://creativecommons.org/licenses/by/4.0/" class="hover:underline">CC BY 4.0</a>
 	</div>
 
-	<div id="pin_paris" class="absolute top-[21%] left-[51%] -translate-x-1/2 -translate-y-1/2 group">
+	<div id="pin_paris" class="absolute top-[21%] left-[51%] -translate-x-1/2 -translate-y-1/2">
 		<input type="checkbox" id="pin_paris_toggle" class="peer hidden md:hidden" />
-		<label for="pin_paris_toggle" class="block w-8 h-8 cursor-pointer md:cursor-auto">
-			<img src="../assets/img/egee_en_france/pin-fill-sharp-location.svg" alt="EGEE Île-de-France" class="w-8 h-8 transform transition duration-300 hover:scale-105" />
+		<label for="pin_paris_toggle" class="relative block w-8 h-8 cursor-pointer md:cursor-auto group">
+			<img src="../assets/img/egee_en_france/pin-fill-sharp-location.svg"
+				alt="EGEE Île-de-France"
+				class="w-8 h-8 transform transition duration-300 hover:scale-105" />
+			<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-64 p-2 text-sm text-white bg-blue-900/90 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity duration-300 text-center pointer-events-none">
+				<p class="font-semibold">EGEE ILE-DE-FRANCE</p>
+				<p>14, Villa de Lourcine – 75014 PARIS</p>
+			</div>
 		</label>
-		<div class="absolute -top-20 left-1/2 -translate-x-1/2 w-64 p-2 text-sm text-white bg-blue-900/90 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity duration-300 text-center">
-			<p class="font-semibold">EGEE ILE-DE-FRANCE</p>
-			<p>14, Villa de Lourcine – 75014 PARIS</p>
-		</div>
 	</div>
 
-	<div id="pin_bretagne" class="absolute top-[29%] left-[22%] -translate-x-1/2 -translate-y-1/2 group">
+	<div id="pin_bretagne" class="absolute top-[29%] left-[22%] -translate-x-1/2 -translate-y-1/2">
 		<input type="checkbox" id="pin_bretagne_toggle" class="peer hidden md:hidden" />
-		<label for="pin_bretagne_toggle" class="block w-8 h-8 cursor-pointer md:cursor-auto">
-			<img src="../assets/img/egee_en_france/pin-fill-sharp-location.svg" alt="EGEE Bretagne" class="w-8 h-8 transform transition duration-300 hover:scale-105" />
+		<label for="pin_bretagne_toggle" class="relative block w-8 h-8 cursor-pointer md:cursor-auto group">
+			<img src="../assets/img/egee_en_france/pin-fill-sharp-location.svg"
+				alt="EGEE Bretagne"
+				class="w-8 h-8 transform transition duration-300 hover:scale-105" />
+			<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-64 p-2 text-sm text-white bg-blue-900/90 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity duration-300 text-center pointer-events-none">
+				<p class="font-semibold">EGEE BRETAGNE</p>
+				<p>CCI Bretagne – 2 avenue de la Préfecture – 35042 Rennes Cédex</p>
+			</div>
 		</label>
-		<div class="absolute -top-20 left-1/2 -translate-x-1/2 w-64 p-2 text-sm text-white bg-blue-900/90 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity duration-300 text-center">
-			<p class="font-semibold">EGEE BRETAGNE</p>
-			<p>CCI Bretagne – 2 avenue de la Préfecture – 35042 Rennes Cédex</p>
-		</div>
 	</div>
 
-	<div id="pin_grand_est" class="absolute top-[22%] left-[78%] -translate-x-1/2 -translate-y-1/2 group">
+	<div id="pin_grand_est" class="absolute top-[22%] left-[78%] -translate-x-1/2 -translate-y-1/2">
 		<input type="checkbox" id="pin_grand_est_toggle" class="peer hidden md:hidden" />
-		<label for="pin_grand_est_toggle" class="block w-8 h-8 cursor-pointer md:cursor-auto">
-			<img src="../assets/img/egee_en_france/pin-fill-sharp-location.svg" alt="Délégation régionale GRAND EST" class="w-8 h-8 transform transition duration-300 hover:scale-105" />
+		<label for="pin_grand_est_toggle" class="relative block w-8 h-8 cursor-pointer md:cursor-auto group">
+			<img src="../assets/img/egee_en_france/pin-fill-sharp-location.svg"
+				alt="Délégation régionale GRAND EST"
+				class="w-8 h-8 transform transition duration-300 hover:scale-105" />
+			<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-64 p-2 text-sm text-white bg-blue-900/90 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity duration-300 text-center pointer-events-none">
+				<p class="font-semibold">EGEE GRAND EST</p>
+				<p>Maison de l’Entreprise – 8, rue Alfred Kastler – 54522 Maxéville cédex</p>
+			</div>
 		</label>
-		<div class="absolute -top-20 left-1/2 -translate-x-1/2 w-64 p-2 text-sm text-white bg-blue-900/90 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 peer-checked:opacity-100 transition-opacity duration-300 text-center">
-			<p class="font-semibold">Délégation régionale GRAND EST</p>
-			<p>Maison de l’Entreprise – 8, rue Alfred Kastler – 54522 Maxéville cédex</p>
-		</div>
 	</div>
-
 
 </div>

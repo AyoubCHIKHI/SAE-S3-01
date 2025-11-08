@@ -53,7 +53,7 @@
 
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/carte_interactive.php' ?>
 
-        <div class="flex flex-col">
+        <div class="flex flex-col px-8 md:px-0">
             <ul class="border-2 border-blue-300 rounded py-2 px-4 mt-10">
                 <li class="mb-2">EGEE ILE-DE-FRANCE :</li>
                 <li class="cursor-pointer transition transform hover:scale-105 hover:bg-blue-50 mb-2"
