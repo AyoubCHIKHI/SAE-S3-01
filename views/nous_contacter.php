@@ -11,7 +11,7 @@
 
 <body class="flex flex-col h-screen">
 
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php'; ?>
+    <?php require __DIR__. '/../includes/navbar.php'; ?>
 
     <article class="flex flex-col md:flex-row flex-1 justify-center items-center gap-4 md:gap-24 py-8 md:p-16">
 
@@ -97,7 +97,7 @@
 
     </article>
 
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
+    <?php require __DIR__ . '/../includes/footer.php'; ?>
 
 </body>
 

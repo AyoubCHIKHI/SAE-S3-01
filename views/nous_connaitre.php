@@ -11,7 +11,7 @@
 
 <body>
 
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php'; ?>
+    <?php require __DIR__ . '/../includes/navbar.php'; ?>
 
 
 
@@ -31,35 +31,35 @@
 
         <div class="grid md:grid-cols-3 gap-x-4 gap-y-4 p-16 justify-items-stretch">
 
-            <a href="Nos_Missions.php"
+            <a href="nos-mission"
                 class="flex flex-col items-center justify-center shadow-md rounded-md p-12 bg-blue-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <img class="size-12" src="../assets/img/nous_connaitre/goal-2.svg" alt="Notre Mission">
                 <p class="my-2 text-lg font-medium text-blue-900">Notre Mission</p>
                 <p class="py-4 text-gray-700 text-center">Découvrez notre vision, nos valeurs et nos objectifs pour un avenir durable.</p>
             </a>
 
-            <a href="video_egee.php"
+            <a href="video_egee"
                 class="flex flex-col items-center justify-center shadow-md rounded-md p-12 bg-blue-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <img class="size-12" src="../assets/img/nous_connaitre/video-library.svg" alt="Vidéos EGEE">
                 <p class="my-2 text-lg font-medium text-blue-900">Vidéos EGEE</p>
                 <p class="py-4 text-gray-700 text-center">Plongez dans nos vidéos pour découvrir nos actions et témoignages inspirants.</p>
             </a>
 
-            <a href="ConseilAdministration.php"
+            <a href="conseil-administration"
                 class="flex flex-col items-center justify-center shadow-md rounded-md p-12 bg-blue-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <img class="size-12" src="../assets/img/nous_connaitre/conseil_d'administration.svg" alt="Conseil d’administration">
                 <p class="my-2 text-center text-lg font-medium text-blue-900">Conseil d’administration</p>
                 <p class="py-4 text-gray-700 text-center">Découvrez les membres qui guident et soutiennent notre organisation au quotidien.</p>
             </a>
 
-            <a href="RapportActivitee.php"
+            <a href="rapport-activitee"
                 class="flex flex-col items-center justify-center shadow-md rounded-md p-12 bg-blue-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <img class="size-12" src="../assets/img/nous_connaitre/rapport_d'activité.svg" alt="Rapport d’activité">
                 <p class="my-2 text-lg font-medium text-blue-900">Rapport d’activité</p>
                 <p class="py-4 text-gray-700 text-center">Consultez nos réalisations et résultats de l’année écoulée.</p>
             </a>
 
-            <a href="https://drive.google.com/file/d/1QO9TdzlWsWi8NJITOPsyEqNbs2jnA066/view"
+            <a href="https://drive.google.com/file/d/1QO9TdzlWsWi8NJITOPsyEqNbs2jnA066/view" target='_blank'
                 class="flex flex-col items-center justify-center shadow-md rounded-md p-12 bg-blue-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <img class="size-12" src="../assets/img/nous_connaitre/nos_engagements.svg" alt="Nos engagements">
                 <p class="my-2 text-lg font-medium text-blue-900">Nos engagements</p>
@@ -70,7 +70,7 @@
     </main>
 
 
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
+    <?php require __DIR__ . '/../includes/footer.php'; ?>
 
 </body>
 

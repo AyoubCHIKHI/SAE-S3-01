@@ -12,7 +12,7 @@
 
 <body>
 
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php'; ?>
+    <?php require __DIR__ . '/../includes/navbar.php'; ?>
 
     <article id="hero_section" class="flex flex-col-reverse md:flex-row gap-4 md:gap-16 lg:gap-52 justify-center items-center py-12">
         <section class="flex flex-col justify-center items-center mt-16">
@@ -246,7 +246,7 @@
             seniors répartis dans 13 délégations régionalessur
             l’ensemble du territoire français.
         </p>
-        <a href="pages/egee_en_france.php">
+        <a href="egee_en_france">
             <button class="bg-blue-400 py-4 px-6 rounded my-12 text-white transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
                 EGEE en France
             </button>
@@ -280,7 +280,7 @@
 
     </article>
 
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
+    <?php require __DIR__ . '/../includes/footer.php'; ?>
 
 </body>
 

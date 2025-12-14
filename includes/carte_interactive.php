@@ -138,7 +138,7 @@
 	</svg>
 
 	<div class="text-xs text-gray-400 text-center mt-2">
-		© <a href="https://github.com/regisenguehard/carte-france-svg" class="hover:underline">carte-france-svg</a> — <a href="https://creativecommons.org/licenses/by/4.0/" class="hover:underline">CC BY 4.0</a>
+		© <a href="https://github.com/regisenguehard/carte-france-svg" target="_blank" class="hover:underline">carte-france-svg</a> — <a href="https://creativecommons.org/licenses/by/4.0/" class="hover:underline">CC BY 4.0</a>
 	</div>
 
 	<div id="pin_paris" class="absolute top-[21%] left-[51%] -translate-x-1/2 -translate-y-1/2">

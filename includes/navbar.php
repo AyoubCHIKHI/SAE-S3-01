@@ -3,7 +3,7 @@
     <input type="checkbox" id="drawer-toggle" class="hidden peer" />
 
     <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between w-full bg-white/80 backdrop-blur-md shadow px-8 py-4 transition duration-300">
-        <a href="/index.php" class="flex-shrink-0">
+        <a href="/" class="flex-shrink-0">
             <img src="/assets/img/Logo.svg" alt="EGEE Logo" class="w-32 md:w-42 lg:w-44 transform transition duration-300 hover:scale-105 rounded-lg">
         </a>
 
@@ -16,9 +16,9 @@
                     </svg>
                 </button>
                 <div class="absolute top-full left-0 mt-2 w-40 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                    <a href="/pages/nos_actions.php#education" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition">Education</a>
-                    <a href="/pages/nos_actions.php#emploi" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition">Emploi</a>
-                    <a href="/pages/nos_actions.php#entreprise" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition rounded-b-lg">Entreprise</a>
+                    <a href="nos_actions" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition">Education</a>
+                    <a href="nos_actions" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition">Emploi</a>
+                    <a href="nos_actions" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition rounded-b-lg">Entreprise</a>
                 </div>
             </div>
 
@@ -30,15 +30,15 @@
                     </svg>
                 </button>
                 <div class="absolute top-full left-0 mt-2 w-60 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300 z-50">
-                    <a href="/pages/egee_en_france.php" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition">EGEE ILE-DE-FRANCE</a>
-                    <a href="/pages/egee_en_france.php" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition">EGEE GRAND EST</a>
-                    <a href="/pages/egee_en_france.php" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition rounded-b-lg">EGEE BRETAGNE</a>
+                    <a href="egee_en_france" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition">EGEE ILE-DE-FRANCE</a>
+                    <a href="egee_en_france" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition">EGEE GRAND EST</a>
+                    <a href="egee_en_france" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition rounded-b-lg">EGEE BRETAGNE</a>
                 </div>
             </div>
 
-            <a href="/pages/nous_connaitre.php" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Nous connaitre</a>
+            <a href="nous_connaitre" class="relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Nous connaitre</a>
 
-            <a href="/pages/nous_contacter.php" class="md:hidden lg:block relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Nous contacter</a>
+            <a href="nous_contacter" class="md:hidden lg:block relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Nous contacter</a>
 
             <button id="ouvrir-don" class="flex gap-1 transform transition duration-300 hover:scale-105 hover:text-red-500">
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -63,8 +63,8 @@
             </svg>
         </label>
 
-        <a href="/pages/nous_connaitre.php" class="text-xl font-semibold text-gray-700 hover:text-blue-500">Nous connaitre</a>
-        <a href="/pages/nous_contacter.php" class="text-xl font-semibold text-gray-700 hover:text-blue-500">Nous contacter</a>
+        <a href="nous_connaitre" class="text-xl font-semibold text-gray-700 hover:text-blue-500">Nous connaitre</a>
+        <a href="nous_contacter" class="text-xl font-semibold text-gray-700 hover:text-blue-500">Nous contacter</a>
         <button class="flex gap-3 items-center text-2xl font-semibold text-red-500">
             <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z" />
@@ -80,9 +80,9 @@
                 </svg>
             </summary>
             <div class="flex flex-col mt-2 pl-6 border-l border-gray-200">
-                <a href="/pages/nos_actions.php#education" class="py-3 text-lg text-gray-700 hover:text-blue-500">Education</a>
-                <a href="/pages/nos_actions.php#emploi" class="py-3 text-lg text-gray-700 hover:text-blue-500">Emploi</a>
-                <a href="/pages/nos_actions.php#entreprise" class="py-3 text-lg text-gray-700 hover:text-blue-500">Entreprise</a>
+                <a href="nos_actions" class="py-3 text-lg text-gray-700 hover:text-blue-500">Education</a>
+                <a href="nos_actions.php" class="py-3 text-lg text-gray-700 hover:text-blue-500">Emploi</a>
+                <a href="nos_actions.php" class="py-3 text-lg text-gray-700 hover:text-blue-500">Entreprise</a>
             </div>
         </details>
 
@@ -94,13 +94,13 @@
                 </svg>
             </summary>
             <div class="flex flex-col mt-2 pl-6 border-l border-gray-200">
-                <a href="/pages/egee_en_france.php" class="py-3 text-lg text-gray-700 hover:text-blue-500">EGEE ILE-DE-FRANCE</a>
-                <a href="/pages/egee_en_france.php" class="py-3 text-lg text-gray-700 hover:text-blue-500">EGEE GRAND EST</a>
-                <a href="/pages/egee_en_france.php" class="py-3 text-lg text-gray-700 hover:text-blue-500">EGEE BRETAGNE</a>
+                <a href="egee_en_france" class="py-3 text-lg text-gray-700 hover:text-blue-500">EGEE ILE-DE-FRANCE</a>
+                <a href="egee_en_france" class="py-3 text-lg text-gray-700 hover:text-blue-500">EGEE GRAND EST</a>
+                <a href="egee_en_france" class="py-3 text-lg text-gray-700 hover:text-blue-500">EGEE BRETAGNE</a>
             </div>
         </details>
     </div>
 
 </div>
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/don_modal.php'; ?>
+<?php require __DIR__ . '/don_modal.php'; ?>

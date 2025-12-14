@@ -25,22 +25,22 @@
 
         <div class="flex flex-col">
             <p class="font-bold text-xl mb-4 uppercase">Nos actions</p>
-            <a href="/pages/Nos_Missions.php" class="transition hover:text-blue-500">Education</a>
-            <a href="#" class="transition hover:text-blue-500">Emploi</a>
-            <a href="#" class="transition hover:text-blue-500">Entreprise</a>
+            <a href="nos_missions" class="transition hover:text-blue-500">Education</a>
+            <a href="nos_missions" class="transition hover:text-blue-500">Emploi</a>
+            <a href="nos_missions" class="transition hover:text-blue-500">Entreprise</a>
         </div>
 
         <div class="flex flex-col">
             <p class="font-bold text-xl mb-4 uppercase">Notre missions</p>
-            <a href="/pages/Nos_Missions.php" class="transition hover:text-blue-500">Accompagner</a>
-            <a href="/pages/Nos_Missions.php" class="transition hover:text-blue-500">Conseiller</a>
-            <a href="/pages/Nos_Missions.php" class="transition hover:text-blue-500">Favoriser emploi</a>
+            <a href="nos_missions" class="transition hover:text-blue-500">Accompagner</a>
+            <a href="nos_missions" class="transition hover:text-blue-500">Conseiller</a>
+            <a href="nos_missions" class="transition hover:text-blue-500">Favoriser emploi</a>
         </div>
 
         <div class="flex flex-col">
             <p class="font-bold text-xl mb-4 uppercase">à propos</p>
             <a href="#" class="transition hover:text-blue-500">Mentions légales</a>
-            <a href="/pages/nous_contacter.php" class="transition hover:text-blue-500">Contactez nous</a>
+            <a href="nous_contacter" class="transition hover:text-blue-500">Contactez nous</a>
             <a href="https://drive.google.com/file/d/1QO9TdzlWsWi8NJITOPsyEqNbs2jnA066/view" class="transition hover:text-blue-500">Nos engagements</a>
         </div>
     </div>

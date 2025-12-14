@@ -10,7 +10,7 @@
     <body class="font-sans">
 
         <div class="fixed top-0 left-0 w-full z-50">
-            <?php require $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
+            <?php require __DIR__.'/../includes/footer.php'; ?>
         </div>
 
         <div class="pt-28">
@@ -56,6 +56,6 @@
                 </div>
             </main>
 
-            <?php require $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
+            <?php require __DIR__.'/../includes/footer.php'; ?>
     </body>
 </html>

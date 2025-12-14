@@ -8,7 +8,7 @@
     </head>
     <body>
 
-        <?php require $_SERVER['DOCUMENT_ROOT'].'/includes/navbar.php'; ?>
+        <?php require __DIR__.'/../includes/footer.php'; ?>
 
 
         <section class="banner">
@@ -71,6 +71,6 @@
             </ul>
         </section>
 
-        <?php require $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php'; ?>
+        <?php require __DIR__.'/../includes/footer.php'; ?>
     </body>
 </html>

@@ -33,7 +33,7 @@
 
 <body>
 
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/navbar.php'; ?>
+    <?php require __DIR__. '/../includes/navbar.php'; ?>
 
     <div class="flex flex-col justify-center items-center">
         <h1 class="text-center font-bold text-5xl mt-10 ml-20 mx-10 pr-10">
@@ -51,7 +51,7 @@
 
     <main class="flex flex-col md:flex-row mt-10 gap-20 justify-center items-center">
 
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/carte_interactive.php' ?>
+        <?php require __DIR__ . '/../includes/carte_interactive.php' ?>
 
         <div class="flex flex-col px-8 md:px-0">
             <ul class="border-2 border-blue-300 rounded py-2 px-4 mt-10">
@@ -117,7 +117,7 @@
         </div>
     </main>
 
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/includes/footer.php'; ?>
+    <?php require __DIR__ . '/../includes/footer.php'; ?>
     <script src="../assets/js/egee_en_france.js"></script>
 </body>
 
