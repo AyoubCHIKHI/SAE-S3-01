@@ -39,12 +39,67 @@ switch ($uri) {
     case '/admin':
         require_once __DIR__ . '/admin.php';
         break;
+
+    // Admin - Bénévoles
+    case '/admin/benevoles':
+        $_GET['action'] = 'index';
+        require_once __DIR__ . '/../src/controllers/admin/benevoles.php';
+        break;
+    case '/admin/benevoles/create':
+        $_GET['action'] = 'create';
+        require_once __DIR__ . '/../src/controllers/admin/benevoles.php';
+        break;
+    case '/admin/benevoles/edit':
+        $_GET['action'] = 'edit';
+        require_once __DIR__ . '/../src/controllers/admin/benevoles.php';
+        break;
+    case '/admin/benevoles/delete':
+        $_GET['action'] = 'delete';
+        require_once __DIR__ . '/../src/controllers/admin/benevoles.php';
+        break;
+
+    // Admin - Événements
+    case '/admin/evenements':
+        $_GET['action'] = 'index';
+        require_once __DIR__ . '/../src/controllers/admin/evenements.php';
+        break;
+    case '/admin/evenements/create':
+        $_GET['action'] = 'create';
+        require_once __DIR__ . '/../src/controllers/admin/evenements.php';
+        break;
+    case '/admin/evenements/edit':
+        $_GET['action'] = 'edit';
+        require_once __DIR__ . '/../src/controllers/admin/evenements.php';
+        break;
+    case '/admin/evenements/delete':
+        $_GET['action'] = 'delete';
+        require_once __DIR__ . '/../src/controllers/admin/evenements.php';
+        break;
+
+    // Admin - Partenaires
+    case '/admin/partenaires':
+        $_GET['action'] = 'index';
+        require_once __DIR__ . '/../src/controllers/admin/partenaires.php';
+        break;
+    case '/admin/partenaires/create':
+        $_GET['action'] = 'create';
+        require_once __DIR__ . '/../src/controllers/admin/partenaires.php';
+        break;
+    case '/admin/partenaires/edit':
+        $_GET['action'] = 'edit';
+        require_once __DIR__ . '/../src/controllers/admin/partenaires.php';
+        break;
+    case '/admin/partenaires/delete':
+        $_GET['action'] = 'delete';
+        require_once __DIR__ . '/../src/controllers/admin/partenaires.php';
+        break;
+
     case '/admin/login':
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             require_once __DIR__ . '/../src/auth.php';
             $email = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';
-            
+
             if (login($email, $password)) {
                 header('Location: /admin');
                 exit;
