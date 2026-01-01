@@ -53,7 +53,6 @@ switch ($uri) {
                 require_once __DIR__ . '/../views/login.php';
             }
         } else {
-            // GET request to /admin/login just shows the form
             require_once __DIR__ . '/../views/login.php';
         }
         break;

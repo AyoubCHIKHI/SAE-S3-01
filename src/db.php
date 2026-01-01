@@ -9,7 +9,7 @@ function getPDO(): PDO
         $host = 'localhost';
         $db   = 'sae_s3_01';
         $user = 'root';
-        $pass = 'root'; // Password set by user. Change to '' if using default XAMPP/WAMP.
+        $pass = 'root';
 
         try {
             $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
