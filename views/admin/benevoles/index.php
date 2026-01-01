@@ -49,7 +49,8 @@
                             <?= htmlspecialchars($benevole['profession']) ?>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="/admin/benevoles/edit?id=<?= $benevole['id'] ?>" class="text-indigo-600 hover:text-indigo-900">Modifier</a>
+                            <a href="/admin/benevoles/edit?id=<?= $benevole['id'] ?>"
+                                class="text-indigo-600 hover:text-indigo-900">Modifier</a>
                             <a href="/admin/benevoles/delete?id=<?= $benevole['id'] ?>"
                                 class="text-red-600 hover:text-red-900 ml-4"
                                 onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce bénévole ?');">Supprimer</a>
