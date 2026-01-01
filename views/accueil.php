@@ -39,7 +39,7 @@
                     Faire un don
                 </button>
 
-                <button onclick="location.href='/pages/nos_actions.php'" class="flex items-center gap-2 text-black px-4 py-2 border border-blue-500 rounded transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg">
+                <button onclick="location.href='/nos_actions'" class="flex items-center gap-2 text-black px-4 py-2 border border-blue-500 rounded transform transition duration-300 hover:bg-blue-50 hover:scale-105 hover:shadow-lg">
                     <img src="assets/img/accueil/play.svg" alt="icon_don" class="w-6">
                     Nos actions
                 </button>
@@ -81,7 +81,7 @@
                 <div class="slide w-full flex-shrink-0 flex justify-center items-center">
                     <p class="text-center text-xl w-[16em] md:w-[32em] py-16">
                         EGEE s’engage à <b>transmettre l’expérience</b> et les compétences des seniors au service des générations futures et du tissu économique français.
-                        <span class="underline decoration-dotted transform transition duration-300 hover:text-blue-600 hover:scale-105"><a href="/pages/Nos_Missions.php">Découvrez toutes nos missions en détaille ↝</a></span>
+                        <span class="underline decoration-dotted transform transition duration-300 hover:text-blue-600 hover:scale-105"><a href="/nos_missions">Découvrez toutes nos missions en détaille ↝</a></span>
                     </p>
                 </div>
 
@@ -113,7 +113,7 @@
                 <img src="assets/img/accueil/education.png" alt="Education illustration" class="w-full aspect-[4/3] rounded-md object-cover">
                 <h3 class="font-bold text-xl mt-3 text-center">Education</h3>
                 <p class="text-center text-sm sm:text-base mt-1">Préparer les jeunes à leur future vie professionnelle</p>
-                <a href="education.php" class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
+                <a href="nos_actions#education" class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
                     <img src="assets/img/cheveron-right.svg" class="w-4 h-4" alt="Voir plus">
                 </a>
             </div>
@@ -122,7 +122,7 @@
                 <img src="assets/img/accueil/emploie.png" alt="Emploi illustration" class="w-full aspect-[4/3] rounded-md object-cover">
                 <h3 class="font-bold text-xl mt-3 text-center">Emploi</h3>
                 <p class="text-center text-sm sm:text-base mt-1">Accompagner l’entrée dans la vie active et le retour à l’emploi</p>
-                <a href="emploie.php" class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
+                <a href="nos_actions#emploi" class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
                     <img src="assets/img/cheveron-right.svg" class="w-4 h-4" alt="Voir plus">
                 </a>
             </div>
@@ -131,7 +131,7 @@
                 <img src="assets/img/accueil/entreprise.webp" alt="Entreprise illustration" class="w-full aspect-[4/3] rounded-md object-cover">
                 <h3 class="font-bold text-xl mt-3 text-center">Entreprise</h3>
                 <p class="text-center text-sm sm:text-base mt-1">Soutenir les entrepreneurs dans la création, la croissance et les difficultés</p>
-                <a href="entreprise.php" class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
+                <a href="nos_actions#entreprise" class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
                     <img src="assets/img/cheveron-right.svg" class="w-4 h-4" alt="Voir plus">
                 </a>
             </div>
@@ -223,9 +223,9 @@
             </div>
 
             <div class="w-full flex justify-center md:justify-start">
-                <button class="my-6 bg-blue-500 text-center px-4 py-2 rounded-md transform transition duration-300 hover:scale-105 hover:shadow-lg cursor-pointer">
+                <a href="/actualites" class="my-6 bg-blue-500 text-center px-4 py-2 rounded-md transform transition duration-300 hover:scale-105 hover:shadow-lg cursor-pointer text-white">
                     Découvrez tous nos articles
-                </button>
+                </a>
             </div>
 
         </div>

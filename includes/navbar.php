@@ -16,9 +16,9 @@
                     </svg>
                 </button>
                 <div class="absolute top-full left-0 mt-2 w-40 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transform -translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                    <a href="nos_actions" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition">Education</a>
-                    <a href="nos_actions" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition">Emploi</a>
-                    <a href="nos_actions" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition rounded-b-lg">Entreprise</a>
+                    <a href="nos_actions#education" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition">Education</a>
+                    <a href="nos_actions#emploi" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition">Emploi</a>
+                    <a href="nos_actions#entreprise" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:font-semibold transition rounded-b-lg">Entreprise</a>
                 </div>
             </div>
 
@@ -80,9 +80,9 @@
                 </svg>
             </summary>
             <div class="flex flex-col mt-2 pl-6 border-l border-gray-200">
-                <a href="nos_actions" class="py-3 text-lg text-gray-700 hover:text-blue-500">Education</a>
-                <a href="nos_actions.php" class="py-3 text-lg text-gray-700 hover:text-blue-500">Emploi</a>
-                <a href="nos_actions.php" class="py-3 text-lg text-gray-700 hover:text-blue-500">Entreprise</a>
+                <a href="nos_actions#education" class="py-3 text-lg text-gray-700 hover:text-blue-500">Education</a>
+                <a href="nos_actions#emploi" class="py-3 text-lg text-gray-700 hover:text-blue-500">Emploi</a>
+                <a href="nos_actions#entreprise" class="py-3 text-lg text-gray-700 hover:text-blue-500">Entreprise</a>
             </div>
         </details>
 

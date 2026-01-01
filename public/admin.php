@@ -1,5 +1,7 @@
-<?php
+require_once __DIR__ . '/../src/auth.php';
 
-// si l'utilisateur est connecté affiche accueil avec le dashboard admin sinon login,
+// Force authentification
+require_auth([ROLE_ADMIN, ROLE_BUREAU, ROLE_POLE]);
 
-require_once __DIR__.'/../views/login.php';
+// Load the dashboard view
+require_once __DIR__ . '/../views/admin/dashboard.php';
