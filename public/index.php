@@ -36,6 +36,9 @@ switch ($uri) {
     case '/actualites':
         require_once __DIR__ . '/../views/actualites.php';
         break;
+    case '/actualite':
+        require_once __DIR__ . '/../views/article_detail.php';
+        break;
     case '/admin':
         require_once __DIR__ . '/admin.php';
         break;
@@ -92,6 +95,20 @@ switch ($uri) {
     case '/admin/partenaires/delete':
         $_GET['action'] = 'delete';
         require_once __DIR__ . '/../src/controllers/admin/partenaires.php';
+        break;
+
+    // Admin - Articles (Actualités)
+    case '/admin/articles':
+        $_GET['action'] = 'index';
+        require_once __DIR__ . '/../src/controllers/admin/articles.php';
+        break;
+    case '/admin/articles/create':
+        $_GET['action'] = 'create';
+        require_once __DIR__ . '/../src/controllers/admin/articles.php';
+        break;
+    case '/admin/articles/delete':
+        $_GET['action'] = 'delete';
+        require_once __DIR__ . '/../src/controllers/admin/articles.php';
         break;
 
     case '/admin/login':
