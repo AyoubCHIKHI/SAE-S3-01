@@ -40,7 +40,7 @@
 
             <a href="nous_contacter" class="md:hidden lg:block relative inline-block after:block after:h-[2px] after:w-0 after:bg-blue-500 after:transition-all hover:after:w-full hover:text-black">Nous contacter</a>
 
-            <button id="ouvrir-don" class="flex gap-1 transform transition duration-300 hover:scale-105 hover:text-red-500">
+            <button class="ouvrir-don-trigger flex gap-1 transform transition duration-300 hover:scale-105 hover:text-red-500">
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z" />
                 </svg>
@@ -65,7 +65,7 @@
 
         <a href="nous_connaitre" class="text-xl font-semibold text-gray-700 hover:text-blue-500">Nous connaitre</a>
         <a href="nous_contacter" class="text-xl font-semibold text-gray-700 hover:text-blue-500">Nous contacter</a>
-        <button class="flex gap-3 items-center text-2xl font-semibold text-red-500">
+        <button class="ouvrir-don-trigger flex gap-3 items-center text-2xl font-semibold text-red-500">
             <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z" />
             </svg>

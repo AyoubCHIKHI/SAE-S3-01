@@ -17,7 +17,7 @@
     <article id="hero_section" class="flex flex-col-reverse md:flex-row gap-4 md:gap-16 lg:gap-52 justify-center items-center py-12">
         <section class="flex flex-col justify-center items-center mt-16">
             <div id="slogan_large" class="text-2xl md:text-4xl lg:text-5xl md:pl-12 font-bold whitespace-nowrap">
-                <p>Transmetrre le savoir,</p>
+                <p>Transmettre le savoir,</p>
                 <p class="indent-8">
                     construire
                     <span id="bloc_bleu" class="relative">
@@ -34,7 +34,7 @@
 
 
             <div class="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-16">
-                <button id="ouvrir-don" class="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
+                <button class="ouvrir-don-trigger flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
                     <img src="assets/img/accueil/heart.svg" alt="icon_don" class="w-6">
                     Faire un don
                 </button>
@@ -109,32 +109,32 @@
 
         <section id="présentation_action" class="flex flex-wrap justify-center gap-6 w-full max-w-6xl">
 
-            <div class="group flex flex-col items-center bg-blue-100 rounded-md shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 p-4 cursor-pointer flex-1 min-w-[250px] max-w-[320px]">
+            <a href="nos_actions#education" class="group flex flex-col items-center bg-blue-100 rounded-md shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 p-4 cursor-pointer flex-1 min-w-[250px] max-w-[320px]">
                 <img src="assets/img/accueil/education.png" alt="Education illustration" class="w-full aspect-[4/3] rounded-md object-cover">
                 <h3 class="font-bold text-xl mt-3 text-center">Education</h3>
                 <p class="text-center text-sm sm:text-base mt-1">Préparer les jeunes à leur future vie professionnelle</p>
-                <a href="nos_actions#education" class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
+                <div class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
                     <img src="assets/img/cheveron-right.svg" class="w-4 h-4" alt="Voir plus">
-                </a>
-            </div>
+                </div>
+            </a>
 
-            <div class="group flex flex-col items-center bg-blue-100 rounded-md shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 p-4 cursor-pointer flex-1 min-w-[250px] max-w-[320px]">
+            <a href="nos_actions#emploi" class="group flex flex-col items-center bg-blue-100 rounded-md shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 p-4 cursor-pointer flex-1 min-w-[250px] max-w-[320px]">
                 <img src="assets/img/accueil/emploie.png" alt="Emploi illustration" class="w-full aspect-[4/3] rounded-md object-cover">
                 <h3 class="font-bold text-xl mt-3 text-center">Emploi</h3>
                 <p class="text-center text-sm sm:text-base mt-1">Accompagner l’entrée dans la vie active et le retour à l’emploi</p>
-                <a href="nos_actions#emploi" class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
+                <div class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
                     <img src="assets/img/cheveron-right.svg" class="w-4 h-4" alt="Voir plus">
-                </a>
-            </div>
+                </div>
+            </a>
 
-            <div class="group flex flex-col items-center bg-blue-100 rounded-md shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 p-4 cursor-pointer flex-1 min-w-[250px] max-w-[320px]">
+            <a href="nos_actions#entreprise" class="group flex flex-col items-center bg-blue-100 rounded-md shadow-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300 p-4 cursor-pointer flex-1 min-w-[250px] max-w-[320px]">
                 <img src="assets/img/accueil/entreprise.webp" alt="Entreprise illustration" class="w-full aspect-[4/3] rounded-md object-cover">
                 <h3 class="font-bold text-xl mt-3 text-center">Entreprise</h3>
                 <p class="text-center text-sm sm:text-base mt-1">Soutenir les entrepreneurs dans la création, la croissance et les difficultés</p>
-                <a href="nos_actions#entreprise" class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
+                <div class="mt-4 inline-flex items-center justify-center w-8 h-8 rounded-full bg-black text-white group-hover:bg-blue-950 transition">
                     <img src="assets/img/cheveron-right.svg" class="w-4 h-4" alt="Voir plus">
-                </a>
-            </div>
+                </div>
+            </a>
 
         </section>
     </article>
@@ -200,7 +200,7 @@
         <div>
             <div class="flex justify-center md:justify-start items-center gap-3 ">
                 <img class="w-10" src="assets/img/accueil/ic_autialités.svg" alt="news_paper_icon">
-                <p class="font-bold text-3xl ">Acualités</p>
+                <p class="font-bold text-3xl ">Actualités</p>
             </div>
 
             <p class="">
@@ -208,18 +208,25 @@
             </p>
 
             <div id="ligne_articles" class="flex flex-col items-center justify-center md:flex-row gap-8 my-8">
-                <div class="flex flex-col justify-center gap-2 rounded-md transform transition duration-300 hover:scale-105 hover:text-blue-300 cursor-pointer">
-                    <img src="assets/img/actualites/MOnswiller-614x460.png" alt="" class="w-72 h-56 border-2 border-black rounded-md shadow-md">
-                    <p class="max-w-72 font-bold">Monswiller se prépare face aux crues !</p>
-                </div>
-                <div class="flex flex-col justify-center gap-2 rounded-md transform transition duration-300 hover:scale-105 hover:text-blue-300 cursor-pointer">
-                    <img src="assets/img/actualites/BTransmettre-accompagner-368x460-1.png" alt="" class="w-72 h-56 border-2 border-black rounded-md shadow-md object-cover">
-                    <p class="max-w-72 font-bold">Transmettre, accompagner, s’engager ensemble</p>
-                </div>
-                <div class="flex flex-col justify-center gap-4 rounded-md transform transition duration-300 hover:scale-105 hover:text-blue-300 cursor-pointer">
-                    <img src="assets/img/actualites/travail_en_mutation.jpg" alt="" class="w-72 h-56 border-2 border-black rounded-md shadow-md">
-                    <p class=" max-w-72 font-bold">Préparer les jeunes à un monde du travail en mutation</p>
-                </div>
+                <?php
+                require_once __DIR__ . '/../src/models/Article.php';
+                $articleModel = new Article();
+                $homeArticles = $articleModel->getLatest(3);
+                
+                if (empty($homeArticles)): ?>
+                    <p class="text-white italic">Aucune actualité disponible.</p>
+                <?php else: ?>
+                    <?php foreach ($homeArticles as $art): ?>
+                        <div onclick="location.href='/actualite?id=<?= $art['id'] ?>'" class="flex flex-col justify-center gap-2 rounded-md transform transition duration-300 hover:scale-105 hover:text-blue-300 cursor-pointer">
+                            <?php if ($art['image_url']): ?>
+                                <img src="<?= htmlspecialchars($art['image_url']) ?>" alt="" class="w-72 h-56 border-2 border-black rounded-md shadow-md object-cover">
+                            <?php else: ?>
+                                <div class="w-72 h-56 bg-gray-200 border-2 border-black rounded-md shadow-md flex items-center justify-center text-gray-500">Image indisponible</div>
+                            <?php endif; ?>
+                            <p class="max-w-72 font-bold"><?= htmlspecialchars($art['title']) ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
 
             <div class="w-full flex justify-center md:justify-start">

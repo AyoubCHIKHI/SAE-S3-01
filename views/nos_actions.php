@@ -35,22 +35,22 @@
                 <img src="../assets/img/accueil/education.png" alt="Illustration Education" class="rounded-lg shadow-md w-full h-[400px] object-cover">
             </div>
             <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold text-blue-900 mb-6 border-l-4 border-blue-500 pl-4">Education</h2>
+                <h2 class="text-3xl font-bold text-blue-900 mb-6 border-l-4 border-blue-400 pl-4">Education</h2>
                 <p class="text-lg text-gray-700 mb-6 leading-relaxed">
                     Nous intervenons auprès des jeunes pour les aider à préparer leur avenir professionnel.
                     Nos bénévoles partagent leur expérience pour rendre le monde de l'entreprise plus concret et accessible.
                 </p>
                 <ul class="space-y-3 text-gray-700">
                     <li class="flex items-start gap-3">
-                        <span class="text-blue-500 font-bold">•</span>
+                        <span class="text-blue-400 font-bold">•</span>
                         <span>Aide à l'orientation et découverte des métiers.</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="text-blue-500 font-bold">•</span>
+                        <span class="text-blue-400 font-bold">•</span>
                         <span>Préparation aux entretiens (simulations, savoir-être).</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="text-blue-500 font-bold">•</span>
+                        <span class="text-blue-400 font-bold">•</span>
                         <span>Accompagnement de la vie étudiante et tutorat.</span>
                     </li>
                 </ul>
@@ -65,22 +65,22 @@
                 <img src="../assets/img/accueil/emploie.png" alt="Illustration Emploi" class="rounded-lg shadow-md w-full h-[400px] object-cover">
             </div>
             <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold text-blue-900 mb-6 border-l-4 border-green-500 pl-4">Emploi</h2>
+                <h2 class="text-3xl font-bold text-blue-900 mb-6 border-l-4 border-blue-600 pl-4">Emploi</h2>
                 <p class="text-lg text-gray-700 mb-6 leading-relaxed">
                     Nous accompagnons les demandeurs d'emploi et les personnes en reconversion.
                     L'objectif est de sécuriser les parcours et de favoriser le retour à l'activité par un suivi personnalisé.
                 </p>
                 <ul class="space-y-3 text-gray-700">
                     <li class="flex items-start gap-3">
-                        <span class="text-green-500 font-bold">•</span>
+                        <span class="text-blue-600 font-bold">•</span>
                         <span>Techniques de Recherche d'Emploi (TRE).</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="text-green-500 font-bold">•</span>
+                        <span class="text-blue-600 font-bold">•</span>
                         <span>Parrainage et coaching individuel.</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="text-green-500 font-bold">•</span>
+                        <span class="text-blue-600 font-bold">•</span>
                         <span>Soutien à la mobilité professionnelle.</span>
                     </li>
                 </ul>
@@ -95,22 +95,22 @@
                 <img src="../assets/img/accueil/entreprise.webp" alt="Illustration Entreprise" class="rounded-lg shadow-md w-full h-[400px] object-cover">
             </div>
             <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold text-blue-900 mb-6 border-l-4 border-purple-500 pl-4">Entreprise</h2>
+                <h2 class="text-3xl font-bold text-blue-900 mb-6 border-l-4 border-blue-900 pl-4">Entreprise</h2>
                 <p class="text-lg text-gray-700 mb-6 leading-relaxed">
                     Nous soutenons les entrepreneurs et les dirigeants de TPE/PME à tous les stades de leur développement.
                     Notre expertise permet de rompre l'isolement du dirigeant.
                 </p>
                 <ul class="space-y-3 text-gray-700">
                     <li class="flex items-start gap-3">
-                        <span class="text-purple-500 font-bold">•</span>
+                        <span class="text-blue-900 font-bold">•</span>
                         <span>Aide à la création et à la reprise d'entreprise.</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="text-purple-500 font-bold">•</span>
+                        <span class="text-blue-900 font-bold">•</span>
                         <span>Suivi de gestion et développement commercial.</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="text-purple-500 font-bold">•</span>
+                        <span class="text-blue-900 font-bold">•</span>
                         <span>Prévention des difficultés et accompagnement stratégique.</span>
                     </li>
                 </ul>
