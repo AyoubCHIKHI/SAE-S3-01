@@ -10,6 +10,7 @@
             ['label' => 'Bénévoles', 'url' => '/admin/benevoles', 'icon' => ''],
             ['label' => 'Partenaires', 'url' => '/admin/partenaires', 'icon' => ''],
             ['label' => 'Événements', 'url' => '/admin/evenements', 'icon' => ''],
+            ['label' => 'Actualités', 'url' => '/admin/articles', 'icon' => ''],
         ];
 
         foreach ($menuItems as $item):
