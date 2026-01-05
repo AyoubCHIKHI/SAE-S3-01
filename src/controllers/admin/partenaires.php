@@ -1,6 +1,9 @@
 <?php
 
 require_once __DIR__ . '/../../models/Partenaire.php';
+require_once __DIR__ . '/../../auth.php';
+
+require_auth([ROLE_ADMIN, ROLE_POLE]);
 
 $partenaireModel = new Partenaire();
 $action = $_GET['action'] ?? 'index';
