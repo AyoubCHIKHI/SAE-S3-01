@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../../models/Benevole.php';
 require_once __DIR__ . '/../../auth.php';
 
-require_auth([ROLE_ADMIN, ROLE_POLE]);
+require_auth([ROLE_ADMIN, ROLE_RESP_BENEVOLE]);
 
 $benevoleModel = new Benevole();
 $action = $_GET['action'] ?? 'index';

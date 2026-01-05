@@ -6,8 +6,11 @@ session_start();
 
 // Roles
 define('ROLE_ADMIN', 'ADMIN');
-define('ROLE_BUREAU', 'BUREAU');
-define('ROLE_POLE', 'POLE');
+define('ROLE_RESP_BENEVOLE', 'RESP_BENEVOLE');
+define('ROLE_RESP_PARTENAIRE', 'RESP_PARTENAIRE');
+define('ROLE_RESP_EVENEMENT', 'RESP_EVENEMENT');
+define('ROLE_BUREAU', 'BUREAU'); // Kept for legacy/other uses
+define('ROLE_POLE', 'POLE'); // Kept for backward compatibility
 
 /**
  * Attempt to log in a user.
@@ -19,7 +22,7 @@ define('ROLE_POLE', 'POLE');
 function login(string $email, string $password): bool
 {
     $pdo = getPDO();
-    
+
     // Fetch user by email
     $stmt = $pdo->prepare("SELECT id, password_hash, role, is_active FROM users WHERE email = :email LIMIT 1");
     $stmt->execute(['email' => $email]);
@@ -59,8 +62,8 @@ function log_login_attempt(?int $userId, string $ip, bool $success): void
     $pdo = getPDO();
     $stmt = $pdo->prepare("INSERT INTO login_logs (user_id, ip_address, success) VALUES (:user_id, :ip, :success)");
     $stmt->execute([
-        'user_id' => $userId, 
-        'ip' => $ip, 
+        'user_id' => $userId,
+        'ip' => $ip,
         'success' => $success ? 1 : 0
     ]);
 }
@@ -73,9 +76,14 @@ function logout(): void
     $_SESSION = [];
     if (ini_get("session.use_cookies")) {
         $params = session_get_cookie_params();
-        setcookie(session_name(), '', time() - 42000,
-            $params["path"], $params["domain"],
-            $params["secure"], $params["httponly"]
+        setcookie(
+            session_name(),
+            '',
+            time() - 42000,
+            $params["path"],
+            $params["domain"],
+            $params["secure"],
+            $params["httponly"]
         );
     }
     session_destroy();

@@ -5,12 +5,20 @@
     <nav class="flex-1 px-2 py-4 space-y-2">
         <?php
         $uri = $_SERVER['REQUEST_URI'];
+        $userRole = $_SESSION['user_role'] ?? '';
         $menuItems = [
             ['label' => 'Tableau de bord', 'url' => '/admin', 'icon' => ''],
-            ['label' => 'Bénévoles', 'url' => '/admin/benevoles', 'icon' => ''],
-            ['label' => 'Partenaires', 'url' => '/admin/partenaires', 'icon' => ''],
-            ['label' => 'Événements', 'url' => '/admin/evenements', 'icon' => ''],
         ];
+
+        if (in_array($userRole, [ROLE_ADMIN, ROLE_RESP_BENEVOLE])) {
+            $menuItems[] = ['label' => 'Bénévoles', 'url' => '/admin/benevoles', 'icon' => ''];
+        }
+        if (in_array($userRole, [ROLE_ADMIN, ROLE_RESP_PARTENAIRE])) {
+            $menuItems[] = ['label' => 'Partenaires', 'url' => '/admin/partenaires', 'icon' => ''];
+        }
+        if (in_array($userRole, [ROLE_ADMIN, ROLE_RESP_EVENEMENT])) {
+            $menuItems[] = ['label' => 'Événements', 'url' => '/admin/evenements', 'icon' => ''];
+        }
 
         foreach ($menuItems as $item):
             $isActive = ($uri === $item['url'] || strpos($uri, $item['url'] . '/') === 0) && !($item['url'] === '/admin' && $uri !== '/admin');

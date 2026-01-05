@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../models/Evenement.php';
 require_once __DIR__ . '/../../models/User.php';
 require_once __DIR__ . '/../../auth.php';
 
-require_auth([ROLE_ADMIN, ROLE_POLE]);
+require_auth([ROLE_ADMIN, ROLE_RESP_EVENEMENT]);
 
 $evenementModel = new Evenement();
 $userModel = new User();
