@@ -35,6 +35,9 @@
         </form>
 
         <p class="mt-4 text-center text-sm text-gray-500">
+            <a href="/register" class="text-blue-600 hover:underline">Pas de compte ? Faire une demande</a>
+        </p>
+        <p class="mt-2 text-center text-sm text-gray-500">
             <a href="/" class="hover:underline">Retour au site</a>
         </p>
     </div>

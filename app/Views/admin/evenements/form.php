@@ -47,25 +47,6 @@
                     </div>
                 </div>
 
-                <div class="mb-4">
-                    <label class="block text-gray-700">Nombre de bénévoles</label>
-                    <input type="text" name="nb_benevoles_requis" value="<?= htmlspecialchars($evenement['lieu'] ?? $data['lieu'] ?? '') ?>" class="w-full border p-2 rounded">
-                </div>
-
-                <div class="mb-4">
-                     <label class="block text-gray-700">Lieu</label>
-                     <input type="text" name="lieu" value="<?= htmlspecialchars($evenement['lieu'] ?? $data['lieu'] ?? '') ?>" class="w-full border p-2 rounded">
-                </div>
-
-                <div class="mb-4">
-                    <label class="block text-gray-700">Statut</label>
-                    <select name="statut" class="w-full border p-2 rounded">
-                        <option value="PLANIFIE" <?= (isset($evenement['statut']) && $evenement['statut'] == 'PLANIFIE') ? 'selected' : '' ?>>Planifié</option>
-                        <option value="TERMINE" <?= (isset($evenement['statut']) && $evenement['statut'] == 'TERMINE') ? 'selected' : '' ?>>Terminé</option>
-                        <option value="ANNULE" <?= (isset($evenement['statut']) && $evenement['statut'] == 'ANNULE') ? 'selected' : '' ?>>Annulé</option>
-                    </select>
-                </div>
-
                 <div class="flex justify-end gap-2">
                     <a href="/admin/evenements" class="px-4 py-2 text-gray-600 hover:text-gray-800">Annuler</a>
                     <button type="submit"

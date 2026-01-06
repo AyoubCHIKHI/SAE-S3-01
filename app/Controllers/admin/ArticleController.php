@@ -7,9 +7,9 @@ use App\Models\Article;
 class ArticleController extends Controller {
 
     public function index() {
-        $this->requireAuth();
+        $this->requireAuth(['ADMIN', 'BUREAU']);
         $articleModel = new Article();
-        $articles = $articleModel->getAll(); // Need to ensure getAll exists in Model
+        $articles = $articleModel->getAll(); 
         $this->view('admin/articles/index', ['articles' => $articles]);
     }
 
@@ -25,10 +25,9 @@ class ArticleController extends Controller {
                 'title' => $_POST['title'],
                 'content' => $_POST['content'],
                 'author_id' => $_SESSION['user_id'],
-                // Handle image upload if needed
             ];
             $articleModel = new Article();
-            $articleModel->create($data); // Need to ensure create exists
+            $articleModel->create($data); 
             $this->redirect('/admin/articles');
         }
     }

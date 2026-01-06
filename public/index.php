@@ -1,4 +1,5 @@
 <?php
+ob_start();
 
 // public/index.php
 
@@ -37,9 +38,14 @@ $router->get('/nos_missions', 'HomeController', 'nosMissions');
 $router->get('/admin/login', 'AuthController', 'login');
 $router->post('/admin/login', 'AuthController', 'login');
 $router->get('/admin/logout', 'AuthController', 'logout');
+$router->get('/register', 'AuthController', 'register');
+$router->post('/register', 'AuthController', 'register');
 
 // Admin Routes
 $router->get('/admin', 'Admin\DashboardController', 'index');
+$router->get('/admin/registrations', 'Admin\RegistrationController', 'index');
+$router->get('/admin/registrations/validate', 'Admin\RegistrationController', 'validate');
+$router->get('/admin/registrations/refuse', 'Admin\RegistrationController', 'refuse');
 
 // Articles
 $router->get('/admin/articles', 'Admin\ArticleController', 'index');

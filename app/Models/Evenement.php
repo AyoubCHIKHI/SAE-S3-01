@@ -19,16 +19,15 @@ class Evenement extends Model
         return $this->query("SELECT * FROM {$this->table} WHERE date_debut >= CURDATE() ORDER BY date_debut ASC LIMIT $limit")->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function create($data) {
-        $stmt = $this->pdo->prepare("INSERT INTO {$this->table} (titre, description, type, date_debut, date_fin, nb_benevoles_requis, lieu, statut) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    public function create($data)
+    {
+        $id = uniqid('evt_');
+        $stmt = $this->pdo->prepare("INSERT INTO {$this->table} (id_evenement, nom_, date_debut, date_fin) VALUES (?, ?, ?, ?)");
         return $stmt->execute([
             $id,
             $data['titre'], // Mapping 'titre' to 'nom_'
             $data['date_debut'],
-            $data['date_fin'],
-            $data['nb_benevoles_requis'],
-            $data['lieu'] ?? '',
-            $data['statut'] ?? 'PLANIFIE'
+            $data['date_fin']
         ]);
     }
 

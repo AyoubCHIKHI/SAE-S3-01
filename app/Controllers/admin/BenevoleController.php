@@ -9,7 +9,7 @@ class BenevoleController extends Controller
 
     public function index()
     {
-        $this->requireAuth();
+        $this->requireAuth(['ADMIN', 'BUREAU']);
         $benevoleModel = new Benevole();
         $benevoles = $benevoleModel->getAll();
         $this->view('admin/benevoles/index', ['benevoles' => $benevoles]);
@@ -17,7 +17,7 @@ class BenevoleController extends Controller
 
     public function create()
     {
-        $this->requireAuth();
+        $this->requireAuth(['ADMIN', 'BUREAU']);
         $villeModel = new \App\Models\Ville();
         $evenementModel = new \App\Models\Evenement();
         $villes = $villeModel->getAll();
@@ -32,7 +32,7 @@ class BenevoleController extends Controller
 
     public function store()
     {
-        $this->requireAuth();
+        $this->requireAuth(['ADMIN', 'BUREAU']);
         $benevoleModel = new Benevole();
         if ($benevoleModel->create($_POST)) {
             header('Location: /admin/benevoles');
@@ -45,7 +45,7 @@ class BenevoleController extends Controller
 
     public function edit()
     {
-        $this->requireAuth();
+        $this->requireAuth(['ADMIN', 'BUREAU']);
         $id = $_GET['id'] ?? null;
         if (!$id) {
             header('Location: /admin/benevoles');
@@ -69,7 +69,7 @@ class BenevoleController extends Controller
 
     public function update()
     {
-        $this->requireAuth();
+        $this->requireAuth(['ADMIN', 'BUREAU']);
         $id = $_POST['id'] ?? null;
         if (!$id) {
             header('Location: /admin/benevoles');
@@ -86,7 +86,7 @@ class BenevoleController extends Controller
 
     public function delete()
     {
-        $this->requireAuth();
+        $this->requireAuth(['ADMIN', 'BUREAU']);
         $id = $_GET['id'] ?? null;
         if ($id) {
             $benevoleModel = new Benevole();

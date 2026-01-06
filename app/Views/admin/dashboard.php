@@ -23,7 +23,7 @@
             </div>
         </header>
 
-        <!-- Simple Stats Table -->
+        <!-- Stats -->
         <div class="bg-white rounded shadow p-6 mb-8">
             <h2 class="text-xl font-bold mb-4 text-gray-700">Statistiques Récentes</h2>
             <table class="w-full text-left border-collapse">
@@ -51,7 +51,7 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <!-- Recent Benevoles -->
+            <!--Benevoles -->
             <div class="bg-white rounded shadow p-6">
                 <h2 class="text-xl font-bold mb-4 text-gray-700">Nouveaux Bénévoles</h2>
                 <?php if (empty($recentBenevoles)): ?>
@@ -72,7 +72,7 @@
                 <?php endif; ?>
             </div>
 
-            <!-- Upcoming Events -->
+            <!-- Events -->
             <div class="bg-white rounded shadow p-6">
                 <h2 class="text-xl font-bold mb-4 text-gray-700">Evénements à Venir</h2>
                 <?php if (empty($upcomingEvents)): ?>
