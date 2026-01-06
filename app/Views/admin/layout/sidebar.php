@@ -7,15 +7,27 @@
         <a href="/admin" class="block px-6 py-3 hover:bg-gray-700 <?= $currentPage === 'dashboard' ? 'bg-gray-700 font-bold' : '' ?>">
             Tableau de bord
         </a>
+
+        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'ADMIN'): ?>
+        <a href="/admin/registrations" class="block px-6 py-3 hover:bg-gray-700 <?= $currentPage === 'registrations' ? 'bg-gray-700 font-bold' : '' ?>">
+            Demandes d'inscription
+        </a>
+        <?php endif; ?>
+
+        <?php if (isset($_SESSION['role']) && in_array($_SESSION['role'], ['ADMIN', 'BUREAU'])): ?>
         <a href="/admin/articles" class="block px-6 py-3 hover:bg-gray-700 <?= $currentPage === 'articles' ? 'bg-gray-700 font-bold' : '' ?>">
             Articles
         </a>
         <a href="/admin/benevoles" class="block px-6 py-3 hover:bg-gray-700 <?= $currentPage === 'benevoles' ? 'bg-gray-700 font-bold' : '' ?>">
             Bénévoles
         </a>
+        <?php endif; ?>
+
+        <?php if (isset($_SESSION['role']) && in_array($_SESSION['role'], ['ADMIN', 'POLE'])): ?>
         <a href="/admin/evenements" class="block px-6 py-3 hover:bg-gray-700 <?= $currentPage === 'evenements' ? 'bg-gray-700 font-bold' : '' ?>">
             Evénements
         </a>
+        <?php endif; ?>
     </nav>
     <div class="p-4 border-t border-gray-700">
         <a href="/admin/logout" class="block text-center text-red-400 hover:text-red-300">

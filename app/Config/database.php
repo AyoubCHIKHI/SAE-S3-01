@@ -2,7 +2,7 @@
 
 return [
     'host' => 'localhost',
-    'dbname' => 'testbd',
+    'dbname' => 'sae_s3_01',
     'user' => 'root',
     'password' => 'root',
     'charset' => 'utf8mb4'

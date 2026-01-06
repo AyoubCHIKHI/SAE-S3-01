@@ -23,6 +23,10 @@ class Router {
 
     public function dispatch() {
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        // Remove trailing slash if not root
+        if ($uri !== '/' && substr($uri, -1) === '/') {
+            $uri = rtrim($uri, '/');
+        }
         $method = $_SERVER['REQUEST_METHOD'];
 
         foreach ($this->routes as $route) {
