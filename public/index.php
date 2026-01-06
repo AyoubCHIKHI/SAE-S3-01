@@ -1,41 +1,68 @@
 <?php
 
-$uri = $_SERVER['REQUEST_URI'];
+// public/index.php
 
-switch ($uri) {
-    case '/':
-        require_once __DIR__ . '/../views/accueil.php';
-        break;
-    case '/nous_contacter':
-        require_once __DIR__ . '/../views/nous_contacter.php';
-        break;
-    case '/nos_actions':
-        require_once __DIR__ . '/../views/nos_actions.php';
-        break;
-    case '/nos_actions/education':
-        require_once __DIR__ . '/../views/nos_actions.php';
-        break;
-    case '/nos_missions':
-        require_once __DIR__ . '/../views/Nos_Missions.php';
-        break;
-    case '/egee_en_france':
-        require_once __DIR__ . '/../views/egee_en_france.php';
-        break;
-    case '/nous_connaitre':
-        require_once __DIR__ . '/../views/nous_connaitre.php';
-        break;
-    case '/rapport-activitee':
-        require_once __DIR__ . '/../views/rapport-activite.php';
-        break;
-    case '/conseil-administration':
-        require_once __DIR__ . '/../views/conseil-administration.php';
-        break;
-    case '/video_egee':
-        require_once __DIR__ . '/../views/video_egee.php';
-        break;
-    case '/admin':
-        require_once __DIR__ . '/admin.php';
-        break;
-    default:
-        echo '404: Pas trouvé';
-}
+// Auto-loader
+spl_autoload_register(function ($class) {
+    $prefix = 'App\\';
+    $base_dir = __DIR__ . '/../app/';
+    $len = strlen($prefix);
+    if (strncmp($prefix, $class, $len) !== 0) {
+        return;
+    }
+    $relative_class = substr($class, $len);
+    $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+    if (file_exists($file)) {
+        require $file;
+    }
+});
+
+session_start();
+
+use App\Core\Router;
+
+$router = new Router();
+
+// Public Routes
+$router->get('/', 'HomeController', 'index');
+$router->get('/nous_contacter', 'HomeController', 'contact');
+$router->get('/nos_actions', 'HomeController', 'actions');
+$router->get('/actualites', 'ArticleController', 'index');
+$router->get('/actualite', 'ArticleController', 'show');
+$router->get('/egee_en_france', 'HomeController', 'egeeEnFrance');
+$router->get('/nous_connaitre', 'HomeController', 'nousConnaitre');
+$router->get('/nos_missions', 'HomeController', 'nosMissions');
+
+// Auth Routes
+$router->get('/admin/login', 'AuthController', 'login');
+$router->post('/admin/login', 'AuthController', 'login');
+$router->get('/admin/logout', 'AuthController', 'logout');
+
+// Admin Routes
+$router->get('/admin', 'Admin\DashboardController', 'index');
+
+// Articles
+$router->get('/admin/articles', 'Admin\ArticleController', 'index');
+$router->get('/admin/articles/create', 'Admin\ArticleController', 'create');
+$router->post('/admin/articles/store', 'Admin\ArticleController', 'store');
+$router->get('/admin/articles/delete', 'Admin\ArticleController', 'delete');
+
+// Benevoles
+$router->get('/admin/benevoles', 'Admin\BenevoleController', 'index');
+$router->get('/admin/benevoles/create', 'Admin\BenevoleController', 'create');
+$router->post('/admin/benevoles/store', 'Admin\BenevoleController', 'store');
+$router->get('/admin/benevoles/edit', 'Admin\BenevoleController', 'edit');
+$router->post('/admin/benevoles/update', 'Admin\BenevoleController', 'update');
+$router->get('/admin/benevoles/delete', 'Admin\BenevoleController', 'delete');
+
+// Evenements
+$router->get('/admin/evenements', 'Admin\EvenementController', 'index');
+$router->get('/admin/evenements/create', 'Admin\EvenementController', 'create');
+$router->post('/admin/evenements/store', 'Admin\EvenementController', 'store');
+$router->get('/admin/evenements/edit', 'Admin\EvenementController', 'edit');
+$router->post('/admin/evenements/update', 'Admin\EvenementController', 'update');
+$router->get('/admin/evenements/delete', 'Admin\EvenementController', 'delete');
+
+
+
+$router->dispatch();
