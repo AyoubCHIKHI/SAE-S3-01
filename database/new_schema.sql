@@ -12,6 +12,29 @@ possedeMedia, avoir_type_versement, SOUTIEN_MISSION, SOUTIEN_EVENEMENT;
 -- Helper: We keep the existing 'users' table for authentication if it exists
 -- but we might need to adjust foreign keys if the new schema references it (it doesn't seem to).
 
+-- Users (Admins, Bureau, Pole)
+CREATE TABLE IF NOT EXISTS users (
+                                     id INT AUTO_INCREMENT PRIMARY KEY,
+                                     first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    role ENUM('ADMIN', 'BUREAU', 'POLE') NOT NULL,
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Login Logs
+CREATE TABLE IF NOT EXISTS login_logs (
+                                          id INT AUTO_INCREMENT PRIMARY KEY,
+                                          user_id INT NULL,
+                                          timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                                          ip_address VARCHAR(45) NOT NULL,
+    success BOOLEAN NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 CREATE TABLE Profession(
    id_profession VARCHAR(50),
    nom_profession VARCHAR(50),
