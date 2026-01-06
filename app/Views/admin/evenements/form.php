@@ -52,6 +52,11 @@
                 </div>
 
                 <div class="mb-4">
+                    <label class="block text-gray-700">Nombre de bénévoles</label>
+                    <input type="text" name="nb_benevoles_requis" value="<?= htmlspecialchars($evenement['lieu'] ?? $data['lieu'] ?? '') ?>" class="w-full border p-2 rounded">
+                </div>
+
+                <div class="mb-4">
                      <label class="block text-gray-700">Lieu</label>
                      <input type="text" name="lieu" value="<?= htmlspecialchars($evenement['lieu'] ?? $data['lieu'] ?? '') ?>" class="w-full border p-2 rounded">
                 </div>
