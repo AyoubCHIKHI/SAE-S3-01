@@ -4,21 +4,34 @@ namespace App\Controllers\Admin;
 use App\Core\Controller;
 use App\Models\Benevole;
 
-class BenevoleController extends Controller {
-    
-    public function index() {
+class BenevoleController extends Controller
+{
+
+    public function index()
+    {
         $this->requireAuth();
         $benevoleModel = new Benevole();
         $benevoles = $benevoleModel->getAll();
         $this->view('admin/benevoles/index', ['benevoles' => $benevoles]);
     }
 
-    public function create() {
+    public function create()
+    {
         $this->requireAuth();
-        $this->view('admin/benevoles/form', ['mode' => 'create']);
+        $villeModel = new \App\Models\Ville();
+        $evenementModel = new \App\Models\Evenement();
+        $villes = $villeModel->getAll();
+        $evenements = $evenementModel->getAll();
+
+        $this->view('admin/benevoles/form', [
+            'mode' => 'create',
+            'villes' => $villes,
+            'evenements' => $evenements
+        ]);
     }
 
-    public function store() {
+    public function store()
+    {
         $this->requireAuth();
         $benevoleModel = new Benevole();
         if ($benevoleModel->create($_POST)) {
@@ -30,7 +43,8 @@ class BenevoleController extends Controller {
         }
     }
 
-    public function edit() {
+    public function edit()
+    {
         $this->requireAuth();
         $id = $_GET['id'] ?? null;
         if (!$id) {
@@ -39,27 +53,39 @@ class BenevoleController extends Controller {
         }
         $benevoleModel = new Benevole();
         $benevole = $benevoleModel->find($id);
-        
-        $this->view('admin/benevoles/form', ['mode' => 'edit', 'benevole' => $benevole]);
+
+        $villeModel = new \App\Models\Ville();
+        $evenementModel = new \App\Models\Evenement();
+        $villes = $villeModel->getAll();
+        $evenements = $evenementModel->getAll();
+
+        $this->view('admin/benevoles/form', [
+            'mode' => 'edit',
+            'benevole' => $benevole,
+            'villes' => $villes,
+            'evenements' => $evenements
+        ]);
     }
 
-    public function update() {
+    public function update()
+    {
         $this->requireAuth();
         $id = $_POST['id'] ?? null;
         if (!$id) {
-             header('Location: /admin/benevoles');
-             exit;
+            header('Location: /admin/benevoles');
+            exit;
         }
         $benevoleModel = new Benevole();
         if ($benevoleModel->update($id, $_POST)) {
-             header('Location: /admin/benevoles');
-             exit;
+            header('Location: /admin/benevoles');
+            exit;
         } else {
-             $this->view('admin/benevoles/form', ['mode' => 'edit', 'benevole' => $_POST, 'error' => 'Erreur lors de la modification.']);
+            $this->view('admin/benevoles/form', ['mode' => 'edit', 'benevole' => $_POST, 'error' => 'Erreur lors de la modification.']);
         }
     }
 
-    public function delete() {
+    public function delete()
+    {
         $this->requireAuth();
         $id = $_GET['id'] ?? null;
         if ($id) {

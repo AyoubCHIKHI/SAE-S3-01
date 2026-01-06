@@ -1,12 +1,14 @@
 <?php $currentPage = 'dashboard'; ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau de bord - EGEE Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 font-sans flex">
 
     <?php require __DIR__ . '/layout/sidebar.php'; ?>
@@ -16,7 +18,8 @@
         <header class="flex justify-between items-center pb-6 border-b border-gray-300 mb-8">
             <h1 class="text-3xl font-bold text-gray-800">Tableau de bord</h1>
             <div class="flex items-center gap-4">
-                <span class="text-gray-600">Bonjour, <span class="font-bold text-blue-900"><?= htmlspecialchars($user) ?></span></span>
+                <span class="text-gray-600">Bonjour, <span
+                        class="font-bold text-blue-900"><?= htmlspecialchars($user) ?></span></span>
             </div>
         </header>
 
@@ -57,8 +60,9 @@
                     <ul class="divide-y divide-gray-200">
                         <?php foreach ($recentBenevoles as $benevole): ?>
                             <li class="py-3">
-                                <p class="font-semibold text-gray-800"><?= htmlspecialchars($benevole['prenom'] . ' ' . $benevole['nom']) ?></p>
-                                <p class="text-sm text-gray-500"><?= htmlspecialchars($benevole['ville']) ?> - <?= date('d/m/Y', strtotime($benevole['date_creation'])) ?></p>
+                                <p class="font-semibold text-gray-800">
+                                    <?= htmlspecialchars($benevole['prenom'] . ' ' . $benevole['Nom']) ?></p>
+                                <p class="text-sm text-gray-500"><?= htmlspecialchars($benevole['nom_ville'] ?? '') ?></p>
                             </li>
                         <?php endforeach; ?>
                     </ul>
@@ -77,10 +81,9 @@
                     <ul class="divide-y divide-gray-200">
                         <?php foreach ($upcomingEvents as $evt): ?>
                             <li class="py-3">
-                                <p class="font-semibold text-gray-800"><?= htmlspecialchars($evt['titre']) ?></p>
+                                <p class="font-semibold text-gray-800"><?= htmlspecialchars($evt['nom_']) ?></p>
                                 <p class="text-sm text-gray-500">
-                                    <?= date('d/m/Y H:i', strtotime($evt['date_debut'])) ?>
-                                    <span class="px-2 py-0.5 rounded-full text-xs font-bold bg-gray-100 text-gray-600 ml-2"><?= $evt['type'] ?></span>
+                                    <?= date('d/m/Y', strtotime($evt['date_debut'])) ?>
                                 </p>
                             </li>
                         <?php endforeach; ?>
@@ -94,4 +97,5 @@
 
     </main>
 </body>
+
 </html>

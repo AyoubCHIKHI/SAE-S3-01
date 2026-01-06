@@ -20,34 +20,24 @@
             <table class="w-full text-left border-collapse">
                 <thead class="bg-gray-50">
                     <tr>
-                        <th class="p-4 text-gray-600 font-semibold border-b">Titre</th>
-                        <th class="p-4 text-gray-600 font-semibold border-b">Type</th>
-                        <th class="p-4 text-gray-600 font-semibold border-b">Date</th>
-                        <th class="p-4 text-gray-600 font-semibold border-b">Statut</th>
+                        <th class="p-4 text-gray-600 font-semibold border-b">Nom</th>
+                        <th class="p-4 text-gray-600 font-semibold border-b">Date Début</th>
+                        <th class="p-4 text-gray-600 font-semibold border-b">Date Fin</th>
                         <th class="p-4 text-gray-600 font-semibold border-b text-right">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php if (empty($evenements)): ?>
-                        <tr><td colspan="5" class="p-4 text-center text-gray-500 italic">Aucun événement planifié.</td></tr>
+                        <tr><td colspan="4" class="p-4 text-center text-gray-500 italic">Aucun événement planifié.</td></tr>
                     <?php else: ?>
                         <?php foreach ($evenements as $e): ?>
                         <tr class="hover:bg-gray-50 border-b last:border-0">
-                            <td class="p-4 font-medium text-gray-800"><?= htmlspecialchars($e['titre']) ?></td>
-                            <td class="p-4"><span class="bg-gray-200 text-gray-800 px-2 py-1 rounded text-xs font-bold"><?= $e['type'] ?></span></td>
-                            <td class="p-4 text-gray-600"><?= date('d/m/Y H:i', strtotime($e['date_debut'])) ?></td>
-                            <td class="p-4">
-                                <?php if($e['statut'] == 'PLANIFIE'): ?>
-                                    <span class="text-green-600 font-semibold">Planifié</span>
-                                <?php elseif($e['statut'] == 'TERMINE'): ?>
-                                    <span class="text-gray-500">Terminé</span>
-                                <?php else: ?>
-                                    <span class="text-red-500">Annulé</span>
-                                <?php endif; ?>
-                            </td>
+                            <td class="p-4 font-medium text-gray-800"><?= htmlspecialchars($e['nom_']) ?></td>
+                            <td class="p-4 text-gray-600"><?= date('d/m/Y', strtotime($e['date_debut'])) ?></td>
+                            <td class="p-4 text-gray-600"><?= date('d/m/Y', strtotime($e['date_fin'])) ?></td>
                             <td class="p-4 text-right">
-                                <a href="/admin/evenements/edit?id=<?= $e['id'] ?>" class="text-blue-600 hover:text-blue-800 mr-3">Modifier</a>
-                                <a href="/admin/evenements/delete?id=<?= $e['id'] ?>" class="text-red-600 hover:text-red-800" onclick="return confirm('Supprimer cet événement ?')">Supprimer</a>
+                                <a href="/admin/evenements/edit?id=<?= $e['id_evenement'] ?>" class="text-blue-600 hover:text-blue-800 mr-3">Modifier</a>
+                                <a href="/admin/evenements/delete?id=<?= $e['id_evenement'] ?>" class="text-red-600 hover:text-red-800" onclick="return confirm('Supprimer cet événement ?')">Supprimer</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
