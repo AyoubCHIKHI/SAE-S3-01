@@ -38,7 +38,7 @@
                 <p class="py-4 text-gray-700 text-center">Découvrez notre vision, nos valeurs et nos objectifs pour un avenir durable.</p>
             </a>
 
-            <a href="video_egee"
+            <a href="/videos"
                 class="flex flex-col items-center justify-center shadow-md rounded-md p-12 bg-blue-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <img class="size-12" src="/assets/img/nous_connaitre/video-library.svg" alt="Vidéos EGEE">
                 <p class="my-2 text-lg font-medium text-blue-900">Vidéos EGEE</p>
@@ -52,7 +52,7 @@
                 <p class="py-4 text-gray-700 text-center">Découvrez les membres qui guident et soutiennent notre organisation au quotidien.</p>
             </a>
 
-            <a href="rapport-activitee"
+            <a href="/rapports"
                 class="flex flex-col items-center justify-center shadow-md rounded-md p-12 bg-blue-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                 <img class="size-12" src="/assets/img/nous_connaitre/rapport_d'activité.svg" alt="Rapport d’activité">
                 <p class="my-2 text-lg font-medium text-blue-900">Rapport d’activité</p>

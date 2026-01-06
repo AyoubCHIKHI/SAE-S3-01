@@ -1,39 +1,36 @@
--- New Database Schema adapted for MySQL
 
 SET FOREIGN_KEY_CHECKS = 0;
 
--- Drop Tables if they exist (to clean up old schema if overlapping names, though names are different)
 DROP TABLE IF EXISTS Profession, Compétence, Régime_Alimentaire, Mission, Pays, evenement, Media, 
 TYPE_PARTENAIRE, TYPE_VERSEMENT, DONATEUR, TYPE_USAGE, TYPE_SOUTIEN, TYPE_INDICATEUR, Ville, 
 PARTENAIRE, CONTACT_PARTENAIRE, CONVENTION, SUBVENTION, INDICATEUR, RESULTAT_INDICATEUR, 
 Bénévole, Coordonnée, VERSEMENT, PROFILE_BENEVOLE, PossèdeProf, A, Regime, Participe, 
 possedeMedia, avoir_type_versement, SOUTIEN_MISSION, SOUTIEN_EVENEMENT;
 
--- Helper: We keep the existing 'users' table for authentication if it exists
--- but we might need to adjust foreign keys if the new schema references it (it doesn't seem to).
 
--- Users (Admins, Bureau, Pole)
 CREATE TABLE IF NOT EXISTS users (
-                                     id INT AUTO_INCREMENT PRIMARY KEY,
-                                     first_name VARCHAR(255) NOT NULL,
-    last_name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    password_hash VARCHAR(255) NOT NULL,
-    role ENUM('ADMIN', 'BUREAU', 'POLE') NOT NULL,
-    is_active BOOLEAN DEFAULT TRUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   first_name VARCHAR(255) NOT NULL,
+   last_name VARCHAR(255) NOT NULL,
+   email VARCHAR(255) NOT NULL UNIQUE,
+   password_hash VARCHAR(255) NOT NULL,
+   role ENUM('ADMIN', 'BUREAU', 'POLE') NOT NULL,
+   profession VARCHAR(255),
+   is_active BOOLEAN DEFAULT TRUE,
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Login Logs
+
 CREATE TABLE IF NOT EXISTS login_logs (
-                                          id INT AUTO_INCREMENT PRIMARY KEY,
-                                          user_id INT NULL,
-                                          timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                                          ip_address VARCHAR(45) NOT NULL,
-    success BOOLEAN NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   user_id INT NULL,
+   timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   ip_address VARCHAR(45) NOT NULL,
+   success BOOLEAN NOT NULL,
+   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 CREATE TABLE Profession(
    id_profession VARCHAR(50),
@@ -133,7 +130,7 @@ CREATE TABLE Ville(
 CREATE TABLE PARTENAIRE(
    id_partenaire VARCHAR(50),
    status VARCHAR(50),
-   date_ajout VARCHAR(50), -- Consider DATE type? Keeping VARCHAR as requested
+   date_ajout VARCHAR(50),
    id_donateur VARCHAR(50) NOT NULL,
    id_type VARCHAR(50) NOT NULL,
    PRIMARY KEY(id_partenaire),
@@ -328,3 +325,16 @@ CREATE TABLE SOUTIEN_EVENEMENT(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE IF NOT EXISTS registration_requests (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    role ENUM('ADMIN', 'BUREAU', 'POLE', 'BENEVOLE', 'BENEFICIAIRE') NOT NULL,
+    profession VARCHAR(255),
+    message TEXT,
+    status ENUM('pending', 'validated', 'refused') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

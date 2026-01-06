@@ -1,7 +1,6 @@
 <?php
 ob_start();
 
-// public/index.php
 
 // Auto-loader
 spl_autoload_register(function ($class) {
@@ -33,6 +32,11 @@ $router->get('/actualite', 'ArticleController', 'show');
 $router->get('/egee_en_france', 'HomeController', 'egeeEnFrance');
 $router->get('/nous_connaitre', 'HomeController', 'nousConnaitre');
 $router->get('/nos_missions', 'HomeController', 'nosMissions');
+$router->get('/rapports', 'HomeController', 'rapports');
+$router->get('/videos', 'HomeController', 'videos');
+$router->get('/video_egee', 'HomeController', 'videos'); // Alias for legacy support if needed
+$router->get('/conseil-administration', 'HomeController', 'bureau');
+
 
 // Auth Routes
 $router->get('/admin/login', 'AuthController', 'login');

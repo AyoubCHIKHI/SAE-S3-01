@@ -24,7 +24,7 @@ $donationTrends = $statsService->getDonationTrends();
 $stats = [
     'benevoles' => $metrics['total_benevoles'],
     'evenements' => $metrics['total_events'],
-    'partenaires' => $partenaireModel ? $partenaireModel->countAll() : 0, // Keep legacy if needed or move to Stats
+    'partenaires' => $partenaireModel ? $partenaireModel->countAll() : 0,
     'donations' => $metrics['total_donations'],
     'members' => $metrics['total_members']
 ];

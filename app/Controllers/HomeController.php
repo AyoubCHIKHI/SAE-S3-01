@@ -31,4 +31,16 @@ class HomeController extends Controller {
     public function nosMissions() {
         $this->view('nos_missions');
     }
+
+    public function rapports() {
+        $this->view('rapports_activites');
+    }
+
+    public function videos() {
+        $this->view('video_egee');
+    }
+
+    public function bureau() {
+        $this->view('bureau');
+    }
 }

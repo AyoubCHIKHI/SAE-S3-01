@@ -1,120 +1,118 @@
 <?php
 
-// install.php - Single Installation Script
-// usage: php scripts/install.php
+// scripts/install.php
+// Installation : Base de données -> Admin -> Données de test
 
-echo "========================================\n";
-echo "      EGEE - Installation Script\n";
-echo "========================================\n\n";
+$startTime = microtime(true);
+echo "Début de l'installation...\n\n";
 
-// 1. Load Configuration or Prompt
-$configFile = __DIR__ . '/../app/Config/database.php';
-$config = [];
+// --- 1. Connexion & Création de la BDD ---
 
-if (file_exists($configFile)) {
-    echo "[INFO] Loading configuration from app/Config/database.php...\n";
-    $config = require $configFile;
-} else {
-    // If config doesn't exist, we could prompt here, but for now we'll fail or use defaults if strict.
-    // Given the task, we assume the config file I just created is the source of truth.
-    die("[ERROR] Configuration file app/Config/database.php not found. Please create it first.\n");
-}
-
+$config = require __DIR__ . '/../app/Config/Database.php';
 $host = $config['host'];
+$dbname = $config['dbname'];
 $user = $config['user'];
 $pass = $config['password'];
-$dbname = $config['dbname'];
 
 try {
-    // 2. Connect to MySQL (no DB selected yet)
-    echo "[STEP 1/4] Connecting to Database Server...\n";
-    $pdo = new PDO("mysql:host=$host;charset=utf8mb4", $user, $pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    // 3. Create Database
-    echo "[STEP 2/4] Creating Database `$dbname`...\n";
+    $pdo = new PDO("mysql:host=$host;charset=utf8mb4", $user, $pass, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+    ]);
+
+    echo "[BDD] Création de la base '$dbname' si nécessaire... ";
     $pdo->exec("CREATE DATABASE IF NOT EXISTS `$dbname` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
     $pdo->exec("USE `$dbname`");
-    echo "Database initialized.\n";
+    echo "OK.\n";
 
-    // 4. Import Schema
-    echo "[STEP 3/4] Importing Schema...\n";
-    $schemaFile = __DIR__ . '/../database/init.sql';
-    if (!file_exists($schemaFile)) {
-        die("[ERROR] Schema file database/init.sql not found.\n");
-    }
+    // --- 2. Import du Schéma ---
 
-    $sql = file_get_contents($schemaFile);
-    // Remove comments to avoid issues with some drivers/parsers
-    $sql = preg_replace('/--.*$/m', '', $sql);
-    
-    // Split by semicolon (basic)
+    echo "[BDD] Importation du schéma... ";
+    $sqlFile = __DIR__ . '/../database/init.sql';
+    if (!file_exists($sqlFile)) die("Erreur : init.sql manquant.\n");
+
+    $sql = preg_replace('/--.*$/m', '', file_get_contents($sqlFile));
     $statements = array_filter(array_map('trim', explode(';', $sql)));
 
     foreach ($statements as $stmt) {
-        if (!empty($stmt)) {
-            $pdo->exec($stmt);
-        }
+        if (!empty($stmt)) $pdo->exec($stmt);
     }
-    echo "Schema imported successfully.\n";
+    echo "OK.\n";
 
-    // 5. Create/Update Admin User
-    echo "[STEP 4/4] Creating Admin User...\n";
-    
-    // Prompt for admin credentials if running interactively, otherwise use defaults
-    // Since we are running in an agent, we will use defaults but check for environment vars 
-    // or just hardcoded safe defaults for dev environment.
-    
-    $adminEmail = 'admin@egee.asso.fr';
-    $first_name = 'Admin';
-    $last_name = 'System';
-    
-    // Interactive check (simplified for this context)
-    if (php_sapi_name() === 'cli' && defined('STDIN')) {
-        echo "Enter Admin Email [$adminEmail]: ";
-        $input = trim(fgets(STDIN));
-        if (!empty($input)) $adminEmail = $input;
-    }
+    // --- 3. Compte Admin ---
 
+    echo "[Utilisateur] Vérification du compte Admin... ";
+    $email = 'admin@egee.asso.fr';
+    
     $stmt = $pdo->prepare("SELECT id FROM users WHERE email = ?");
-    $stmt->execute([$adminEmail]);
-    $existingUser = $stmt->fetch();
-
-    if ($existingUser) {
-        echo "Admin user ($adminEmail) already exists.\n";
-        echo "Do you want to reset the password? (y/n) [n]: ";
-        $reset = trim(fgets(STDIN));
-        if (strtolower($reset) === 'y') {
-             echo "Enter New Password: ";
-             $password = trim(fgets(STDIN));
-             if (empty($password)) {
-                 die("Password cannot be empty.\n");
-             }
-             $hash = password_hash($password, PASSWORD_DEFAULT);
-             $pdo->prepare("UPDATE users SET password_hash = ? WHERE id = ?")->execute([$hash, $existingUser['id']]);
-             echo "Password updated.\n";
-        }
+    $stmt->execute([$email]);
+    if (!$stmt->fetch()) {
+        $hash = password_hash('admin', PASSWORD_DEFAULT);
+        $pdo->prepare("INSERT INTO users (first_name, last_name, email, password_hash, role, is_active) VALUES (?, ?, ?, ?, ?, 1)")
+            ->execute(['Admin', 'System', $email, $hash, 'ADMIN']);
+        echo "Créé (admin/admin).\n";
     } else {
-        echo "Creating new admin user ($adminEmail)...\n";
-        echo "Enter Password [admin]: ";
-        $password = trim(fgets(STDIN));
-        if (empty($password)) $password = 'admin'; // Default
-
-        $hash = password_hash($password, PASSWORD_DEFAULT);
-        $role = 'ADMIN';
-        
-        $stmt = $pdo->prepare("INSERT INTO users (first_name, last_name, email, password_hash, role, is_active) VALUES (?, ?, ?, ?, ?, 1)");
-        $stmt->execute([$first_name, $last_name, $adminEmail, $hash, $role]);
-        echo "Admin user created.\n";
-        echo "Credentials: $adminEmail / (hidden)\n";
+        echo "Existe.\n";
     }
 
-    echo "\n========================================\n";
-    echo "   Installation Completed Successfully  \n";
-    echo "========================================\n";
+    // --- 4. Données de Test ---
 
-} catch (PDOException $e) {
-    die("[ERROR] Database Error: " . $e->getMessage() . "\n");
+    echo "[Données] Articles... ";
+    
+    // Chargement manuel des dépendances Core si nécessaire
+    if (file_exists(__DIR__ . '/../app/Core/Database.php')) require_once __DIR__ . '/../app/Core/Database.php';
+    if (file_exists(__DIR__ . '/../app/Core/Model.php')) require_once __DIR__ . '/../app/Core/Model.php';
+    require_once __DIR__ . '/../app/Models/Article.php';
+
+    // Récupération de l'ID Admin
+    $adminId = $pdo->query("SELECT id FROM users WHERE role = 'ADMIN' LIMIT 1")->fetchColumn();
+
+    if ($adminId) {
+        $articleModel = new \App\Models\Article();
+        $articles = [
+            ['Monswiller se prépare face aux crues !', 'Une initiative locale soutenue par EGEE.', '/assets/img/actualites/MOnswiller-614x460.png', 'Partenariat'],
+            ['Transmettre, accompagner, s’engager ensemble', 'Nos bénévoles partagent leur expérience.', '/assets/img/actualites/BTransmettre-accompagner-368x460-1.png', 'Benevolat'],
+            ['Préparer les jeunes', 'Interventions dans les lycées et universités.', '/assets/img/actualites/travail_en_mutation.jpg', 'Education']
+        ];
+
+        foreach ($articles as $art) {
+            $exists = $pdo->prepare("SELECT 1 FROM articles WHERE title = ?");
+            $exists->execute([$art[0]]);
+            if (!$exists->fetch()) {
+                if (method_exists($articleModel, 'create')) {
+                    $articleModel->create([
+                        'title' => $art[0], 
+                        'content' => $art[1], 
+                        'image_url' => $art[2], 
+                        'category' => $art[3], 
+                        'author_id' => $adminId
+                    ]);
+                }
+            }
+        }
+        echo "OK.\n";
+    } else {
+        echo "Ignoré (Pas d'Admin).\n";
+    }
+
+    echo "[Données] Villes... ";
+    // France
+    $pdo->exec("INSERT IGNORE INTO Pays (id_pays, nom_pays) VALUES ('FR', 'France')");
+
+    $cities = [
+        'PARIS' => 'Paris', 'LYON' => 'Lyon', 'MARSEILLE' => 'Marseille',
+        'TOULOUSE' => 'Toulouse', 'NICE' => 'Nice', 'NANTES' => 'Nantes',
+        'STRASBOURG' => 'Strasbourg', 'BORDEAUX' => 'Bordeaux',
+        'LILLE' => 'Lille', 'MONTPELLIER' => 'Montpellier'
+    ];
+
+    $cityStmt = $pdo->prepare("INSERT IGNORE INTO Ville (id_ville, nom_ville, id_pays) VALUES (?, ?, 'FR')");
+    foreach ($cities as $id => $name) {
+        $cityStmt->execute([$id, $name]);
+    }
+    echo "OK.\n";
+
+    echo "\nInstallation terminée avec succès.\n";
+
 } catch (Exception $e) {
-    die("[ERROR] " . $e->getMessage() . "\n");
+    die("\nErreur : " . $e->getMessage() . "\n");
 }

@@ -241,9 +241,7 @@
             EGEE en France
         </p>
 
-        </p>
         <img src="/assets/img/accueil/location.svg" class="w-32 mb-10" alt="LOC">
-        <p class="text-2xl uppercase">Où nous trouver</p>
         <p class="text-2xl uppercase">Où nous trouver</p>
 
         <p class="text-center text-xl mt-10 w-[16em] md:w-[36em]">
