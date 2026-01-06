@@ -57,7 +57,7 @@ function login(string $email, string $password): bool
 /**
  * Log a login attempt.
  */
-function log_login_attempt(?int $userId, string $ip, bool $success): void
+function log_login_attempt(int $userId, string $ip, bool $success): bool
 {
     $pdo = getPDO();
     $stmt = $pdo->prepare("INSERT INTO login_logs (user_id, ip_address, success) VALUES (:user_id, :ip, :success)");
@@ -66,12 +66,13 @@ function log_login_attempt(?int $userId, string $ip, bool $success): void
         'ip' => $ip,
         'success' => $success ? 1 : 0
     ]);
+    return true;
 }
 
 /**
  * Logout the current user.
  */
-function logout(): void
+function logout(): bool
 {
     $_SESSION = [];
     if (ini_get("session.use_cookies")) {
@@ -87,6 +88,8 @@ function logout(): void
         );
     }
     session_destroy();
+
+    return true;
 }
 
 /**
@@ -100,16 +103,16 @@ function is_logged_in(): bool
 /**
  * Get current user role.
  */
-function get_current_role(): ?string
+function get_current_role(): string
 {
-    return $_SESSION['user_role'] ?? null;
+    return $_SESSION['user_role'];
 }
 
 /**
  * Require validation of being logged in, otherwise redirect.
  * Optionally check for specific roles.
  */
-function require_auth(array $allowedRoles = []): void
+function require_auth(array $allowedRoles = []): bool
 {
     if (!is_logged_in()) {
         header('Location: /admin/login');
@@ -124,4 +127,5 @@ function require_auth(array $allowedRoles = []): void
             die("Accès refusé. Vous n'avez pas les droits nécessaires.");
         }
     }
+    return true;
 }
