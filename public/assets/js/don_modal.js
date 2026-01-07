@@ -27,18 +27,23 @@ fenetreDon.addEventListener("click", (e) => {
 if (e.target === fenetreDon) fermerDon();
 });
 
+
+const montantInput = document.getElementById("montantInput");
+
 montants.forEach((montant) => {
-montant.addEventListener("click", () => {
-    montants.forEach((m) =>
-    m.classList.remove("bg-blue-300", "border-2", "border-blue-800")
-    );
-    montant.classList.add("bg-blue-300", "border-2", "border-blue-800");
-    autreMontant.value = "";
-});
+    montant.addEventListener("click", () => {
+        montants.forEach((m) =>
+            m.classList.remove("bg-blue-300", "border-2", "border-blue-800")
+        );
+        montant.classList.add("bg-blue-300", "border-2", "border-blue-800");
+        autreMontant.value = "";
+        montantInput.value = montant.dataset.amount;
+    });
 });
 
 autreMontant.addEventListener("input", () => {
-montants.forEach((m) =>
-    m.classList.remove("bg-blue-300", "border-2", "border-blue-800")
-);
+    montants.forEach((m) =>
+        m.classList.remove("bg-blue-300", "border-2", "border-blue-800")
+    );
+    montantInput.value = autreMontant.value;
 });

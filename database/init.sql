@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS demandes_inscription (
 
 CREATE TABLE IF NOT EXISTS donateurs (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    prenom VARCHAR(255) NOT NULL,
     nom VARCHAR(255) NOT NULL,
     email VARCHAR(255),
     telephone VARCHAR(50),

@@ -1,37 +1,31 @@
 <?php
+
 namespace App\Models;
 
-use App\Core\Model;
+use App\Utils\Database;
 use PDO;
 
-class Donateur extends Model {
-    protected $table = 'donateurs';
+class Donateur
+{
+    protected $pdo;
 
-    public function getAll(): array
+    public function __construct()
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM {$this->table} ORDER BY cree_le DESC");
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $this->pdo = Database::getConnection();
     }
 
-    public function create(array $data): bool
+    public function create(array $data)
     {
-        $sql = "INSERT INTO {$this->table} (nom, email, telephone, montant, date, message) 
-                VALUES (:nom, :email, :telephone, :montant, :date, :message)";
+        $sql = "INSERT INTO donateurs (prenom, nom, email, telephone, message, montant, date) VALUES (:prenom, :nom, :email, :telephone, :message, :montant, NOW())";
         $stmt = $this->pdo->prepare($sql);
-        return $stmt->execute([
-            'nom' => $data['nom'],
-            'email' => $data['email'],
-            'telephone' => $data['telephone'] ?? null,
-            'montant' => $data['montant'] ?? 0.00,
-            'date' => $data['date'] ?? date('Y-m-d'),
-            'message' => $data['message'] ?? null
+        $stmt->execute([
+            ':prenom' => $data['prenom'],
+            ':nom' => $data['nom'],
+            ':email' => $data['email'],
+            ':telephone' => $data['telephone'],
+            ':message' => $data['message'],
+            ':montant' => $data['montant']
         ]);
-    }
-
-    public function delete($id)
-    {
-        $stmt = $this->pdo->prepare("DELETE FROM {$this->table} WHERE id = :id");
-        return $stmt->execute(['id' => $id]);
+        return $this->pdo->lastInsertId();
     }
 }

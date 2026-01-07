@@ -46,6 +46,7 @@ $router->get('/admin/logout', 'AuthController', 'logout');
 $router->get('/register', 'AuthController', 'register');
 $router->post('/register', 'AuthController', 'register');
 
+$router->post('/don/store', 'DonateurController', 'store');
 $router->post('/contact/submit', 'HomeController', 'submitContact');
 
 // Admin Routes
