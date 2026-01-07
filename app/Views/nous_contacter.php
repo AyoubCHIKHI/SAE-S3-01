@@ -46,53 +46,57 @@
         </section>
 
         <section id="formulaire_contact" class="flex flex-col justify-center py-6 md:py-0 md:px-12">
+            <form action="/contact/submit" method="POST" class="flex flex-col w-full">
+                <div class="flex gap-4">
 
-            <div class="flex gap-4">
+                    <div class="flex flex-col w-1/2">
+                        <label for="nom" class="font-bold">NOM:</label>
+                        <input
+                            id="nom"
+                            type="text"
+                            name="nom"
+                            placeholder="Votre nom"
+                            class="border-2 rounded-md p-2 placeholder-gray-600 mt-2 w-full"
+                            required>
+                    </div>
 
-                <div class="flex flex-col">
-                    <label for="nom" class="font-bold">NOM:</label>
-                    <input
-                        id="nom"
-                        type="text"
-                        name="nom"
-                        placeholder="Votre nom"
-                        class="border-2 rounded-md p-2 placeholder-gray-600 mt-2"
-                        required>
+                    <div class="flex flex-col w-1/2">
+                        <label for="prenom" class="font-bold">Prénom:</label>
+                        <input
+                            id="prenom"
+                            type="text"
+                            name="prenom"
+                            placeholder="Votre prénom"
+                            class="border-2 rounded-md p-2 placeholder-gray-600 mt-2 w-full" 
+                            required>
+                    </div>
+
                 </div>
 
-                <div class="flex flex-col">
-                    <label for="prénom" class="font-bold">Prénom:</label>
-                    <input
-                        id="prénom"
-                        type="text"
-                        name="prénom"
-                        placeholder="Votre prénom"
-                        class="border-2 rounded-md p-2 placeholder-gray-600 mt-2" 
-                        required>
+                <label for="email" class="font-bold mt-4">Email:</label>
+                <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="votremail@mail.com"
+                    class="border-2 rounded-md p-2 placeholder-gray-600 mt-2"
+                    required>
+
+                <label for="message" class="font-bold mt-4">Votre message:</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Écrivez votre message"
+                    class="border-2 rounded-md p-2 h-[8em] placeholder-gray-600 mt-2"></textarea>
+
+                <div class="mt-4 mb-2 text-sm text-gray-600">
+                    En soumettant ce formulaire, vous acceptez notre <a href="/mentions_legales" class="text-blue-500 underline hover:text-blue-700" target="_blank">politique de confidentialité</a>.
                 </div>
 
-            </div>
-
-            <label for="email" class="font-bold mt-4">Email:</label>
-            <input
-                id="email"
-                type="email"
-                name="email"
-                placeholder="votremail@mail.com"
-                class="border-2 rounded-md p-2 placeholder-gray-600 mt-2"
-                required>
-
-            <label for="message" class="font-bold mt-4">Votre message:</label>
-            <textarea
-                id="message"
-                name="message"
-                placeholder="Écrivez votre message"
-                class="border-2 rounded-md p-2 h-[8em] placeholder-gray-600 mt-2"></textarea>
-
-            <button class="bg-blue-400 py-4 px-6 rounded mt-6 text-white transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
-                Envoyer votre message
-            </button>
-
+                <button type="submit" class="bg-blue-400 py-4 px-6 rounded mt-6 text-white transform transition duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg">
+                    Envoyer votre message
+                </button>
+            </form>
         </section>
 
     </article>

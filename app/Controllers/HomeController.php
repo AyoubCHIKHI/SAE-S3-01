@@ -4,6 +4,7 @@ namespace App\Controllers;
 use App\Core\Controller;
 
 use App\Models\Article;
+use App\Models\Message;
 
 class HomeController extends Controller {
     public function index() {
@@ -14,6 +15,30 @@ class HomeController extends Controller {
 
     public function contact() {
         $this->view('nous_contacter');
+    }
+    
+    public function submitContact() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $nom = trim($_POST['nom'] ?? '');
+            $prenom = trim($_POST['prenom'] ?? '');
+            $email = trim($_POST['email'] ?? '');
+            $messageContent = trim($_POST['message'] ?? '');
+            
+            if ($nom && $email && $messageContent) {
+                $messageModel = new Message();
+                $messageModel->create([
+                    'name' => "$nom $prenom",
+                    'email' => $email,
+                    'message' => $messageContent
+                ]);
+                
+                // Redirect with success (simplistic for now)
+                header('Location: /nous_contacter?success=1');
+                exit;
+            }
+        }
+        header('Location: /nous_contacter?error=1');
+        exit;
     }
 
     public function actions() {
@@ -42,5 +67,9 @@ class HomeController extends Controller {
 
     public function bureau() {
         $this->view('bureau');
+    }
+
+    public function mentionsLegales() {
+        $this->view('mentions_legales');
     }
 }

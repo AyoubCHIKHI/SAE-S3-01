@@ -15,83 +15,87 @@
 
     <!-- Main Content -->
     <main class="flex-1 ml-64 p-8 overflow-y-auto h-screen">
-        <header class="flex justify-between items-center pb-6 border-b border-gray-300 mb-8">
-            <h1 class="text-3xl font-bold text-gray-800">Tableau de bord</h1>
+        <header class="flex justify-between items-center pb-6 mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">Tableau de bord</h1>
             <div class="flex items-center gap-4">
-                <span class="text-gray-600">Bonjour, <span
-                        class="font-bold text-blue-900"><?= htmlspecialchars($user) ?></span></span>
+                <span class="text-gray-500">Bonjour, <span
+                        class="font-medium text-gray-900"><?= htmlspecialchars($user) ?></span></span>
             </div>
         </header>
 
-        <!-- Stats -->
-        <div class="bg-white rounded shadow p-6 mb-8">
-            <h2 class="text-xl font-bold mb-4 text-gray-700">Statistiques Récentes</h2>
-            <table class="w-full text-left border-collapse">
-                <thead>
-                    <tr class="border-b">
-                        <th class="py-2 text-gray-600">Métrique</th>
-                        <th class="py-2 text-gray-600">Valeur</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="border-b">
-                        <td class="py-3">Total Articles</td>
-                        <td class="py-3 font-semibold"><?= $stats['articles'] ?? 0 ?></td>
-                    </tr>
-                    <tr class="border-b">
-                        <td class="py-3">Total Bénévoles</td>
-                        <td class="py-3 font-semibold"><?= $stats['benevoles'] ?? 0 ?></td>
-                    </tr>
-                    <tr>
-                        <td class="py-3">Total Missions / Evénements</td>
-                        <td class="py-3 font-semibold"><?= $stats['missions'] ?? 0 ?></td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-lg border border-gray-200 p-6">
+                <div class="text-xs font-medium text-gray-500 uppercase tracking-widest">Total Articles</div>
+                <div class="mt-2 text-3xl font-bold text-gray-900"><?= $stats['articles'] ?? 0 ?></div>
+            </div>
+            
+            <div class="bg-white rounded-lg border border-gray-200 p-6">
+                <div class="text-xs font-medium text-gray-500 uppercase tracking-widest">Missions</div>
+                <div class="mt-2 text-3xl font-bold text-gray-900"><?= $stats['missions'] ?? 0 ?></div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-gray-200 p-6">
+                <div class="text-xs font-medium text-gray-500 uppercase tracking-widest">Bénéficiaires</div>
+                <div class="mt-2 text-3xl font-bold text-gray-900"><?= $stats['beneficiaries'] ?? 0 ?></div>
+            </div>
+
+            <div class="bg-white rounded-lg border border-gray-200 p-6">
+                <div class="text-xs font-medium text-gray-500 uppercase tracking-widest">Nouveaux Bénévoles</div>
+                <div class="mt-2 text-3xl font-bold text-gray-900"><?= $stats['benevoles'] ?? 0 ?></div>
+            </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <!--Benevoles -->
-            <div class="bg-white rounded shadow p-6">
-                <h2 class="text-xl font-bold mb-4 text-gray-700">Nouveaux Bénévoles</h2>
-                <?php if (empty($recentBenevoles)): ?>
-                    <p class="text-gray-500 italic">Aucun bénévole récent.</p>
-                <?php else: ?>
-                    <ul class="divide-y divide-gray-200">
-                        <?php foreach ($recentBenevoles as $benevole): ?>
-                            <li class="py-3">
-                                <p class="font-semibold text-gray-800">
-                                    <?= htmlspecialchars($benevole['prenom'] . ' ' . $benevole['Nom']) ?></p>
-                                <p class="text-sm text-gray-500"><?= htmlspecialchars($benevole['nom_ville'] ?? '') ?></p>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <div class="mt-4 text-right">
-                        <a href="/admin/benevoles" class="text-blue-600 hover:underline text-sm">Voir tout &rarr;</a>
-                    </div>
-                <?php endif; ?>
+            <!-- New Volunteers -->
+            <div class="bg-white rounded-lg border border-gray-200 flex flex-col">
+                <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+                    <h2 class="text-base font-bold text-gray-900">Nouveaux Bénévoles</h2>
+                    <a href="/admin/volunteers" class="text-gray-500 hover:text-gray-900 text-sm font-medium transition-colors">Voir tout</a>
+                </div>
+                <div class="p-6 flex-1">
+                    <?php if (empty($recentVolunteers)): ?>
+                        <p class="text-gray-400 italic text-center py-4 text-sm">Aucun bénévole récent.</p>
+                    <?php else: ?>
+                        <ul class="space-y-4">
+                            <?php foreach ($recentVolunteers as $vol): ?>
+                                <li class="flex items-center justify-between">
+                                    <div>
+                                        <p class="font-medium text-gray-900 text-sm"><?= htmlspecialchars($vol['first_name'] . ' ' . $vol['last_name']) ?></p>
+                                        <p class="text-xs text-gray-500"><?= htmlspecialchars($vol['city'] ?? 'Ville inconnue') ?></p>
+                                    </div>
+                                    <span class="px-2 py-1 text-[10px] font-medium text-gray-600 bg-gray-100 rounded-full tracking-wide">NOUVEAU</span>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </div>
             </div>
 
-            <!-- Events -->
-            <div class="bg-white rounded shadow p-6">
-                <h2 class="text-xl font-bold mb-4 text-gray-700">Evénements à Venir</h2>
-                <?php if (empty($upcomingEvents)): ?>
-                    <p class="text-gray-500 italic">Aucun événement planifié.</p>
-                <?php else: ?>
-                    <ul class="divide-y divide-gray-200">
-                        <?php foreach ($upcomingEvents as $evt): ?>
-                            <li class="py-3">
-                                <p class="font-semibold text-gray-800"><?= htmlspecialchars($evt['nom_']) ?></p>
-                                <p class="text-sm text-gray-500">
-                                    <?= date('d/m/Y', strtotime($evt['date_debut'])) ?>
-                                </p>
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                    <div class="mt-4 text-right">
-                        <a href="/admin/evenements" class="text-blue-600 hover:underline text-sm">Voir tout &rarr;</a>
-                    </div>
-                <?php endif; ?>
+            <!-- Upcoming Missions -->
+            <div class="bg-white rounded-lg border border-gray-200 flex flex-col">
+                <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+                    <h2 class="text-base font-bold text-gray-900">Missions à Venir</h2>
+                    <a href="/admin/missions" class="text-gray-500 hover:text-gray-900 text-sm font-medium transition-colors">Voir tout</a>
+                </div>
+                <div class="p-6 flex-1">
+                    <?php if (empty($upcomingMissions)): ?>
+                        <p class="text-gray-400 italic text-center py-4 text-sm">Aucune mission planifiée.</p>
+                    <?php else: ?>
+                        <ul class="space-y-4">
+                            <?php foreach ($upcomingMissions as $miss): ?>
+                                <li class="flex items-center justify-between group cursor-default">
+                                    <div>
+                                        <p class="font-medium text-gray-900 group-hover:text-black transition text-sm"><?= htmlspecialchars($miss['title']) ?></p>
+                                        <p class="text-xs text-gray-500">
+                                            <?= date('d/m/Y', strtotime($miss['start_date'])) ?>
+                                        </p>
+                                    </div>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
 

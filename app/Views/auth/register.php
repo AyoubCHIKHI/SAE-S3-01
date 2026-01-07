@@ -83,6 +83,10 @@
                     <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" name="message" rows="3"><?php echo $data['message'] ?? ''; ?></textarea>
                 </div>
 
+                <div class="mb-4 text-sm text-gray-600">
+                    En soumettant ce formulaire, vous acceptez notre <a href="/mentions_legales" class="text-blue-500 underline hover:text-blue-700" target="_blank">politique de confidentialité</a>.
+                </div>
+
                 <div class="flex items-center justify-between mt-6">
                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="submit">
                         Envoyer la demande

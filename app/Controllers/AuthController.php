@@ -61,6 +61,11 @@ class AuthController extends Controller {
 
 
     public function login() {
+        if (isset($_SESSION['user_id'])) {
+            $this->redirect('/admin');
+            return;
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = $_POST['email'] ?? '';
             $password = $_POST['password'] ?? '';
