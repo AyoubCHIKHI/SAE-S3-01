@@ -37,7 +37,7 @@
 
             <div class="bg-white rounded-lg border border-gray-200 p-6">
                 <div class="text-xs font-medium text-gray-500 uppercase tracking-widest">Bénéficiaires</div>
-                <div class="mt-2 text-3xl font-bold text-gray-900"><?= $stats['beneficiaries'] ?? 0 ?></div>
+                <div class="mt-2 text-3xl font-bold text-gray-900"><?= $stats['beneficiaires'] ?? 0 ?></div>
             </div>
 
             <div class="bg-white rounded-lg border border-gray-200 p-6">
@@ -61,8 +61,8 @@
                             <?php foreach ($recentVolunteers as $vol): ?>
                                 <li class="flex items-center justify-between">
                                     <div>
-                                        <p class="font-medium text-gray-900 text-sm"><?= htmlspecialchars($vol['first_name'] . ' ' . $vol['last_name']) ?></p>
-                                        <p class="text-xs text-gray-500"><?= htmlspecialchars($vol['city'] ?? 'Ville inconnue') ?></p>
+                                        <p class="font-medium text-gray-900 text-sm"><?= htmlspecialchars($vol['prenom'] . ' ' . $vol['nom']) ?></p>
+                                        <p class="text-xs text-gray-500"><?= htmlspecialchars($vol['ville'] ?? 'Ville inconnue') ?></p>
                                     </div>
                                     <span class="px-2 py-1 text-[10px] font-medium text-gray-600 bg-gray-100 rounded-full tracking-wide">NOUVEAU</span>
                                 </li>
@@ -86,9 +86,9 @@
                             <?php foreach ($upcomingMissions as $miss): ?>
                                 <li class="flex items-center justify-between group cursor-default">
                                     <div>
-                                        <p class="font-medium text-gray-900 group-hover:text-black transition text-sm"><?= htmlspecialchars($miss['title']) ?></p>
+                                        <p class="font-medium text-gray-900 group-hover:text-black transition text-sm"><?= htmlspecialchars($miss['titre']) ?></p>
                                         <p class="text-xs text-gray-500">
-                                            <?= date('d/m/Y', strtotime($miss['start_date'])) ?>
+                                            <?= $miss['date_debut'] ? date('d/m/Y', strtotime($miss['date_debut'])) : '' ?>
                                         </p>
                                     </div>
                                 </li>

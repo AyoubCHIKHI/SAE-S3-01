@@ -32,13 +32,13 @@
                     <?php else: ?>
                         <?php foreach ($beneficiaries as $b): ?>
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="py-4 px-6 text-sm font-medium text-gray-900"><?= htmlspecialchars($b['first_name'] . ' ' . $b['last_name']) ?></td>
+                            <td class="py-4 px-6 text-sm font-medium text-gray-900"><?= htmlspecialchars($b['prenom'] . ' ' . $b['nom']) ?></td>
                             <td class="py-4 px-6 text-sm text-gray-500"><?= htmlspecialchars($b['email']) ?></td>
-                            <td class="py-4 px-6 text-sm text-gray-500 max-w-xs truncate" title="<?= htmlspecialchars($b['needs']) ?>"><?= htmlspecialchars($b['needs']) ?></td>
+                            <td class="py-4 px-6 text-sm text-gray-500 max-w-xs truncate" title="<?= htmlspecialchars($b['besoins']) ?>"><?= htmlspecialchars($b['besoins']) ?></td>
                             <td class="py-4 px-6 text-sm">
-                                <?php if ($b['v_first']): ?>
+                                <?php if ($b['v_prenom']): ?>
                                     <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800">
-                                        <?= htmlspecialchars($b['v_first'] . ' ' . $b['v_last']) ?>
+                                        <?= htmlspecialchars($b['v_prenom'] . ' ' . $b['v_nom']) ?>
                                     </span>
                                 <?php else: ?>
                                     <span class="text-gray-400 text-xs italic">Non assigné</span>

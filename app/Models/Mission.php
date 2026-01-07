@@ -10,45 +10,48 @@ class Mission extends Model
 
     public function getAll()
     {
-        return $this->query("SELECT * FROM {$this->table} ORDER BY start_date DESC")->fetchAll(PDO::FETCH_ASSOC);
+        return $this->query("SELECT * FROM {$this->table} ORDER BY date_debut DESC")->fetchAll(PDO::FETCH_ASSOC);
     }
     
     public function getUpcoming($limit = 5)
     {
-        return $this->query("SELECT * FROM {$this->table} WHERE start_date >= NOW() ORDER BY start_date ASC LIMIT $limit")->fetchAll(PDO::FETCH_ASSOC);
+        $limit = (int) $limit;
+        return $this->query("SELECT * FROM {$this->table} WHERE date_debut >= NOW() ORDER BY date_debut ASC LIMIT $limit")->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function create($data)
+    public function create($data): bool
     {
-        $sql = "INSERT INTO missions (title, description, category, location, start_date, end_date, expected_volunteers, responsible_person, equipment_needed, specific_tasks) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        return $this->query($sql, [
-            $data['title'],
+        $sql = "INSERT INTO missions (titre, description, categorie, lieu, date_debut, date_fin, benevoles_attendus, responsable, materiel_requis, taches_specifiques) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([
+            $data['titre'],
             $data['description'],
-            $data['category'],
-            $data['location'],
-            $data['start_date'],
-            $data['end_date'],
-            $data['expected_volunteers'],
-            $data['responsible_person'],
-            $data['equipment_needed'],
-            $data['specific_tasks']
+            $data['categorie'],
+            $data['lieu'],
+            $data['date_debut'],
+            $data['date_fin'],
+            $data['benevoles_attendus'],
+            $data['responsable'],
+            $data['materiel_requis'],
+            $data['taches_specifiques']
         ]);
     }
 
-    public function update($id, $data)
+    public function update($id, $data): bool
     {
-        $sql = "UPDATE missions SET title = ?, description = ?, category = ?, location = ?, start_date = ?, end_date = ?, expected_volunteers = ?, responsible_person = ?, equipment_needed = ?, specific_tasks = ? WHERE id = ?";
-        return $this->query($sql, [
-            $data['title'],
+        $sql = "UPDATE missions SET titre = ?, description = ?, categorie = ?, lieu = ?, date_debut = ?, date_fin = ?, benevoles_attendus = ?, responsable = ?, materiel_requis = ?, taches_specifiques = ? WHERE id = ?";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([
+            $data['titre'],
             $data['description'],
-            $data['category'],
-            $data['location'],
-            $data['start_date'],
-            $data['end_date'],
-            $data['expected_volunteers'],
-            $data['responsible_person'],
-            $data['equipment_needed'],
-            $data['specific_tasks'],
+            $data['categorie'],
+            $data['lieu'],
+            $data['date_debut'],
+            $data['date_fin'],
+            $data['benevoles_attendus'],
+            $data['responsable'],
+            $data['materiel_requis'],
+            $data['taches_specifiques'],
             $id
         ]);
     }

@@ -22,9 +22,9 @@ class ArticleController extends Controller {
         $this->requireAuth();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = [
-                'title' => $_POST['title'],
-                'content' => $_POST['content'],
-                'author_id' => $_SESSION['user_id'],
+                'titre' => $_POST['titre'],
+                'contenu' => $_POST['contenu'],
+                'auteur_id' => $_SESSION['user_id'],
             ];
             $articleModel = new Article();
             $articleModel->create($data); 

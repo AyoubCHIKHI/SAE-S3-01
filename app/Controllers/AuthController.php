@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 use App\Core\Database;
+use App\Models\DemandeInscription;
 use PDO;
 
 class AuthController extends Controller {
@@ -32,27 +33,27 @@ class AuthController extends Controller {
             return;
         }
 
-        // Vérifier si l'email existe déjà dans users ou registration_requests
+        // Vérifier si l'email existe déjà dans utilisateurs ou demandes_inscription
         $db = Database::getInstance()->getConnection();
         
-        // Check users
-        $stmt = $db->prepare("SELECT id FROM users WHERE email = ?");
+        // Check utilisateurs
+        $stmt = $db->prepare("SELECT id FROM utilisateurs WHERE email = ?");
         $stmt->execute([$data['email']]);
         if ($stmt->fetch()) {
             $this->view('auth/register', ['error' => 'Cet email est déjà utilisé.', 'data' => $data]);
             return;
         }
 
-        // Check requests
-        $stmt = $db->prepare("SELECT id FROM registration_requests WHERE email = ? AND status = 'pending'");
+        // Check demandes
+        $stmt = $db->prepare("SELECT id FROM demandes_inscription WHERE email = ? AND statut = 'pending'");
         $stmt->execute([$data['email']]);
         if ($stmt->fetch()) {
              $this->view('auth/register', ['error' => 'Une demande est déjà en cours pour cet email.', 'data' => $data]);
              return;
         }
 
-        $requestModel = new \App\Models\RegistrationRequest();
-        if ($requestModel->create($data)) {
+        $demandeModel = new DemandeInscription();
+        if ($demandeModel->create($data)) {
             $this->view('auth/register', ['success' => 'Votre demande d\'inscription a été envoyée avec succès. Elle sera examinée par un administrateur.']);
         } else {
             $this->view('auth/register', ['error' => 'Une erreur est survenue lors de l\'enregistrement de votre demande.', 'data' => $data]);
@@ -71,14 +72,14 @@ class AuthController extends Controller {
             $password = $_POST['password'] ?? '';
 
             $db = Database::getInstance()->getConnection();
-            $stmt = $db->prepare("SELECT * FROM users WHERE email = ? AND is_active = 1");
+            $stmt = $db->prepare("SELECT * FROM utilisateurs WHERE email = ? AND est_actif = 1");
             $stmt->execute([$email]);
             $user = $stmt->fetch();
 
-            if ($user && password_verify($password, $user['password_hash'])) {
+            if ($user && password_verify($password, $user['mot_de_passe'])) {
                 session_regenerate_id(true);
                 $_SESSION['user_id'] = $user['id'];
-                $_SESSION['user_name'] = $user['first_name'] . ' ' . $user['last_name'];
+                $_SESSION['user_name'] = $user['prenom'] . ' ' . $user['nom'];
                 $_SESSION['role'] = $user['role'];
                 
                 $this->redirect('/admin');

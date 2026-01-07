@@ -10,16 +10,16 @@ class Article extends Model {
     public function getAll(): array
     {
         // Join with users to get author name
-        $sql = "SELECT a.*, u.first_name, u.last_name 
+        $sql = "SELECT a.*, u.prenom, u.nom 
                 FROM {$this->table} a 
-                LEFT JOIN users u ON a.author_id = u.id 
-                ORDER BY created_at DESC";
+                LEFT JOIN utilisateurs u ON a.auteur_id = u.id 
+                ORDER BY cree_le DESC";
         return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getLatest(int $limit = 3): array
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM {$this->table} ORDER BY created_at DESC LIMIT :limit");
+        $stmt = $this->pdo->prepare("SELECT * FROM {$this->table} ORDER BY cree_le DESC LIMIT :limit");
         $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -27,15 +27,15 @@ class Article extends Model {
 
     public function create(array $data): bool
     {
-        $sql = "INSERT INTO {$this->table} (title, content, image_url, category, author_id) 
-                VALUES (:title, :content, :image_url, :category, :author_id)";
+        $sql = "INSERT INTO {$this->table} (titre, contenu, image_url, categorie, auteur_id) 
+                VALUES (:titre, :contenu, :image_url, :categorie, :auteur_id)";
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([
-            'title' => $data['title'],
-            'content' => $data['content'],
+            'titre' => $data['titre'],
+            'contenu' => $data['contenu'],
             'image_url' => $data['image_url'] ?? null,
-            'category' => $data['category'] ?? 'Generale',
-            'author_id' => $data['author_id']
+            'categorie' => $data['categorie'] ?? 'Generale',
+            'auteur_id' => $data['auteur_id']
         ]);
     }
 

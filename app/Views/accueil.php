@@ -219,7 +219,7 @@
                             <?php else: ?>
                                 <div class="w-72 h-56 bg-gray-200 border-2 border-black rounded-md shadow-md flex items-center justify-center text-gray-500">Image indisponible</div>
                             <?php endif; ?>
-                            <p class="max-w-72 font-bold"><?= htmlspecialchars($art['title']) ?></p>
+                            <p class="max-w-72 font-bold"><?= htmlspecialchars($art['titre']) ?></p>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>

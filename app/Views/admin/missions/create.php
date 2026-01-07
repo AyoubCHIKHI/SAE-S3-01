@@ -14,7 +14,7 @@
             <form action="/admin/missions/store" method="POST" class="space-y-4">
                 <div>
                     <label class="block text-gray-700">Titre</label>
-                    <input type="text" name="title" class="w-full border p-2 rounded" required>
+                    <input type="text" name="titre" class="w-full border p-2 rounded" required>
                 </div>
                 <div>
                     <label class="block text-gray-700">Description</label>
@@ -23,7 +23,7 @@
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-gray-700">Catégorie</label>
-                        <select name="category" class="w-full border p-2 rounded">
+                        <select name="categorie" class="w-full border p-2 rounded">
                             <option value="Social">Social</option>
                             <option value="Solidarité">Solidarité</option>
                             <option value="Autre">Autre</option>
@@ -31,36 +31,36 @@
                     </div>
                     <div>
                         <label class="block text-gray-700">Lieu</label>
-                        <input type="text" name="location" class="w-full border p-2 rounded">
+                        <input type="text" name="lieu" class="w-full border p-2 rounded">
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-gray-700">Date/Heure Début</label>
-                        <input type="datetime-local" name="start_date" class="w-full border p-2 rounded">
+                        <input type="datetime-local" name="date_debut" class="w-full border p-2 rounded">
                     </div>
                     <div>
                         <label class="block text-gray-700">Date/Heure Fin</label>
-                        <input type="datetime-local" name="end_date" class="w-full border p-2 rounded">
+                        <input type="datetime-local" name="date_fin" class="w-full border p-2 rounded">
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="block text-gray-700">Nombre de bénévoles attendus</label>
-                        <input type="number" name="expected_volunteers" class="w-full border p-2 rounded">
+                        <input type="number" name="benevoles_attendus" class="w-full border p-2 rounded">
                     </div>
                     <div>
                         <label class="block text-gray-700">Responsable Référent</label>
-                        <input type="text" name="responsible_person" class="w-full border p-2 rounded">
+                        <input type="text" name="responsable" class="w-full border p-2 rounded">
                     </div>
                 </div>
                 <div>
                     <label class="block text-gray-700">Matériel nécessaire</label>
-                    <textarea name="equipment_needed" class="w-full border p-2 rounded" rows="2"></textarea>
+                    <textarea name="materiel_requis" class="w-full border p-2 rounded" rows="2"></textarea>
                 </div>
                 <div>
                     <label class="block text-gray-700">Tâches spécifiques</label>
-                    <textarea name="specific_tasks" class="w-full border p-2 rounded" rows="2"></textarea>
+                    <textarea name="taches_specifiques" class="w-full border p-2 rounded" rows="2"></textarea>
                 </div>
                 <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Enregistrer</button>
             </form>

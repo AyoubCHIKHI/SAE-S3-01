@@ -2,14 +2,14 @@
 namespace App\Controllers\Admin;
 
 use App\Core\Controller;
-use App\Models\Donator;
+use App\Models\Donateur;
 
-class DonatorController extends Controller {
+class DonateurController extends Controller {
 
     public function index() {
         $this->requireAuth();
-        $donatorModel = new Donator();
-        $donators = $donatorModel->getAll();
+        $donateurModel = new Donateur();
+        $donators = $donateurModel->getAll();
         $this->view('admin/donators/index', ['donators' => $donators]);
     }
 
@@ -17,14 +17,14 @@ class DonatorController extends Controller {
         $this->requireAuth();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = [
-                'name' => $_POST['name'],
+                'nom' => $_POST['nom'],
                 'email' => $_POST['email'],
-                'phone' => $_POST['phone'] ?? '',
-                'amount' => $_POST['amount'] ?? 0,
+                'telephone' => $_POST['telephone'] ?? '',
+                'montant' => $_POST['montant'] ?? 0,
                 'message' => $_POST['message'] ?? ''
             ];
-            $donatorModel = new Donator();
-            $donatorModel->create($data);
+            $donateurModel = new Donateur();
+            $donateurModel->create($data);
             $this->redirect('/admin/donators');
         }
     }
@@ -33,8 +33,8 @@ class DonatorController extends Controller {
         $this->requireAuth();
         $id = $_GET['id'] ?? null;
         if ($id) {
-            $donatorModel = new Donator();
-            $donatorModel->delete($id);
+            $donateurModel = new Donateur();
+            $donateurModel->delete($id);
         }
         $this->redirect('/admin/donators');
     }

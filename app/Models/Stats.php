@@ -10,32 +10,32 @@ class Stats extends Model
     public function getKeyMetrics(): array
     {
         
-        // New Systems
+        // Nouveaux systèmes
         $missionModel = new Mission();
-        $volunteerModel = new Volunteer(); 
-        $beneficiaryModel = new Beneficiary();
+        $benevoleModel = new Benevole(); 
+        $beneficiaireModel = new Beneficiaire();
         $articleModel = new Article();
 
-        // Participation Count
+        // Nombre de participations
         $participationCount = 0;
         try {
-            $participationCount = $this->pdo->query("SELECT COUNT(*) FROM mission_volunteers")->fetchColumn();
+            $participationCount = $this->pdo->query("SELECT COUNT(*) FROM mission_benevoles")->fetchColumn();
         } catch (\Exception $e) {}
 
-        // Donations Count (from new donators table)
+        // Total des dons (depuis la table donateurs)
         $totalDonations = 0;
         try {
-            $totalDonations = $this->pdo->query("SELECT SUM(amount) FROM donators")->fetchColumn();
+            $totalDonations = $this->pdo->query("SELECT SUM(montant) FROM donateurs")->fetchColumn();
         } catch (\Exception $e) {}
 
 
         return [
-            'total_benevoles' => $volunteerModel->countAll(),
-            'total_donations' => $totalDonations,
+            'total_benevoles' => $benevoleModel->countAll(),
+            'total_donations' => $totalDonations ?: 0,
             'total_missions' => $missionModel->countAll(),
             'total_articles' => $articleModel->countAll(),
-            'total_beneficiaries' => $beneficiaryModel->countAll(),
-            'total_assignments' => $participationCount
+            'total_beneficiaires' => $beneficiaireModel->countAll(),
+            'total_assignments' => $participationCount ?: 0
         ];
     }
 }

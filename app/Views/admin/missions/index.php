@@ -33,11 +33,11 @@
                     <?php else: ?>
                         <?php foreach ($missions as $m): ?>
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="py-4 px-6 text-sm font-medium text-gray-900"><?= htmlspecialchars($m['title']) ?></td>
-                            <td class="py-4 px-6 text-sm text-gray-500"><?= htmlspecialchars($m['category']) ?></td>
-                            <td class="py-4 px-6 text-sm text-gray-500"><?= htmlspecialchars($m['location']) ?></td>
-                            <td class="py-4 px-6 text-sm text-gray-500 text-nowrap"><?= date('d/m/Y', strtotime($m['start_date'])) ?></td>
-                            <td class="py-4 px-6 text-sm text-gray-500"><?= htmlspecialchars($m['expected_volunteers']) ?></td>
+                            <td class="py-4 px-6 text-sm font-medium text-gray-900"><?= htmlspecialchars($m['titre']) ?></td>
+                            <td class="py-4 px-6 text-sm text-gray-500"><?= htmlspecialchars($m['categorie']) ?></td>
+                            <td class="py-4 px-6 text-sm text-gray-500"><?= htmlspecialchars($m['lieu']) ?></td>
+                            <td class="py-4 px-6 text-sm text-gray-500 text-nowrap"><?= $m['date_debut'] ? date('d/m/Y', strtotime($m['date_debut'])) : '' ?></td>
+                            <td class="py-4 px-6 text-sm text-gray-500"><?= htmlspecialchars($m['benevoles_attendus']) ?></td>
                             <td class="py-4 px-6 text-sm text-right space-x-3">
                                 <a href="/admin/missions/edit?id=<?= $m['id'] ?>" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Editer</a>
                                 <a href="/admin/missions/delete?id=<?= $m['id'] ?>" class="text-gray-400 hover:text-red-700 transition-colors" onclick="return confirm('Confirmer la suppression ?')">Supprimer</a>

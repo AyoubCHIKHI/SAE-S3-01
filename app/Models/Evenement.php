@@ -6,7 +6,7 @@ use PDO;
 
 class Evenement extends Model
 {
-    protected $table = 'evenement';
+    protected $table = 'missions';
 
     public function getAll()
     {
@@ -21,37 +21,36 @@ class Evenement extends Model
 
     public function create($data)
     {
-        $id = uniqid('evt_');
-        $stmt = $this->pdo->prepare("INSERT INTO {$this->table} (id_evenement, nom_, date_debut, date_fin) VALUES (?, ?, ?, ?)");
-        return $stmt->execute([
-            $id,
-            $data['titre'], // Mapping 'titre' to 'nom_'
+        $sql = "INSERT INTO {$this->table} (titre, description, categorie, lieu, date_debut, date_fin, benevoles_attendus, responsable, materiel_requis, taches_specifiques) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        return $this->query($sql, [
+            $data['titre'],
+            $data['description'] ?? null,
+            $data['categorie'] ?? null,
+            $data['lieu'] ?? null,
             $data['date_debut'],
-            $data['date_fin']
+            $data['date_fin'],
+            $data['benevoles_attendus'] ?? 0,
+            $data['responsable'] ?? null,
+            $data['materiel_requis'] ?? null,
+            $data['taches_specifiques'] ?? null
         ]);
     }
 
     public function update($id, $data)
     {
-        $stmt = $this->pdo->prepare("UPDATE {$this->table} SET nom_ = ?, date_debut = ?, date_fin = ? WHERE id_evenement = ?");
-        return $stmt->execute([
+        $sql = "UPDATE {$this->table} SET titre = ?, description = ?, categorie = ?, lieu = ?, date_debut = ?, date_fin = ?, benevoles_attendus = ?, responsable = ?, materiel_requis = ?, taches_specifiques = ? WHERE id = ?";
+        return $this->query($sql, [
             $data['titre'],
+            $data['description'] ?? null,
+            $data['categorie'] ?? null,
+            $data['lieu'] ?? null,
             $data['date_debut'],
             $data['date_fin'],
+            $data['benevoles_attendus'] ?? 0,
+            $data['responsable'] ?? null,
+            $data['materiel_requis'] ?? null,
+            $data['taches_specifiques'] ?? null,
             $id
         ]);
-    }
-
-    public function find($id)
-    {
-        $stmt = $this->pdo->prepare("SELECT * FROM {$this->table} WHERE id_evenement = ?");
-        $stmt->execute([$id]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
-
-    public function delete($id)
-    {
-        $stmt = $this->pdo->prepare("DELETE FROM {$this->table} WHERE id_evenement = ?");
-        return $stmt->execute([$id]);
     }
 }

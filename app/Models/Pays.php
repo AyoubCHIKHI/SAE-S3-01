@@ -6,10 +6,10 @@ use PDO;
 
 class Pays extends Model
 {
-    protected $table = 'Pays';
+    protected $table = 'pays';
 
     public function getAll()
     {
-        return $this->query("SELECT * FROM {$this->table} ORDER BY nom_pays ASC")->fetchAll(PDO::FETCH_ASSOC);
+        return $this->query("SELECT * FROM {$this->table} ORDER BY nom ASC")->fetchAll(PDO::FETCH_ASSOC);
     }
 }

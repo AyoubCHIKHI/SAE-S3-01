@@ -32,24 +32,24 @@
                         'Entreprise' => 'text-orange-600',
                         'Generale' => 'text-gray-600'
                     ];
-                    $catColor = $catColors[$article['category']] ?? 'text-gray-600';
+                    $catColor = $catColors[$article['categorie']] ?? 'text-gray-600';
                 ?>
                     <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
                         <?php if ($article['image_url']): ?>
-                            <img src="<?= htmlspecialchars($article['image_url']) ?>" alt="<?= htmlspecialchars($article['title']) ?>" class="w-full h-48 object-cover">
+                            <img src="<?= htmlspecialchars($article['image_url']) ?>" alt="<?= htmlspecialchars($article['titre']) ?>" class="w-full h-48 object-cover">
                         <?php else: ?>
                             <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
                                 <span class="text-gray-400">Image à venir</span>
                             </div>
                         <?php endif; ?>
                         <div class="p-6">
-                            <span class="text-xs font-semibold tracking-wide <?= $catColor ?> uppercase"><?= htmlspecialchars($article['category']) ?></span>
-                            <h2 class="mt-2 text-xl font-bold text-gray-900 leading-tight"><?= htmlspecialchars($article['title']) ?></h2>
+                            <span class="text-xs font-semibold tracking-wide <?= $catColor ?> uppercase"><?= htmlspecialchars($article['categorie']) ?></span>
+                            <h2 class="mt-2 text-xl font-bold text-gray-900 leading-tight"><?= htmlspecialchars($article['titre']) ?></h2>
                             <p class="mt-3 text-gray-600 line-clamp-3">
-                                <?= htmlspecialchars(substr($article['content'], 0, 150)) . (strlen($article['content']) > 150 ? '...' : '') ?>
+                                <?= htmlspecialchars(substr($article['contenu'], 0, 150)) . (strlen($article['contenu']) > 150 ? '...' : '') ?>
                             </p>
                             <div class="mt-4 flex items-center justify-between">
-                                <span class="text-sm text-gray-500"><?= date('d M Y', strtotime($article['created_at'])) ?></span>
+                                <span class="text-sm text-gray-500"><?= date('d M Y', strtotime($article['cree_le'])) ?></span>
                                 <a href="/actualite?id=<?= $article['id'] ?>" class="text-blue-600 hover:text-blue-800 font-medium">Lire la suite &rarr;</a>
                             </div>
                         </div>

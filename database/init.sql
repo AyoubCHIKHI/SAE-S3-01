@@ -1,136 +1,136 @@
 
 SET FOREIGN_KEY_CHECKS = 0;
 
-CREATE TABLE IF NOT EXISTS users (
-   id INT AUTO_INCREMENT PRIMARY KEY,
-   first_name VARCHAR(255) NOT NULL,
-   last_name VARCHAR(255) NOT NULL,
-   email VARCHAR(255) NOT NULL UNIQUE,
-   password_hash VARCHAR(255) NOT NULL,
-   role ENUM('ADMIN', 'BUREAU', 'POLE') NOT NULL,
-   profession VARCHAR(255),
-   is_active BOOLEAN DEFAULT TRUE,
-   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS utilisateurs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    prenom VARCHAR(255) NOT NULL,
+    nom VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    mot_de_passe VARCHAR(255) NOT NULL,
+    role ENUM('ADMIN', 'BUREAU', 'POLE') NOT NULL,
+    profession VARCHAR(255),
+    est_actif BOOLEAN DEFAULT TRUE,
+    cree_le TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    mis_a_jour_le TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS login_logs (
-   id INT AUTO_INCREMENT PRIMARY KEY,
-   user_id INT NULL,
-   timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-   ip_address VARCHAR(45) NOT NULL,
-   success BOOLEAN NOT NULL,
-   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
-   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE IF NOT EXISTS historique_connexions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    utilisateur_id INT NULL,
+    date_heure TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    adresse_ip VARCHAR(45) NOT NULL,
+    succes BOOLEAN NOT NULL,
+    FOREIGN KEY (utilisateur_id) REFERENCES utilisateurs(id) ON DELETE SET NULL
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE IF NOT EXISTS articles (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    content TEXT,
+    titre VARCHAR(255) NOT NULL,
+    contenu TEXT,
     image_url VARCHAR(255),
-    category VARCHAR(50),
-    author_id INT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE SET NULL
+    categorie VARCHAR(50),
+    auteur_id INT,
+    cree_le TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    mis_a_jour_le TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (auteur_id) REFERENCES utilisateurs(id) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS registration_requests (
+CREATE TABLE IF NOT EXISTS demandes_inscription (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
+    mot_de_passe VARCHAR(255) NOT NULL,
     nom VARCHAR(100) NOT NULL,
     prenom VARCHAR(100) NOT NULL,
     role ENUM('ADMIN', 'BUREAU', 'POLE', 'BENEVOLE', 'BENEFICIAIRE') NOT NULL,
     profession VARCHAR(255),
     message TEXT,
-    status ENUM('pending', 'validated', 'refused') DEFAULT 'pending',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    statut ENUM('pending', 'validated', 'refused') DEFAULT 'pending',
+    cree_le TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS donators (
+CREATE TABLE IF NOT EXISTS donateurs (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    nom VARCHAR(255) NOT NULL,
     email VARCHAR(255),
-    phone VARCHAR(50),
-    amount DECIMAL(10, 2),
+    telephone VARCHAR(50),
+    montant DECIMAL(10, 2),
     date DATE,
     message TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    cree_le TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE IF NOT EXISTS messages (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    nom VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     message TEXT NOT NULL,
-    reply TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    replied_at TIMESTAMP NULL
+    reponse TEXT,
+    cree_le TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    repondu_le TIMESTAMP NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE IF NOT EXISTS missions (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
+    titre VARCHAR(255) NOT NULL,
     description TEXT,
-    category VARCHAR(100),
-    location VARCHAR(255),
-    start_date DATETIME,
-    end_date DATETIME,
-    expected_volunteers INT DEFAULT 0,
-    responsible_person VARCHAR(255),
-    equipment_needed TEXT,
-    specific_tasks TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    categorie VARCHAR(100),
+    lieu VARCHAR(255),
+    date_debut DATETIME,
+    date_fin DATETIME,
+    benevoles_attendus INT DEFAULT 0,
+    responsable VARCHAR(255),
+    materiel_requis TEXT,
+    taches_specifiques TEXT,
+    cree_le TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS volunteers (
+CREATE TABLE IF NOT EXISTS benevoles (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(100) NOT NULL,
-    last_name VARCHAR(100) NOT NULL,
-    birth_date DATE,
+    prenom VARCHAR(100) NOT NULL,
+    nom VARCHAR(100) NOT NULL,
+    date_naissance DATE,
     email VARCHAR(255),
-    phone VARCHAR(50),
-    city VARCHAR(100),
+    telephone VARCHAR(50),
+    ville VARCHAR(100),
     profession VARCHAR(100),
-    skills TEXT,
-    dietary_requirements VARCHAR(100),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    competences TEXT,
+    exigences_alimentaires VARCHAR(100),
+    cree_le TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS beneficiaries (
+CREATE TABLE IF NOT EXISTS beneficiaires (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(100) NOT NULL,
-    last_name VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
+    nom VARCHAR(100) NOT NULL,
     email VARCHAR(255),
-    phone VARCHAR(50),
-    needs TEXT,
+    telephone VARCHAR(50),
+    besoins TEXT,
     notes TEXT,
-    assigned_volunteer_id INT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (assigned_volunteer_id) REFERENCES volunteers(id) ON DELETE SET NULL
+    benevole_assigne_id INT,
+    cree_le TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (benevole_assigne_id) REFERENCES benevoles(id) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS mission_volunteers (
+CREATE TABLE IF NOT EXISTS mission_benevoles (
     mission_id INT,
-    volunteer_id INT,
-    assigned_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (mission_id, volunteer_id),
+    benevole_id INT,
+    assigne_le TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (mission_id, benevole_id),
     FOREIGN KEY (mission_id) REFERENCES missions(id) ON DELETE CASCADE,
-    FOREIGN KEY (volunteer_id) REFERENCES volunteers(id) ON DELETE CASCADE
+    FOREIGN KEY (benevole_id) REFERENCES benevoles(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-CREATE TABLE IF NOT EXISTS Pays (
-    id_pays VARCHAR(5) PRIMARY KEY,
-    nom_pays VARCHAR(255) NOT NULL
+CREATE TABLE IF NOT EXISTS pays (
+    code VARCHAR(5) PRIMARY KEY,
+    nom VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE IF NOT EXISTS Ville (
-    id_ville VARCHAR(50) PRIMARY KEY,
-    nom_ville VARCHAR(255) NOT NULL,
-    id_pays VARCHAR(5) NOT NULL,
-    FOREIGN KEY (id_pays) REFERENCES Pays(id_pays) ON DELETE CASCADE
+CREATE TABLE IF NOT EXISTS villes (
+    id VARCHAR(50) PRIMARY KEY,
+    nom VARCHAR(255) NOT NULL,
+    pays_code VARCHAR(5) NOT NULL,
+    FOREIGN KEY (pays_code) REFERENCES pays(code) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 SET FOREIGN_KEY_CHECKS = 1;

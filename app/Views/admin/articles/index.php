@@ -38,10 +38,10 @@
                     <?php else: ?>
                         <?php foreach ($articles as $article): ?>
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="py-4 px-6 font-medium text-gray-900"><?= htmlspecialchars($article['title']) ?></td>
-                            <td class="py-4 px-6"><span class="bg-gray-100 text-gray-600 py-1 px-2.5 rounded-full text-xs font-medium"><?= htmlspecialchars($article['category']) ?></span></td>
-                            <td class="py-4 px-6 text-gray-500"><?= date('d/m/Y', strtotime($article['created_at'])) ?></td>
-                            <td class="py-4 px-6 text-gray-500"><?= htmlspecialchars(($article['first_name'] ?? '') . ' ' . ($article['last_name'] ?? '')) ?></td>
+                            <td class="py-4 px-6 font-medium text-gray-900"><?= htmlspecialchars($article['titre']) ?></td>
+                            <td class="py-4 px-6"><span class="bg-gray-100 text-gray-600 py-1 px-2.5 rounded-full text-xs font-medium"><?= htmlspecialchars($article['categorie']) ?></span></td>
+                            <td class="py-4 px-6 text-gray-500"><?= date('d/m/Y', strtotime($article['cree_le'])) ?></td>
+                            <td class="py-4 px-6 text-gray-500"><?= htmlspecialchars(($article['prenom'] ?? '') . ' ' . ($article['nom'] ?? '')) ?></td>
                             <td class="py-4 px-6 text-right flex justify-end gap-3">
                                 <a href="/actualite?id=<?= $article['id'] ?>" target="_blank" class="text-gray-400 hover:text-blue-600 transition-colors" title="Voir">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>

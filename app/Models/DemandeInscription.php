@@ -4,13 +4,13 @@ namespace App\Models;
 use App\Core\Model;
 use PDO;
 
-class RegistrationRequest extends Model
+class DemandeInscription extends Model
 {
-    protected $table = 'registration_requests';
+    protected $table = 'demandes_inscription';
 
     public function create($data)
     {
-        $stmt = $this->pdo->prepare("INSERT INTO {$this->table} (email, password_hash, nom, prenom, role, profession, message) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $this->pdo->prepare("INSERT INTO {$this->table} (email, mot_de_passe, nom, prenom, role, profession, message) VALUES (?, ?, ?, ?, ?, ?, ?)");
         return $stmt->execute([
             $data['email'],
             password_hash($data['password'], PASSWORD_DEFAULT),
@@ -24,12 +24,12 @@ class RegistrationRequest extends Model
 
     public function getAllPending()
     {
-        return $this->query("SELECT * FROM {$this->table} WHERE status = 'pending' ORDER BY created_at ASC")->fetchAll(PDO::FETCH_ASSOC);
+        return $this->query("SELECT * FROM {$this->table} WHERE statut = 'pending' ORDER BY cree_le ASC")->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getHistory()
     {
-        return $this->query("SELECT * FROM {$this->table} WHERE status != 'pending' ORDER BY created_at DESC")->fetchAll(PDO::FETCH_ASSOC);
+        return $this->query("SELECT * FROM {$this->table} WHERE statut != 'pending' ORDER BY cree_le DESC")->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function find($id)
@@ -39,33 +39,33 @@ class RegistrationRequest extends Model
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function updateStatus($id, $status)
+    public function updateStatus($id, $statut)
     {
-        $stmt = $this->pdo->prepare("UPDATE {$this->table} SET status = ? WHERE id = ?");
-        return $stmt->execute([$status, $id]);
+        $stmt = $this->pdo->prepare("UPDATE {$this->table} SET statut = ? WHERE id = ?");
+        return $stmt->execute([$statut, $id]);
     }
 
     public function validateRequest($id)
     {
         $request = $this->find($id);
-        if (!$request || $request['status'] !== 'pending') {
+        if (!$request || $request['statut'] !== 'pending') {
             return false;
         }
 
         $this->pdo->beginTransaction();
         try {
             // Create user for the request
-            $stmt = $this->pdo->prepare("INSERT INTO users (first_name, last_name, email, password_hash, role, profession, is_active) VALUES (?, ?, ?, ?, ?, ?, 1)");
+            $stmt = $this->pdo->prepare("INSERT INTO utilisateurs (prenom, nom, email, mot_de_passe, role, profession, est_actif) VALUES (?, ?, ?, ?, ?, ?, 1)");
             $stmt->execute([
                 $request['prenom'],
                 $request['nom'],
                 $request['email'],
-                $request['password_hash'], 
+                $request['mot_de_passe'], 
                 $request['role'],
                 $request['profession']
             ]);
 
-            // Update status
+            // Update statut
             $this->updateStatus($id, 'validated');
 
             $this->pdo->commit();

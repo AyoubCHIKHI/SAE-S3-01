@@ -25,19 +25,19 @@
                 <div class="border-b border-gray-200 pb-8 last:border-0">
                     <div class="flex items-baseline justify-between mb-4">
                         <div class="flex items-center gap-2 text-gray-900 font-semibold">
-                            <span><?= htmlspecialchars($msg['name']) ?></span>
+                            <span><?= htmlspecialchars($msg['nom']) ?></span>
                             <span class="text-gray-400 font-normal">&mdash;</span>
                             <a href="mailto:<?= htmlspecialchars($msg['email']) ?>" class="text-gray-600 hover:text-black font-normal"><?= htmlspecialchars($msg['email']) ?></a>
                         </div>
-                        <span class="text-sm text-gray-400 font-mono"><?= date('d/m/Y H:i', strtotime($msg['created_at'])) ?></span>
+                        <span class="text-sm text-gray-400 font-mono"><?= date('d/m/Y H:i', strtotime($msg['cree_le'])) ?></span>
                     </div>
 
                     <div class="text-gray-800 text-base leading-relaxed mb-6 whitespace-pre-wrap"><?= htmlspecialchars($msg['message']) ?></div>
 
-                    <?php if ($msg['replied_at']): ?>
+                    <?php if ($msg['repondu_le']): ?>
                         <div class="bg-gray-50 p-4 border border-gray-100 rounded-sm">
-                            <p class="text-xs text-gray-500 uppercase font-semibold mb-2">Répondu le <?= date('d/m/Y à H:i', strtotime($msg['replied_at'])) ?></p>
-                            <div class="text-gray-700"><?= htmlspecialchars($msg['reply']) ?></div>
+                            <p class="text-xs text-gray-500 uppercase font-semibold mb-2">Répondu le <?= date('d/m/Y à H:i', strtotime($msg['repondu_le'])) ?></p>
+                            <div class="text-gray-700"><?= htmlspecialchars($msg['reponse']) ?></div>
                         </div>
                     <?php else: ?>
                         <div class="mt-4">

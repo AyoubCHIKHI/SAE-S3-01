@@ -21,13 +21,13 @@
             <form action="/admin/articles/store" method="POST" class="space-y-6">
                 
                 <div>
-                    <label for="title" class="block text-gray-700 font-bold mb-2">Titre de l'article</label>
-                    <input type="text" id="title" name="title" class="w-full border rounded px-4 py-2 focus:outline-none focus:border-blue-500" placeholder="Ex: Rentrée solennelle..." required>
+                    <label for="titre" class="block text-gray-700 font-bold mb-2">Titre de l'article</label>
+                    <input type="text" id="titre" name="titre" class="w-full border rounded px-4 py-2 focus:outline-none focus:border-blue-500" placeholder="Ex: Rentrée solennelle..." required>
                 </div>
 
                 <div>
-                    <label for="category" class="block text-gray-700 font-bold mb-2">Catégorie</label>
-                    <select id="category" name="category" class="w-full border rounded px-4 py-2 focus:outline-none focus:border-blue-500 bg-white">
+                    <label for="categorie" class="block text-gray-700 font-bold mb-2">Catégorie</label>
+                    <select id="categorie" name="categorie" class="w-full border rounded px-4 py-2 focus:outline-none focus:border-blue-500 bg-white">
                         <option value="Generale">Générale</option>
                         <option value="Education">Education</option>
                         <option value="Emploi">Emploi</option>
@@ -41,8 +41,8 @@
                 </div>
 
                 <div>
-                    <label for="content" class="block text-gray-700 font-bold mb-2">Contenu</label>
-                    <textarea id="content" name="content" rows="10" class="w-full border rounded px-4 py-2 focus:outline-none focus:border-blue-500" required></textarea>
+                    <label for="contenu" class="block text-gray-700 font-bold mb-2">Contenu</label>
+                    <textarea id="contenu" name="contenu" rows="10" class="w-full border rounded px-4 py-2 focus:outline-none focus:border-blue-500" required></textarea>
                 </div>
 
                 <div class="flex justify-end">

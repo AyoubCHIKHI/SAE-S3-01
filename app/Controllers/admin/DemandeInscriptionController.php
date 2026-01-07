@@ -2,19 +2,19 @@
 namespace App\Controllers\Admin;
 
 use App\Core\Controller;
-use App\Models\RegistrationRequest;
+use App\Models\DemandeInscription;
 use App\Core\Database;
 
-class RegistrationController extends Controller
+class DemandeInscriptionController extends Controller
 {
-    // List pending requests
+    // Liste des demandes en attente
     public function index()
     {
         $this->requireAuth(['ADMIN']);
 
-        $requestModel = new RegistrationRequest();
-        $requests = $requestModel->getAllPending();
-        $history = $requestModel->getHistory();
+        $demandeModel = new DemandeInscription();
+        $requests = $demandeModel->getAllPending();
+        $history = $demandeModel->getHistory();
 
         $this->view('admin/registrations/index', ['requests' => $requests, 'history' => $history]);
     }
@@ -29,16 +29,16 @@ class RegistrationController extends Controller
             return;
         }
 
-        $requestModel = new RegistrationRequest();
-        $request = $requestModel->find($id);
+        $demandeModel = new DemandeInscription();
+        $request = $demandeModel->find($id);
 
-        if (!$request || $request['status'] !== 'pending') {
+        if (!$request || $request['statut'] !== 'pending') {
             $this->redirect('/admin/registrations');
             return;
         }
 
-        // Delegate to Model
-        $requestModel->validateRequest($id);
+        // Déléguer au Modèle
+        $demandeModel->validateRequest($id);
 
         $this->redirect('/admin/registrations');
     }
@@ -49,8 +49,8 @@ class RegistrationController extends Controller
 
         $id = $_GET['id'] ?? null;
         if ($id) {
-            $requestModel = new RegistrationRequest();
-            $requestModel->updateStatus($id, 'refused');
+            $demandeModel = new DemandeInscription();
+            $demandeModel->updateStatus($id, 'refused');
         }
 
         $this->redirect('/admin/registrations');

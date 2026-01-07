@@ -27,7 +27,7 @@ class HomeController extends Controller {
             if ($nom && $email && $messageContent) {
                 $messageModel = new Message();
                 $messageModel->create([
-                    'name' => "$nom $prenom",
+                    'nom' => "$nom $prenom",
                     'email' => $email,
                     'message' => $messageContent
                 ]);

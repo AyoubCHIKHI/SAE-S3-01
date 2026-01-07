@@ -38,7 +38,7 @@
                         <?php foreach ($requests as $request): ?>
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap">
-                                <?php echo date('d/m/Y H:i', strtotime($request['created_at'])); ?>
+                                <?php echo date('d/m/Y H:i', strtotime($request['cree_le'])); ?>
                             </td>
                             <td class="py-4 px-6">
                                 <div class="text-sm font-medium text-gray-900"><?php echo htmlspecialchars($request['nom'] . ' ' . $request['prenom']); ?></div>
@@ -95,7 +95,7 @@
                         <?php foreach ($history as $req): ?>
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap">
-                                <?php echo date('d/m/Y H:i', strtotime($req['created_at'])); ?>
+                                <?php echo date('d/m/Y H:i', strtotime($req['cree_le'])); ?>
                             </td>
                             <td class="py-4 px-6">
                                 <div class="text-sm font-medium text-gray-900"><?php echo htmlspecialchars($req['nom'] . ' ' . $req['prenom']); ?></div>
@@ -110,12 +110,12 @@
                                 <?php echo htmlspecialchars($req['email']); ?>
                             </td>
                             <td class="py-4 px-6 text-center">
-                                <?php if ($req['status'] === 'validated'): ?>
+                                <?php if ($req['statut'] === 'validated'): ?>
                                     <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">Accepté</span>
-                                <?php elseif ($req['status'] === 'refused'): ?>
+                                <?php elseif ($req['statut'] === 'refused'): ?>
                                     <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">Refusé</span>
                                 <?php else: ?>
-                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800"><?php echo htmlspecialchars($req['status']); ?></span>
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800"><?php echo htmlspecialchars($req['statut']); ?></span>
                                 <?php endif; ?>
                             </td>
                         </tr>

@@ -9,18 +9,18 @@ class Message extends Model {
 
     public function getAll(): array
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM {$this->table} ORDER BY created_at DESC");
+        $stmt = $this->pdo->prepare("SELECT * FROM {$this->table} ORDER BY cree_le DESC");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function create(array $data): bool
     {
-        $sql = "INSERT INTO {$this->table} (name, email, message) 
-                VALUES (:name, :email, :message)";
+        $sql = "INSERT INTO {$this->table} (nom, email, message) 
+                VALUES (:nom, :email, :message)";
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([
-            'name' => $data['name'],
+            'nom' => $data['nom'],
             'email' => $data['email'],
             'message' => $data['message']
         ]);
@@ -28,10 +28,10 @@ class Message extends Model {
 
     public function reply($id, $replyContent)
     {
-        $sql = "UPDATE {$this->table} SET reply = :reply, replied_at = NOW() WHERE id = :id";
+        $sql = "UPDATE {$this->table} SET reponse = :reponse, repondu_le = NOW() WHERE id = :id";
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([
-            'reply' => $replyContent,
+            'reponse' => $replyContent,
             'id' => $id
         ]);
     }

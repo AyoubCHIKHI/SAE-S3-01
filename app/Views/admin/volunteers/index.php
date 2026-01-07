@@ -33,11 +33,11 @@
                     <?php else: ?>
                         <?php foreach ($volunteers as $v): ?>
                         <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="py-4 px-6 text-sm font-medium text-gray-900"><?= htmlspecialchars($v['first_name'] . ' ' . $v['last_name']) ?></td>
-                            <td class="py-4 px-6 text-sm text-gray-500"><?= htmlspecialchars($v['city']) ?></td>
+                            <td class="py-4 px-6 text-sm font-medium text-gray-900"><?= htmlspecialchars($v['prenom'] . ' ' . $v['nom']) ?></td>
+                            <td class="py-4 px-6 text-sm text-gray-500"><?= htmlspecialchars($v['ville']) ?></td>
                             <td class="py-4 px-6 text-sm text-gray-500"><?= htmlspecialchars($v['email']) ?></td>
-                            <td class="py-4 px-6 text-sm text-gray-500"><?= htmlspecialchars($v['phone']) ?></td>
-                            <td class="py-4 px-6 text-sm text-gray-500 max-w-xs truncate" title="<?= htmlspecialchars($v['skills']) ?>"><?= htmlspecialchars($v['skills']) ?></td>
+                            <td class="py-4 px-6 text-sm text-gray-500"><?= htmlspecialchars($v['telephone']) ?></td>
+                            <td class="py-4 px-6 text-sm text-gray-500 max-w-xs truncate" title="<?= htmlspecialchars($v['competences']) ?>"><?= htmlspecialchars($v['competences']) ?></td>
                             <td class="py-4 px-6 text-sm text-right space-x-3">
                                 <a href="/admin/volunteers/edit?id=<?= $v['id'] ?>" class="text-gray-600 hover:text-gray-900 font-medium transition-colors">Editer</a>
                                 <a href="/admin/volunteers/delete?id=<?= $v['id'] ?>" class="text-gray-400 hover:text-red-700 transition-colors" onclick="return confirm('Confirmer la suppression ?')">Supprimer</a>

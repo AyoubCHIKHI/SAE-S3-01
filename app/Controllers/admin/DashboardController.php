@@ -3,7 +3,7 @@ namespace App\Controllers\Admin;
 
 use App\Core\Controller;
 use App\Models\Stats;
-use App\Models\Volunteer;
+use App\Models\Benevole;
 use App\Models\Mission;
 
 class DashboardController extends Controller {
@@ -12,14 +12,14 @@ class DashboardController extends Controller {
         $this->requireAuth();
 
         $statsModel = new Stats();
-        $volunteerModel = new Volunteer(); // Changed from Benevole
+        $benevoleModel = new Benevole();
         $missionModel = new Mission(); // Changed from Evenement
         
         $metrics = $statsModel->getKeyMetrics();
         // Assuming Volunteer model has logic for recent, but default getAll for now or limit in view. 
         // Or I should add getRecent to Volunteer Model.
         // For now, I'll grab all and slice, or just grab all. Volunteer table has created_at.
-        $recentVolunteers = $this->getRecentVolunteers($volunteerModel);
+        $recentVolunteers = $this->getRecentVolunteers($benevoleModel);
         $upcomingMissions = $missionModel->getUpcoming(5);
 
         $data = [
@@ -27,7 +27,7 @@ class DashboardController extends Controller {
             'stats' => [
                 'benevoles' => $metrics['total_benevoles'],
                 'missions' => $metrics['total_missions'],
-                'beneficiaries' => $metrics['total_beneficiaries'],
+                'beneficiaires' => $metrics['total_beneficiaires'],
                 'participations' => $metrics['total_assignments'],
                 'articles' => $metrics['total_articles']
             ],

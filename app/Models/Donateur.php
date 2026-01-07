@@ -4,26 +4,26 @@ namespace App\Models;
 use App\Core\Model;
 use PDO;
 
-class Donator extends Model {
-    protected $table = 'donators';
+class Donateur extends Model {
+    protected $table = 'donateurs';
 
     public function getAll(): array
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM {$this->table} ORDER BY created_at DESC");
+        $stmt = $this->pdo->prepare("SELECT * FROM {$this->table} ORDER BY cree_le DESC");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function create(array $data): bool
     {
-        $sql = "INSERT INTO {$this->table} (name, email, phone, amount, date, message) 
-                VALUES (:name, :email, :phone, :amount, :date, :message)";
+        $sql = "INSERT INTO {$this->table} (nom, email, telephone, montant, date, message) 
+                VALUES (:nom, :email, :telephone, :montant, :date, :message)";
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([
-            'name' => $data['name'],
+            'nom' => $data['nom'],
             'email' => $data['email'],
-            'phone' => $data['phone'] ?? null,
-            'amount' => $data['amount'] ?? 0.00,
+            'telephone' => $data['telephone'] ?? null,
+            'montant' => $data['montant'] ?? 0.00,
             'date' => $data['date'] ?? date('Y-m-d'),
             'message' => $data['message'] ?? null
         ]);

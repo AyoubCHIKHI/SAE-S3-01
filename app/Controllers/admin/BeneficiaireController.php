@@ -2,36 +2,36 @@
 namespace App\Controllers\Admin;
 
 use App\Core\Controller;
-use App\Models\Beneficiary;
-use App\Models\Volunteer;
+use App\Models\Beneficiaire;
+use App\Models\Benevole;
 
-class BeneficiaryController extends Controller
+class BeneficiaireController extends Controller
 {
-    private $beneficiaryModel;
-    private $volunteerModel;
+    private $beneficiaireModel;
+    private $benevoleModel;
 
     public function __construct()
     {
-        $this->beneficiaryModel = new Beneficiary();
-        $this->volunteerModel = new Volunteer();
+        $this->beneficiaireModel = new Beneficiaire();
+        $this->benevoleModel = new Benevole();
     }
 
     public function index()
     {
-        $beneficiaries = $this->beneficiaryModel->getAll();
-        $this->view('admin/beneficiaries/index', ['beneficiaries' => $beneficiaries]);
+        $beneficiaires = $this->beneficiaireModel->getAll();
+        $this->view('admin/beneficiaries/index', ['beneficiaries' => $beneficiaires]);
     }
 
     public function create()
     {
-        $volunteers = $this->volunteerModel->getAll();
-        $this->view('admin/beneficiaries/create', ['volunteers' => $volunteers]);
+        $benevoles = $this->benevoleModel->getAll();
+        $this->view('admin/beneficiaries/create', ['volunteers' => $benevoles]);
     }
 
     public function store()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->beneficiaryModel->create($_POST);
+            $this->beneficiaireModel->create($_POST);
         }
         header('Location: /admin/beneficiaries');
         exit;
@@ -44,9 +44,9 @@ class BeneficiaryController extends Controller
             header('Location: /admin/beneficiaries');
             exit;
         }
-        $beneficiary = $this->beneficiaryModel->find($id);
-        $volunteers = $this->volunteerModel->getAll();
-        $this->view('admin/beneficiaries/edit', ['beneficiary' => $beneficiary, 'volunteers' => $volunteers]);
+        $beneficiaire = $this->beneficiaireModel->find($id);
+        $benevoles = $this->benevoleModel->getAll();
+        $this->view('admin/beneficiaries/edit', ['beneficiary' => $beneficiaire, 'volunteers' => $benevoles]);
     }
 
     public function update()
@@ -54,7 +54,7 @@ class BeneficiaryController extends Controller
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'] ?? null;
             if ($id) {
-                $this->beneficiaryModel->update($id, $_POST);
+                $this->beneficiaireModel->update($id, $_POST);
             }
         }
         header('Location: /admin/beneficiaries');
@@ -65,7 +65,7 @@ class BeneficiaryController extends Controller
     {
         $id = $_GET['id'] ?? null;
         if ($id) {
-            $this->beneficiaryModel->delete($id);
+            $this->beneficiaireModel->delete($id);
         }
         header('Location: /admin/beneficiaries');
         exit;

@@ -50,14 +50,14 @@ $router->post('/contact/submit', 'HomeController', 'submitContact');
 
 // Admin Routes
 $router->get('/admin', 'Admin\DashboardController', 'index');
-$router->get('/admin/registrations', 'Admin\RegistrationController', 'index');
-$router->get('/admin/registrations/validate', 'Admin\RegistrationController', 'validate');
-$router->get('/admin/registrations/refuse', 'Admin\RegistrationController', 'refuse');
+$router->get('/admin/registrations', 'Admin\DemandeInscriptionController', 'index');
+$router->get('/admin/registrations/validate', 'Admin\DemandeInscriptionController', 'validate');
+$router->get('/admin/registrations/refuse', 'Admin\DemandeInscriptionController', 'refuse');
 
 // Donateurs
-$router->get('/admin/donators', 'Admin\DonatorController', 'index');
-$router->post('/admin/donators/store', 'Admin\DonatorController', 'store');
-$router->get('/admin/donators/delete', 'Admin\DonatorController', 'delete');
+$router->get('/admin/donators', 'Admin\DonateurController', 'index');
+$router->post('/admin/donators/store', 'Admin\DonateurController', 'store');
+$router->get('/admin/donators/delete', 'Admin\DonateurController', 'delete');
 
 // Communications
 $router->get('/admin/messages', 'Admin\MessageController', 'index');
@@ -69,10 +69,6 @@ $router->get('/admin/articles/create', 'Admin\ArticleController', 'create');
 $router->post('/admin/articles/store', 'Admin\ArticleController', 'store');
 $router->get('/admin/articles/delete', 'Admin\ArticleController', 'delete');
 
-
-
-
-
 // Missions
 $router->get('/admin/missions', 'Admin\MissionController', 'index');
 $router->get('/admin/missions/create', 'Admin\MissionController', 'create');
@@ -82,19 +78,19 @@ $router->post('/admin/missions/update', 'Admin\MissionController', 'update');
 $router->get('/admin/missions/delete', 'Admin\MissionController', 'delete');
 
 // Volunteers (New)
-$router->get('/admin/volunteers', 'Admin\VolunteerController', 'index');
-$router->get('/admin/volunteers/create', 'Admin\VolunteerController', 'create');
-$router->post('/admin/volunteers/store', 'Admin\VolunteerController', 'store');
-$router->get('/admin/volunteers/edit', 'Admin\VolunteerController', 'edit');
-$router->post('/admin/volunteers/update', 'Admin\VolunteerController', 'update');
-$router->get('/admin/volunteers/delete', 'Admin\VolunteerController', 'delete');
+$router->get('/admin/volunteers', 'Admin\BenevoleController', 'index');
+$router->get('/admin/volunteers/create', 'Admin\BenevoleController', 'create');
+$router->post('/admin/volunteers/store', 'Admin\BenevoleController', 'store');
+$router->get('/admin/volunteers/edit', 'Admin\BenevoleController', 'edit');
+$router->post('/admin/volunteers/update', 'Admin\BenevoleController', 'update');
+$router->get('/admin/volunteers/delete', 'Admin\BenevoleController', 'delete');
 
 // Beneficiaries
-$router->get('/admin/beneficiaries', 'Admin\BeneficiaryController', 'index');
-$router->get('/admin/beneficiaries/create', 'Admin\BeneficiaryController', 'create');
-$router->post('/admin/beneficiaries/store', 'Admin\BeneficiaryController', 'store');
-$router->get('/admin/beneficiaries/edit', 'Admin\BeneficiaryController', 'edit');
-$router->post('/admin/beneficiaries/update', 'Admin\BeneficiaryController', 'update');
-$router->get('/admin/beneficiaries/delete', 'Admin\BeneficiaryController', 'delete');
+$router->get('/admin/beneficiaries', 'Admin\BeneficiaireController', 'index');
+$router->get('/admin/beneficiaries/create', 'Admin\BeneficiaireController', 'create');
+$router->post('/admin/beneficiaries/store', 'Admin\BeneficiaireController', 'store');
+$router->get('/admin/beneficiaries/edit', 'Admin\BeneficiaireController', 'edit');
+$router->post('/admin/beneficiaries/update', 'Admin\BeneficiaireController', 'update');
+$router->get('/admin/beneficiaries/delete', 'Admin\BeneficiaireController', 'delete');
 
 $router->dispatch();

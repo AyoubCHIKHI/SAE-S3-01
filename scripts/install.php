@@ -8,7 +8,7 @@ echo "Début de l'installation...\n\n";
 
 // --- 1. Connexion & Création de la BDD ---
 
-$config = require __DIR__ . '/../app/Config/Database.php';
+$config = require __DIR__ . '/../app/Config/database.php';
 $host = $config['host'];
 $dbname = $config['dbname'];
 $user = $config['user'];
@@ -43,11 +43,12 @@ try {
     echo "[Utilisateur] Vérification du compte Admin... ";
     $email = 'admin@egee.asso.fr';
     
-    $stmt = $pdo->prepare("SELECT id FROM users WHERE email = ?");
+    // Check utilisateurs (new table name)
+    $stmt = $pdo->prepare("SELECT id FROM utilisateurs WHERE email = ?");
     $stmt->execute([$email]);
     if (!$stmt->fetch()) {
         $hash = password_hash('admin', PASSWORD_DEFAULT);
-        $pdo->prepare("INSERT INTO users (first_name, last_name, email, password_hash, role, is_active) VALUES (?, ?, ?, ?, ?, 1)")
+        $pdo->prepare("INSERT INTO utilisateurs (prenom, nom, email, mot_de_passe, role, est_actif) VALUES (?, ?, ?, ?, ?, 1)")
             ->execute(['Admin', 'System', $email, $hash, 'ADMIN']);
         echo "Créé (admin/admin).\n";
     } else {
@@ -58,13 +59,19 @@ try {
 
     echo "[Données] Articles... ";
     
-    // Chargement manuel des dépendances Core si nécessaire
-    if (file_exists(__DIR__ . '/../app/Core/Database.php')) require_once __DIR__ . '/../app/Core/Database.php';
-    if (file_exists(__DIR__ . '/../app/Core/Model.php')) require_once __DIR__ . '/../app/Core/Model.php';
-    require_once __DIR__ . '/../app/Models/Article.php';
+    // Autoloader setup for script context
+    spl_autoload_register(function ($class) {
+        $prefix = 'App\\';
+        $base_dir = __DIR__ . '/../app/';
+        $len = strlen($prefix);
+        if (strncmp($prefix, $class, $len) !== 0) return;
+        $relative_class = substr($class, $len);
+        $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
+        if (file_exists($file)) require $file;
+    });
 
     // Récupération de l'ID Admin
-    $adminId = $pdo->query("SELECT id FROM users WHERE role = 'ADMIN' LIMIT 1")->fetchColumn();
+    $adminId = $pdo->query("SELECT id FROM utilisateurs WHERE role = 'ADMIN' LIMIT 1")->fetchColumn();
 
     if ($adminId) {
         $articleModel = new \App\Models\Article();
@@ -75,18 +82,16 @@ try {
         ];
 
         foreach ($articles as $art) {
-            $exists = $pdo->prepare("SELECT 1 FROM articles WHERE title = ?");
+            $exists = $pdo->prepare("SELECT 1 FROM articles WHERE titre = ?");
             $exists->execute([$art[0]]);
             if (!$exists->fetch()) {
-                if (method_exists($articleModel, 'create')) {
-                    $articleModel->create([
-                        'title' => $art[0], 
-                        'content' => $art[1], 
-                        'image_url' => $art[2], 
-                        'category' => $art[3], 
-                        'author_id' => $adminId
-                    ]);
-                }
+                $articleModel->create([
+                    'titre' => $art[0], 
+                    'contenu' => $art[1], 
+                    'image_url' => $art[2], 
+                    'categorie' => $art[3], 
+                    'auteur_id' => $adminId
+                ]);
             }
         }
         echo "OK.\n";
@@ -96,7 +101,7 @@ try {
 
     echo "[Données] Villes... ";
     // France
-    $pdo->exec("INSERT IGNORE INTO Pays (id_pays, nom_pays) VALUES ('FR', 'France')");
+    $pdo->exec("INSERT IGNORE INTO pays (code, nom) VALUES ('FR', 'France')");
 
     $cities = [
         'PARIS' => 'Paris', 'LYON' => 'Lyon', 'MARSEILLE' => 'Marseille',
@@ -105,7 +110,7 @@ try {
         'LILLE' => 'Lille', 'MONTPELLIER' => 'Montpellier'
     ];
 
-    $cityStmt = $pdo->prepare("INSERT IGNORE INTO Ville (id_ville, nom_ville, id_pays) VALUES (?, ?, 'FR')");
+    $cityStmt = $pdo->prepare("INSERT IGNORE INTO villes (id, nom, pays_code) VALUES (?, ?, 'FR')");
     foreach ($cities as $id => $name) {
         $cityStmt->execute([$id, $name]);
     }
