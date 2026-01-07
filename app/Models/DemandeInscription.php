@@ -54,7 +54,7 @@ class DemandeInscription extends Model
 
         $this->pdo->beginTransaction();
         try {
-            // Create user for the request
+           
             $stmt = $this->pdo->prepare("INSERT INTO utilisateurs (prenom, nom, email, mot_de_passe, role, profession, est_actif) VALUES (?, ?, ?, ?, ?, ?, 1)");
             $stmt->execute([
                 $request['prenom'],
@@ -65,7 +65,6 @@ class DemandeInscription extends Model
                 $request['profession']
             ]);
 
-            // Update statut
             $this->updateStatus($id, 'validated');
 
             $this->pdo->commit();

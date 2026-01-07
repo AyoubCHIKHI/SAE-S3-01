@@ -4,7 +4,6 @@ namespace App\Core;
 class Controller {
     protected function view($view, $data = []) {
         extract($data);
-        // Assuming views are in app/Views, possibly with subfolders
         $viewPath = __DIR__ . "/../Views/$view.php";
         if (file_exists($viewPath)) {
             require $viewPath;
@@ -18,14 +17,11 @@ class Controller {
         exit;
     }
 
-    // Helper to check auth
     protected function requireAuth($allowedRoles = []) {
-        // Prevent caching of protected pages
         header('Cache-Control: no-cache, no-store, must-revalidate');
         header('Pragma: no-cache');
         header('Expires: 0');
 
-        // Simple session check logic (migrated from auth.php)
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
@@ -36,9 +32,9 @@ class Controller {
         // Role check
         if (!empty($allowedRoles)) {
             $userRole = $_SESSION['role'] ?? '';
-            // If the user's role is NOT in the allowed list
+            // si le role de l'utilisateur n'est pas dans la liste des rôles autorisés
             if (!in_array($userRole, $allowedRoles)) {
-                // Redirect to dashboard
+                // rediriger vers le dashboard
                 $this->redirect('/admin'); 
             }
         }

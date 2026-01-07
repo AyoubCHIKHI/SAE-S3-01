@@ -10,19 +10,18 @@ class Stats extends Model
     public function getKeyMetrics(): array
     {
         
-        // Nouveaux systèmes
         $missionModel = new Mission();
         $benevoleModel = new Benevole(); 
         $beneficiaireModel = new Beneficiaire();
         $articleModel = new Article();
 
-        // Nombre de participations
+     
         $participationCount = 0;
         try {
             $participationCount = $this->pdo->query("SELECT COUNT(*) FROM mission_benevoles")->fetchColumn();
         } catch (\Exception $e) {}
 
-        // Total des dons (depuis la table donateurs)
+
         $totalDonations = 0;
         try {
             $totalDonations = $this->pdo->query("SELECT SUM(montant) FROM donateurs")->fetchColumn();

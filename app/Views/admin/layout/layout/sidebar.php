@@ -7,7 +7,7 @@
         $uri = $_SERVER['REQUEST_URI'];
         $menuItems = [
             ['label' => 'Tableau de bord', 'url' => '/admin', 'icon' => ''],
-            ['label' => 'Bénévoles', 'url' => '/admin/benevoles', 'icon' => ''],
+            ['label' => 'Bénévoles', 'url' => '/admin/volunteers', 'icon' => ''],
             ['label' => 'Partenaires', 'url' => '/admin/partenaires', 'icon' => ''],
             ['label' => 'Événements', 'url' => '/admin/evenements', 'icon' => ''],
             ['label' => 'Actualités', 'url' => '/admin/articles', 'icon' => ''],

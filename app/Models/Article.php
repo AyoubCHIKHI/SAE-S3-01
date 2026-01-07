@@ -9,7 +9,6 @@ class Article extends Model {
 
     public function getAll(): array
     {
-        // Join with users to get author name
         $sql = "SELECT a.*, u.prenom, u.nom 
                 FROM {$this->table} a 
                 LEFT JOIN utilisateurs u ON a.auteur_id = u.id 

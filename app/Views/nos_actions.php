@@ -7,9 +7,7 @@
     <link rel="icon" type="image/png" href="/assets/img/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Smooth scrolling for anchor links */
         html { scroll-behavior: smooth; }
-        /* Scroll margin to prevent navbar from covering titles */
         section { scroll-margin-top: 6rem; }
     </style>
 </head>
@@ -17,7 +15,6 @@
 
     <?php require __DIR__ . '/includes/navbar.php'; ?>
 
-    <!-- Simple Hero -->
     <div class="bg-white border-b border-gray-200 py-16">
         <div class="container mx-auto px-4 text-center max-w-4xl">
             <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6">Nos Actions</h1>
@@ -29,7 +26,6 @@
 
     <main class="container mx-auto px-4 py-12 max-w-6xl space-y-24">
 
-        <!-- Education -->
         <section id="education" class="flex flex-col md:flex-row items-center gap-12">
             <div class="md:w-1/2">
                 <img src="/assets/img/accueil/education.png" alt="Illustration Education" class="rounded-lg shadow-md w-full h-[400px] object-cover">
@@ -59,7 +55,6 @@
 
         <hr class="border-gray-200">
 
-        <!-- Emploi -->
         <section id="emploi" class="flex flex-col md:flex-row-reverse items-center gap-12">
             <div class="md:w-1/2">
                 <img src="/assets/img/accueil/emploie.png" alt="Illustration Emploi" class="rounded-lg shadow-md w-full h-[400px] object-cover">
@@ -89,7 +84,6 @@
 
         <hr class="border-gray-200">
 
-        <!-- Entreprise -->
         <section id="entreprise" class="flex flex-col md:flex-row items-center gap-12">
             <div class="md:w-1/2">
                 <img src="/assets/img/accueil/entreprise.webp" alt="Illustration Entreprise" class="rounded-lg shadow-md w-full h-[400px] object-cover">

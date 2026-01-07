@@ -74,11 +74,27 @@ try {
     $adminId = $pdo->query("SELECT id FROM utilisateurs WHERE role = 'ADMIN' LIMIT 1")->fetchColumn();
 
     if ($adminId) {
+        $pdo->exec("DELETE FROM articles"); // Clear existing for fresh install data
         $articleModel = new \App\Models\Article();
         $articles = [
-            ['Monswiller se prépare face aux crues !', 'Une initiative locale soutenue par EGEE.', '/assets/img/actualites/MOnswiller-614x460.png', 'Partenariat'],
-            ['Transmettre, accompagner, s’engager ensemble', 'Nos bénévoles partagent leur expérience.', '/assets/img/actualites/BTransmettre-accompagner-368x460-1.png', 'Benevolat'],
-            ['Préparer les jeunes', 'Interventions dans les lycées et universités.', '/assets/img/actualites/travail_en_mutation.jpg', 'Education']
+            [
+                'Monswiller se prépare face aux crues !', 
+                'La commune de Monswiller, en collaboration avec les experts bénévoles d\'EGEE, a mis en place un plan de prévention complet face aux risques de crues. Cette initiative locale vise à sensibiliser les habitants et à proposer des solutions techniques durables pour protéger les infrastructures. Nos conseillers ont apporté leur expertise en gestion de crise et en aménagement du territoire pour garantir la sécurité de tous les citoyens.', 
+                '/assets/img/actualites/MOnswiller-614x460.png', 
+                'Partenariat'
+            ],
+            [
+                'Transmettre, accompagner, s’engager ensemble', 
+                'Au sein d\'EGEE, la transmission du savoir est au cœur de notre engagement. Nos bénévoles, anciens cadres et chefs d\'entreprise, accompagnent quotidiennement les jeunes entrepreneurs et les personnes en insertion professionnelle. À travers des ateliers de mentorat et des sessions de conseil personnalisé, nous aidons chacun à construire son projet avec confiance et détermination. Rejoignez-nous pour faire vivre la solidarité intergénérationnelle.', 
+                '/assets/img/actualites/BTransmettre-accompagner-368x460-1.png', 
+                'Benevolat'
+            ],
+            [
+                'Préparer les jeunes au monde de demain', 
+                'Nos interventions dans les lycées et universités se multiplient pour préparer les étudiants aux réalités du marché du travail. Simulations d\'entretiens, aide à la rédaction de CV et partages d\'expériences concrètes : les conseillers EGEE se mobilisent pour offrir aux jeunes les clés de leur réussite future. L\'éducation et l\'orientation sont les piliers de notre action pour soutenir la nouvelle génération dans ses premiers pas professionnels.', 
+                '/assets/img/actualites/travail_en_mutation.jpg', 
+                'Education'
+            ]
         ];
 
         foreach ($articles as $art) {

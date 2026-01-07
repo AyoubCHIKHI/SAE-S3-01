@@ -12,7 +12,7 @@ class BenevoleController extends Controller
         $this->requireAuth(['ADMIN', 'BUREAU']);
         $benevoleModel = new Benevole();
         $benevoles = $benevoleModel->getAll();
-        $this->view('admin/benevoles/index', ['benevoles' => $benevoles]);
+        $this->view('admin/volunteers/index', ['volunteers' => $benevoles]);
     }
 
     public function create()
@@ -23,10 +23,8 @@ class BenevoleController extends Controller
         $villes = $villeModel->getAll();
         $evenements = $evenementModel->getAll();
 
-        $this->view('admin/benevoles/form', [
-            'mode' => 'create',
-            'villes' => $villes,
-            'evenements' => $evenements
+        $this->view('admin/volunteers/create', [
+            'villes' => $villes
         ]);
     }
 
@@ -35,11 +33,11 @@ class BenevoleController extends Controller
         $this->requireAuth(['ADMIN', 'BUREAU']);
         $benevoleModel = new Benevole();
         if ($benevoleModel->create($_POST)) {
-            header('Location: /admin/benevoles');
+            header('Location: /admin/volunteers');
             exit;
         } else {
             // Handle error
-            $this->view('admin/benevoles/form', ['mode' => 'create', 'error' => 'Erreur lors de la création.', 'data' => $_POST]);
+            $this->view('admin/volunteers/create', ['error' => 'Erreur lors de la création.', 'data' => $_POST]);
         }
     }
 
@@ -48,7 +46,7 @@ class BenevoleController extends Controller
         $this->requireAuth(['ADMIN', 'BUREAU']);
         $id = $_GET['id'] ?? null;
         if (!$id) {
-            header('Location: /admin/benevoles');
+            header('Location: /admin/volunteers');
             exit;
         }
         $benevoleModel = new Benevole();
@@ -59,11 +57,9 @@ class BenevoleController extends Controller
         $villes = $villeModel->getAll();
         $evenements = $evenementModel->getAll();
 
-        $this->view('admin/benevoles/form', [
-            'mode' => 'edit',
-            'benevole' => $benevole,
-            'villes' => $villes,
-            'evenements' => $evenements
+        $this->view('admin/volunteers/edit', [
+            'volunteer' => $benevole,
+            'villes' => $villes
         ]);
     }
 
@@ -72,15 +68,15 @@ class BenevoleController extends Controller
         $this->requireAuth(['ADMIN', 'BUREAU']);
         $id = $_POST['id'] ?? null;
         if (!$id) {
-            header('Location: /admin/benevoles');
+            header('Location: /admin/volunteers');
             exit;
         }
         $benevoleModel = new Benevole();
         if ($benevoleModel->update($id, $_POST)) {
-            header('Location: /admin/benevoles');
+            header('Location: /admin/volunteers');
             exit;
         } else {
-            $this->view('admin/benevoles/form', ['mode' => 'edit', 'benevole' => $_POST, 'error' => 'Erreur lors de la modification.']);
+            $this->view('admin/volunteers/edit', ['volunteer' => $_POST, 'error' => 'Erreur lors de la modification.']);
         }
     }
 
@@ -92,7 +88,7 @@ class BenevoleController extends Controller
             $benevoleModel = new Benevole();
             $benevoleModel->delete($id);
         }
-        header('Location: /admin/benevoles');
+        header('Location: /admin/volunteers');
         exit;
     }
 }

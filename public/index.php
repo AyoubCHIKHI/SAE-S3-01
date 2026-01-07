@@ -2,7 +2,6 @@
 ob_start();
 
 
-// Auto-loader
 spl_autoload_register(function ($class) {
     $prefix = 'App\\';
     $base_dir = __DIR__ . '/../app/';
@@ -23,7 +22,7 @@ use App\Core\Router;
 
 $router = new Router();
 
-// Public Routes
+// Public 
 $router->get('/', 'HomeController', 'index');
 $router->get('/nous_contacter', 'HomeController', 'contact');
 $router->get('/nos_actions', 'HomeController', 'actions');
@@ -39,7 +38,7 @@ $router->get('/conseil-administration', 'HomeController', 'bureau');
 $router->get('/mentions_legales', 'HomeController', 'mentionsLegales');
 
 
-// Auth Routes
+// Auth 
 $router->get('/admin/login', 'AuthController', 'login');
 $router->post('/admin/login', 'AuthController', 'login');
 $router->get('/admin/logout', 'AuthController', 'logout');
@@ -48,7 +47,7 @@ $router->post('/register', 'AuthController', 'register');
 
 $router->post('/contact/submit', 'HomeController', 'submitContact');
 
-// Admin Routes
+// Admin 
 $router->get('/admin', 'Admin\DashboardController', 'index');
 $router->get('/admin/registrations', 'Admin\DemandeInscriptionController', 'index');
 $router->get('/admin/registrations/validate', 'Admin\DemandeInscriptionController', 'validate');
@@ -77,7 +76,7 @@ $router->get('/admin/missions/edit', 'Admin\MissionController', 'edit');
 $router->post('/admin/missions/update', 'Admin\MissionController', 'update');
 $router->get('/admin/missions/delete', 'Admin\MissionController', 'delete');
 
-// Volunteers (New)
+// Benevoles
 $router->get('/admin/volunteers', 'Admin\BenevoleController', 'index');
 $router->get('/admin/volunteers/create', 'Admin\BenevoleController', 'create');
 $router->post('/admin/volunteers/store', 'Admin\BenevoleController', 'store');

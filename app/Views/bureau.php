@@ -26,7 +26,6 @@
         <?php require __DIR__ . '/includes/footer.php'; ?>
     </div>
     
-    <!-- Donation Modal Includes -->
     <?php include __DIR__ . '/includes/don_modal.php'; ?>
 </body>
 </html>

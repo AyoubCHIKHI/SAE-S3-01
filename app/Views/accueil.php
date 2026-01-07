@@ -215,9 +215,9 @@
                     <?php foreach ($latestArticles as $art): ?>
                         <div onclick="location.href='/actualite?id=<?= $art['id'] ?>'" class="flex flex-col justify-center gap-2 rounded-md transform transition duration-300 hover:scale-105 hover:text-blue-300 cursor-pointer">
                             <?php if ($art['image_url']): ?>
-                                <img src="<?= htmlspecialchars($art['image_url']) ?>" alt="" class="w-72 h-56 border-2 border-black rounded-md shadow-md object-cover">
+                                <img src="<?= htmlspecialchars($art['image_url']) ?>" alt="" class="w-72 h-56 border border-white/20 rounded-md object-cover">
                             <?php else: ?>
-                                <div class="w-72 h-56 bg-gray-200 border-2 border-black rounded-md shadow-md flex items-center justify-center text-gray-500">Image indisponible</div>
+                                <div class="w-72 h-56 bg-white/10 border border-white/20 rounded-md flex items-center justify-center text-gray-300">Image indisponible</div>
                             <?php endif; ?>
                             <p class="max-w-72 font-bold"><?= htmlspecialchars($art['titre']) ?></p>
                         </div>

@@ -32,7 +32,6 @@ class HomeController extends Controller {
                     'message' => $messageContent
                 ]);
                 
-                // Redirect with success (simplistic for now)
                 header('Location: /nous_contacter?success=1');
                 exit;
             }
