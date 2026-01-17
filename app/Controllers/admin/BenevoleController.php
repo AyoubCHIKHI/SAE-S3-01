@@ -31,12 +31,21 @@ class BenevoleController extends Controller
     public function store()
     {
         $this->requireAuth(['ADMIN', 'BUREAU']);
+
+        $required = ['prenom', 'nom', 'email'];
+        if (!$this->validateFields($_POST, $required)) {
+            $this->view('admin/volunteers/create', [
+                'error' => 'Veuillez remplir tous les champs obligatoires (Prénom, Nom, Email).',
+                'data' => $_POST
+            ]);
+            return;
+        }
+
         $benevoleModel = new Benevole();
         if ($benevoleModel->create($_POST)) {
             header('Location: /admin/volunteers');
             exit;
         } else {
-            // Handle error
             $this->view('admin/volunteers/create', ['error' => 'Erreur lors de la création.', 'data' => $_POST]);
         }
     }
@@ -71,6 +80,16 @@ class BenevoleController extends Controller
             header('Location: /admin/volunteers');
             exit;
         }
+
+        $required = ['prenom', 'nom', 'email'];
+        if (!$this->validateFields($_POST, $required)) {
+            $this->view('admin/volunteers/edit', [
+                'volunteer' => $_POST,
+                'error' => 'Veuillez remplir tous les champs obligatoires (Prénom, Nom, Email).'
+            ]);
+            return;
+        }
+
         $benevoleModel = new Benevole();
         if ($benevoleModel->update($id, $_POST)) {
             header('Location: /admin/volunteers');

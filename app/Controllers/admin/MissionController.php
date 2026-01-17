@@ -27,29 +27,44 @@ class MissionController extends Controller
     public function store()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!$this->validateFields($_POST, ['titre'])) {
+                $this->view('admin/missions/create', [
+                    'error' => 'Le titre de la mission est obligatoire.',
+                    'data' => $_POST
+                ]);
+                return;
+            }
             $this->missionModel->create($_POST);
         }
         header('Location: /admin/missions');
         exit;
     }
 
-    public function edit() 
+    public function edit()
     {
         $id = $_GET['id'] ?? null;
         if (!$id) {
-             header('Location: /admin/missions');
-             exit;
+            header('Location: /admin/missions');
+            exit;
         }
         $mission = $this->missionModel->find($id);
         $this->view('admin/missions/edit', ['mission' => $mission]);
     }
-    
+
     public function update()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = $_POST['id'] ?? null;
             if ($id) {
-                 $this->missionModel->update($id, $_POST);
+                if (!$this->validateFields($_POST, ['titre'])) {
+                    $mission = $this->missionModel->find($id);
+                    $this->view('admin/missions/edit', [
+                        'mission' => array_merge($mission, $_POST),
+                        'error' => 'Le titre de la mission est obligatoire.'
+                    ]);
+                    return;
+                }
+                $this->missionModel->update($id, $_POST);
             }
         }
         header('Location: /admin/missions');

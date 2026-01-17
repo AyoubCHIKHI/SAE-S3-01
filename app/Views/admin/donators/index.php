@@ -1,12 +1,14 @@
 <?php $currentPage = 'donators'; ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Donateurs - Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100 font-sans flex">
 
     <?php require __DIR__ . '/../layout/sidebar.php'; ?>
@@ -19,14 +21,25 @@
         <!-- Formulaire d'ajout rapide -->
         <section class="bg-white p-6 rounded-lg border border-gray-200 mb-8">
             <h2 class="text-lg font-bold text-gray-900 mb-4">Ajouter un donateur</h2>
+            <?php if (isset($error)): ?>
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                    <?= htmlspecialchars($error) ?>
+                </div>
+            <?php endif; ?>
             <form action="/admin/donators/store" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input type="text" name="nom" placeholder="Nom complet" required class="border border-gray-300 p-2 rounded-lg text-sm focus:border-gray-500 focus:outline-none">
-                <input type="email" name="email" placeholder="Email" class="border border-gray-300 p-2 rounded-lg text-sm focus:border-gray-500 focus:outline-none">
-                <input type="tel" name="telephone" placeholder="Téléphone" class="border border-gray-300 p-2 rounded-lg text-sm focus:border-gray-500 focus:outline-none">
-                <input type="number" step="0.01" name="montant" placeholder="Montant (€)" class="border border-gray-300 p-2 rounded-lg text-sm focus:border-gray-500 focus:outline-none">
-                <textarea name="message" placeholder="Message / Note" class="border border-gray-300 p-2 rounded-lg text-sm focus:border-gray-500 focus:outline-none col-span-2"></textarea>
+                <input type="text" name="nom" placeholder="Nom complet" required
+                    class="border border-gray-300 p-2 rounded-lg text-sm focus:border-gray-500 focus:outline-none">
+                <input type="email" name="email" placeholder="Email"
+                    class="border border-gray-300 p-2 rounded-lg text-sm focus:border-gray-500 focus:outline-none">
+                <input type="tel" name="telephone" placeholder="Téléphone"
+                    class="border border-gray-300 p-2 rounded-lg text-sm focus:border-gray-500 focus:outline-none">
+                <input type="number" step="0.01" name="montant" placeholder="Montant (€)"
+                    class="border border-gray-300 p-2 rounded-lg text-sm focus:border-gray-500 focus:outline-none">
+                <textarea name="message" placeholder="Message / Note"
+                    class="border border-gray-300 p-2 rounded-lg text-sm focus:border-gray-500 focus:outline-none col-span-2"></textarea>
                 <div class="col-span-2 text-right">
-                    <button type="submit" class="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors">
+                    <button type="submit"
+                        class="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors">
                         Ajouter le donateur
                     </button>
                 </div>
@@ -42,7 +55,8 @@
                         <th class="py-3 px-6 text-xs font-semibold text-gray-500 uppercase tracking-wider">Email</th>
                         <th class="py-3 px-6 text-xs font-semibold text-gray-500 uppercase tracking-wider">Don</th>
                         <th class="py-3 px-6 text-xs font-semibold text-gray-500 uppercase tracking-wider">Date</th>
-                        <th class="py-3 px-6 text-xs font-semibold text-gray-500 uppercase tracking-wider text-right">Actions</th>
+                        <th class="py-3 px-6 text-xs font-semibold text-gray-500 uppercase tracking-wider text-right">
+                            Actions</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200 text-sm">
@@ -52,22 +66,28 @@
                         </tr>
                     <?php else: ?>
                         <?php foreach ($donators as $donator): ?>
-                        <tr class="hover:bg-gray-50 transition-colors">
-                            <td class="py-4 px-6 font-medium text-gray-900">
-                                <?= htmlspecialchars($donator['nom']) ?>
-                                <div class="text-xs text-gray-500 font-normal"><?= htmlspecialchars($donator['telephone'] ?? '') ?></div>
-                            </td>
-                            <td class="py-4 px-6 text-gray-500"><?= htmlspecialchars($donator['email']) ?></td>
-                            <td class="py-4 px-6 font-semibold text-gray-900"><?= number_format($donator['montant'] ?? 0, 2) ?> €</td>
-                            <td class="py-4 px-6 text-gray-500"><?= date('d/m/Y', strtotime($donator['cree_le'])) ?></td>
-                            <td class="py-4 px-6 text-right">
-                                <a href="/admin/donators/delete?id=<?= $donator['id'] ?>" onclick="return confirm('Êtes-vous sûr ?')" class="text-gray-400 hover:text-red-700 font-bold transition-colors" title="Supprimer">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </a>
-                            </td>
-                        </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="py-4 px-6 font-medium text-gray-900">
+                                    <?= htmlspecialchars($donator['nom']) ?>
+                                    <div class="text-xs text-gray-500 font-normal">
+                                        <?= htmlspecialchars($donator['telephone'] ?? '') ?></div>
+                                </td>
+                                <td class="py-4 px-6 text-gray-500"><?= htmlspecialchars($donator['email']) ?></td>
+                                <td class="py-4 px-6 font-semibold text-gray-900">
+                                    <?= number_format($donator['montant'] ?? 0, 2) ?> €</td>
+                                <td class="py-4 px-6 text-gray-500"><?= date('d/m/Y', strtotime($donator['cree_le'])) ?></td>
+                                <td class="py-4 px-6 text-right">
+                                    <a href="/admin/donators/delete?id=<?= $donator['id'] ?>"
+                                        onclick="return confirm('Êtes-vous sûr ?')"
+                                        class="text-gray-400 hover:text-red-700 font-bold transition-colors" title="Supprimer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </tbody>
@@ -75,4 +95,5 @@
         </div>
     </main>
 </body>
+
 </html>

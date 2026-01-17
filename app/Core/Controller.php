@@ -44,4 +44,16 @@ class Controller {
         header('Pragma: no-cache');
         header('Expires: 0');
     }
+
+    /**
+     * Valide que les champs requis sont présents et non vides.
+     */
+    protected function validateFields($data, $requiredFields) {
+        foreach ($requiredFields as $field) {
+            if (!isset($data[$field]) || trim((string)$data[$field]) === '') {
+                return false;
+            }
+        }
+        return true;
+    }
 }

@@ -4,18 +4,31 @@ namespace App\Controllers\Admin;
 use App\Core\Controller;
 use App\Models\Donateur;
 
-class DonateurController extends Controller {
+class DonateurController extends Controller
+{
 
-    public function index() {
+    public function index()
+    {
         $this->requireAuth();
         $donateurModel = new Donateur();
         $donators = $donateurModel->getAll();
         $this->view('admin/donators/index', ['donators' => $donators]);
     }
 
-    public function store() {
+    public function store()
+    {
         $this->requireAuth();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!$this->validateFields($_POST, ['nom'])) {
+                $donateurModel = new Donateur();
+                $donators = $donateurModel->getAll();
+                $this->view('admin/donators/index', [
+                    'donators' => $donators,
+                    'error' => 'Le nom du donateur est obligatoire.',
+                    'data' => $_POST
+                ]);
+                return;
+            }
             $data = [
                 'nom' => $_POST['nom'],
                 'email' => $_POST['email'],
@@ -29,7 +42,8 @@ class DonateurController extends Controller {
         }
     }
 
-    public function delete() {
+    public function delete()
+    {
         $this->requireAuth();
         $id = $_GET['id'] ?? null;
         if ($id) {

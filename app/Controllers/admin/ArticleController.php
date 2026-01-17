@@ -4,35 +4,47 @@ namespace App\Controllers\Admin;
 use App\Core\Controller;
 use App\Models\Article;
 
-class ArticleController extends Controller {
+class ArticleController extends Controller
+{
 
-    public function index() {
+    public function index()
+    {
         $this->requireAuth(['ADMIN', 'BUREAU']);
         $articleModel = new Article();
-        $articles = $articleModel->getAll(); 
+        $articles = $articleModel->getAll();
         $this->view('admin/articles/index', ['articles' => $articles]);
     }
 
-    public function create() {
+    public function create()
+    {
         $this->requireAuth();
         $this->view('admin/articles/create');
     }
 
-    public function store() {
+    public function store()
+    {
         $this->requireAuth();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!$this->validateFields($_POST, ['titre', 'contenu'])) {
+                $this->view('admin/articles/create', [
+                    'error' => 'Le titre et le contenu sont obligatoires.',
+                    'data' => $_POST
+                ]);
+                return;
+            }
             $data = [
                 'titre' => $_POST['titre'],
                 'contenu' => $_POST['contenu'],
                 'auteur_id' => $_SESSION['user_id'],
             ];
             $articleModel = new Article();
-            $articleModel->create($data); 
+            $articleModel->create($data);
             $this->redirect('/admin/articles');
         }
     }
 
-    public function delete() {
+    public function delete()
+    {
         $this->requireAuth();
         $id = $_GET['id'] ?? null;
         if ($id) {
